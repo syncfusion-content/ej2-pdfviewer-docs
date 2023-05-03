@@ -65,9 +65,6 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 * **Show/Hide toolbar using enableToolbar API as in the following code snippet**
 
 {% tabs %}
-{% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/index.ts %}
-{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/index.html %}
 {% endhighlight %}
@@ -77,9 +74,6 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 
 * **Show/Hide toolbar using showToolbar as in the following code snippet**
 {% tabs %}
-{% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/toolbar/toolbar-method-cs1/index.ts %}
-{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/toolbar/toolbar-method-cs1/index.html %}
 {% endhighlight %}
@@ -94,9 +88,6 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 * **Show/Hide toolbaritem using toolbarSettings as in the following code snippet.**
 
 {% tabs %}
-{% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/toolbar/toolbar-items-cs1/index.ts %}
-{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/toolbar/toolbar-items-cs1/index.html %}
 {% endhighlight %}
@@ -107,9 +98,6 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 * **Show/Hide toolbaritem using showToolbaritem as in the following code snippet**
 
 {% tabs %}
-{% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/index.ts %}
-{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/index.html %}
 {% endhighlight %}
