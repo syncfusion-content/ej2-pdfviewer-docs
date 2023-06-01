@@ -36,7 +36,7 @@ The Typescript PDF Viewer supports the following keyboard interactions.
 |Print the document|CONTROL + P|COMMAND + P|
 |Delete the annotations and form fields|Delete|Delete|
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

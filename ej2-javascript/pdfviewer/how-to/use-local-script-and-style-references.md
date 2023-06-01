@@ -37,7 +37,7 @@ npm install
 
 **Step 4:** Add the `Div` element and initiate the `Essential JS 2 PDF Viewer` component with script and style references in the `index.html` by using following code
 
-```
+```html
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
        <head>

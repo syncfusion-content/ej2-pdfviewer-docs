@@ -15,7 +15,7 @@ The magnification tools of the PDF Viewer contains ZoomIn, ZoomOut, Zoom, FitPag
 
 The following code snippet describes how to enable the magnification in PDF Viewer.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

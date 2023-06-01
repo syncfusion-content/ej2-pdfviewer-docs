@@ -99,7 +99,7 @@ pdfviewer.load('PDF_Succinctly.pdf', null);
 
 * Add an HTML div element to act as the PDF Viewer element `index.html` using the following code.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

@@ -81,7 +81,7 @@ The following table shows the default text values used in PDF Viewer in 'en-US' 
 
 The different locale value for the PDF Viewer can be specified using the locale property.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

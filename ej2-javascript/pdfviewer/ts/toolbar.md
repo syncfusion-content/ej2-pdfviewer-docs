@@ -33,7 +33,7 @@ The following table shows built-in toolbar items and its actions:-
 
 The PDF Viewer has an option to show or hide the complete default toolbar. You can achieve this by using following two ways.,
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

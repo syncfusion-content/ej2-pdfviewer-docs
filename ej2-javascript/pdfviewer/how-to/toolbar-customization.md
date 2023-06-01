@@ -17,7 +17,7 @@ The PDF Viewer provides API for user interactions options provided in it's built
 
 **Step 2:** Now, add an HTML div element to act as the custom toolbar PDF Viewer using the following code.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

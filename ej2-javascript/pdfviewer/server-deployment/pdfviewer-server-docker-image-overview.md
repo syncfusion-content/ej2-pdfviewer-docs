@@ -65,7 +65,7 @@ Now the PDF Viewer server Docker instance runs in the localhost with the provide
 
 **Step 4:** Append the Docker instance running the URL `(http://localhost:6001/api/pdfviewer)` to the service URL in the client-side PDF Viewer control. For more information about how to get started with PDF Viewer control, refer to this [`getting started page`](https://ej2.syncfusion.com/javascript/documentation/pdfviewer/getting-started/?).
 
-```
+```html
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
           <title>Essential JS 2</title>
           <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet">

@@ -12,7 +12,7 @@ domainurl: ##DomainURL##
 
 The PDF Viewer supports downloading the loaded PDF file. You can enable/disable the download using the following code snippet.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

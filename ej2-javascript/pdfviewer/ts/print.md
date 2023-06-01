@@ -12,7 +12,7 @@ domainurl: ##DomainURL##
 
 The PDF Viewer supports printing the loaded PDF file. You can enable/disable the print using the following code snippet.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

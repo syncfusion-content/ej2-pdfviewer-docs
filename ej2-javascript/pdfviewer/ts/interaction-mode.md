@@ -17,7 +17,7 @@ The PDF Viewer provides interaction mode for easy interaction with the loaded PD
 
 In this mode, the text selection can be performed in the PDF document loaded in PDF Viewer. The panning and scrolling of the pages by touch cannot be performed in this mode. It allows users to select and copy text from the PDF files. This is helpful for copying and sharing text content. You can enable/disable the text selection using the following code snippet.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
