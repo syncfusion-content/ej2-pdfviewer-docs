@@ -71,7 +71,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 
 When the download icon is selected on the toolbar, the Form Fields will be saved in the PDF document and this action will not affect the original document. Refer the below GIF for further reference.
 
-![Alt text](../../pdfviewer/images/saveformfield.gif)
+![Alt text](../../../pdfviewer/images/saveformfield.gif)
 
 You can invoke download action using following code snippet.
 
@@ -91,7 +91,7 @@ pdfviewer.download();
 
 When the print icon is selected on the toolbar, the PDF document will be printed along with the Form Fields added to the pages and this action will not affect the original document. Refer the below GIF for further reference.
 
-![Alt text](../../pdfviewer/images/printformfield.gif)
+![Alt text](../../../pdfviewer/images/printformfield.gif)
 
 You can invoke print action using the following code snippet.,
 
@@ -112,4 +112,4 @@ pdfviewer.print.print();
 
 We can open the already saved PDF document contains Form Fields in it by clicking the open icon in the toolbar. Refer the below GIF for further reference.
 
-![Alt text](../../pdfviewer/images/openexistingpdf.gif)
+![Alt text](../../../pdfviewer/images/openexistingpdf.gif)

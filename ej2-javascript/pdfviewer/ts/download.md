@@ -54,7 +54,7 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('PDF_Succinctly.pdf', null);
 ```
 
-![Alt text](./images/download.png)
+![Alt text](../images/download.png)
 
 You can invoke download action using following code snippet.,
 
