@@ -17,7 +17,7 @@ From the release of version **21.1.0.35 (2023 Volume 1)** of Essential Studio, t
 * Linux – libpdfium.so
 * OSX – libpdfium.dylib
 
-![Error information in the Network tab](../../pdfviewer/images/ErrorinformationuintheNetworkTab.png)
+![Error information in the Network tab](/ej2-javascript/pdfviewer/how-to/images/ErrorinformationuintheNetworkTab.png)
 
 ## To solve this issue, you should follow the below steps
 

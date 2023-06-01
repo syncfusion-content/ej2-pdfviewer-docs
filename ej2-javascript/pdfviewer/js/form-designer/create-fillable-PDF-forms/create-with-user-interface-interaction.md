@@ -68,7 +68,7 @@ The properties of the Form Fields can be edited using the Form Field Properties 
 
 The PDF Viewer control supports the clipboard operations such as cut, copy and paste for Form Fields. You can right click on the Form Field object to view the context menu and select to the clipboard options that you would like to perform. Refer the below image for the options in the context menu.
 
-![Alt text](../../../../../../pdfviewer/images/clipboardformfield.png)
+![Alt text](/ej2-javascript/pdfviewer/images/clipboardformfield.png)
 
 ## Undo and Redo
 

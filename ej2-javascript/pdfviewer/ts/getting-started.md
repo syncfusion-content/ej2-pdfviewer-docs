@@ -178,15 +178,15 @@ These modules should be injected into the PDF Viewer using `PdfViewer.Inject` me
 
 3.Use the below command to restore the required packages.
 
-    ```
-      dotnet restore
-    ```
+```
+ dotnet restore
+```
 
 4.Use the below command to run the web service.
 
-     ```
-      dotnet run
-     ```
+```
+ dotnet run
+```
 
 5.You can see that the PDF Viewer server instance runs in the localhost with the port number [`localhost:5001`](https://localhost:5001/) and navigate to the PDF Viewer Web control [`localhost:5001/pdfviewer`](https://localhost:5001/pdfviewer) which returns the default get response method. We can bind the link to the `serviceUrl` property of PDF Viewer as below.
 
