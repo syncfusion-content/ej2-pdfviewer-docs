@@ -40,13 +40,13 @@ pdfviewer.appendTo('#PdfViewer');
 
 Click the Form Field icon on the toolbar and then click on to the PDF document to draw a Form Field. Refer the below GIF for further reference.
 
-![Alt text](../../pdfviewer/images/addformfield.gif)
+![Alt text](../../images/addformfield.gif)
 
 ## Drag the form field
 
 We provide options to drag the Form Field which is currently selected in the PDF document. Refer the below GIF for further reference.
 
-![Alt text](../../pdfviewer/images/dragformfield.gif)
+![Alt text](../../images/dragformfield.gif)
 
 ## Resize the form field
 
