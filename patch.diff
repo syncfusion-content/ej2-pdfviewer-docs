@@ -1,0 +1,928 @@
+diff --git a/ej2-javascript/code-snippet/pdfviewer/addformfield-cs3/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/addformfield-cs3/systemjs.config.js
+index 457946c..c661018 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/addformfield-cs3/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/addformfield-cs3/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",       
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs1/index.js b/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs1/index.js
+index 602f91f..fb153c2 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs1/index.js
++++ b/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs1/index.js
+@@ -8,6 +8,6 @@ pdfviewer.appendTo('#PdfViewer');
+ pdfviewer.documentLoad = function (args) {
+ pdfviewer.formDesignerModule.addFormField("Textbox", { name: "Textbox", bounds: { X: 146, Y: 229, Width: 150, Height: 24 } });
+ pdfviewer.formDesignerModule.addFormField("Textbox", { name: "Textfield", bounds: { X: 300, Y: 229, Width: 150, Height: 24 } });
+-pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0] });
++pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
+ }
+ 
+diff --git a/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs3/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs3/systemjs.config.js
+index 457946c..c661018 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs3/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/deleteformfield-cs3/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",       
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/es5-getting-started-cs1/js/index.html b/ej2-javascript/code-snippet/pdfviewer/es5-getting-started-cs1/js/index.html
+index 9c755ec..7e39c6e 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/es5-getting-started-cs1/js/index.html
++++ b/ej2-javascript/code-snippet/pdfviewer/es5-getting-started-cs1/js/index.html
+@@ -1,10 +1,19 @@
+ <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+           <title>Essential JS 2</title>
+           <!-- Essential JS 2 material theme -->
+-          <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-base/styles/material.css" rel="stylesheet">    
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-pdfviewer/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-buttons/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-popups/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-navigations/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-dropdowns/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-lists/styles/material.css" rel="stylesheet">
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-inputs/styles/material.css" rel="stylesheet">    
++          <link href="https://cdn.syncfusion.com/ej2/20.3.56/ej2-splitbuttons/styles/material.css" rel="stylesheet">
+ 
+-          <!-- Essential JS 2 PDF Viewer's script -->            
+-          <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
++          <!-- Essential JS 2 PDF Viewer's script --> 
++          <script src="https://cdn.syncfusion.com/ej2/20.3.56/ej2-pdfviewer/dist/global/ej2-pdfviewer.min.js" type="text/javascript"></script>           
++          <script src="https://cdn.syncfusion.com/ej2/20.3.56/dist/ej2.min.js" type="text/javascript"></script>
+ 	<script src="https://cdn.syncfusion.com/ej2/20.4.38/dist/ej2.min.js" type="text/javascript"></script>
+ </head>
+      <body>
+diff --git a/ej2-javascript/code-snippet/pdfviewer/getting-started-cs1/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/getting-started-cs1/systemjs.config.js
+index 457946c..6623f15 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/getting-started-cs1/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/getting-started-cs1/systemjs.config.js
+@@ -17,11 +17,13 @@ System.config({
+         typescript: "https://unpkg.com/typescript@2.2.2/lib/typescript.js",
+         'plugin-json':'https://cdnjs.cloudflare.com/ajax/libs/systemjs-plugin-json/0.3.0/json.min.js',
+         "@syncfusion/ej2-base": "syncfusion:ej2-base/dist/ej2-base.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",
+         "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",        
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/systemjs.config.js
+index 457946c..89455ab 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-hide-cs1/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",        
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-cs1/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-cs1/systemjs.config.js
+index 457946c..89455ab 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-cs1/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-cs1/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",        
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/systemjs.config.js
+index 457946c..9b553eb 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-items-method-cs1/systemjs.config.js
+@@ -20,8 +20,10 @@ System.config({
+         "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+-        "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",  
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",        
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-method-cs1/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-method-cs1/systemjs.config.js
+index 457946c..012ee87 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-method-cs1/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/toolbar/toolbar-method-cs1/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js", 
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",       
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/code-snippet/pdfviewer/updateformfield-cs3/systemjs.config.js b/ej2-javascript/code-snippet/pdfviewer/updateformfield-cs3/systemjs.config.js
+index 457946c..c661018 100644
+--- a/ej2-javascript/code-snippet/pdfviewer/updateformfield-cs3/systemjs.config.js
++++ b/ej2-javascript/code-snippet/pdfviewer/updateformfield-cs3/systemjs.config.js
+@@ -21,7 +21,9 @@ System.config({
+         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
+         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",        
+         "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",  
+-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",        
++        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
++        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
++        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",       
+         "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
+         "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
+         "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
+diff --git a/ej2-javascript/pdfviewer/js/download.md b/ej2-javascript/pdfviewer/js/download.md
+index d4db050..6e3e944 100644
+--- a/ej2-javascript/pdfviewer/js/download.md
++++ b/ej2-javascript/pdfviewer/js/download.md
+@@ -47,7 +47,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/download.png)
++![Alt text](./images/download.png)
+ 
+ You can invoke download action using following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/js/ej1-api-migration.md b/ej2-javascript/pdfviewer/js/ej1-api-migration.md
+index 3f455e2..329cefa 100644
+--- a/ej2-javascript/pdfviewer/js/ej1-api-migration.md
++++ b/ej2-javascript/pdfviewer/js/ej1-api-migration.md
+@@ -17,7 +17,7 @@ This article describes API migration process of PDF Viewer component from Essent
+ 
+ <!-- markdownlint-disable MD010 -->
+ | Behavior | API in Essential JS 1 | API in Essential JS 2 |
+-| --- | --- | --- |
++|---|---|---|
+ | Localization | **Property**: *locale* <br/>`$("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', locale:"es-ES" });` | **Property**: *locale* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({locale: 'es-ES',                    serviceUrl:https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);   pdfviewer.appendTo('#PdfViewer');`|
+ |To set the PDF document path for initial loading | **Property**: *documentPath* <br/>`$("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', documentPath: "HTTP Succinctly.pdf" });` | **Property**: *documentPath* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({ documentPath: "PDF_Succinctly.pdf",                    serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);pdfviewer.appendTo('#PdfViewer');`|
+ | To get the number of the page being displayed in the PDF Viewer | **Property**: *currentPageNumber* <br/>`$var pdfviewerObj = $("#viewer").data("ejPdfViewer");var currentPage = pdfviewerObj.currentPageNumber;` | **Property**: *currentPageNumber* <br/>`var pdfviewerObj = document.getElementById("PdfViewer").ej2_instances[0];var currentPage = pdfviewerObj.currentPageNumber;`|
+diff --git a/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-programmatically.md b/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-programmatically.md
+index ebaf646..abf68bf 100644
+--- a/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-programmatically.md
++++ b/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-programmatically.md
+@@ -71,7 +71,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
+ 
+ When the download icon is selected on the toolbar, the Form Fields will be saved in the PDF document and this action will not affect the original document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/saveformfield.gif)
++![Alt text](../../.././pdfviewer/images/saveformfield.gif)
+ 
+ You can invoke download action using following code snippet.
+ 
+@@ -91,7 +91,7 @@ pdfviewer.download();
+ 
+ When the print icon is selected on the toolbar, the PDF document will be printed along with the Form Fields added to the pages and this action will not affect the original document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/printformfield.gif)
++![Alt text](../../.././pdfviewer/images/printformfield.gif)
+ 
+ You can invoke print action using the following code snippet.,
+ 
+@@ -112,7 +112,7 @@ pdfviewer.print.print();
+ 
+ We can open the already saved PDF document contains Form Fields in it by clicking the open icon in the toolbar. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/openexistingpdf.gif)
++![Alt text](../../.././pdfviewer/images/openexistingpdf.gif)
+ 
+ ## Validate form fields
+ 
+@@ -328,7 +328,7 @@ viewer.signatureFieldSettings = {
+ 
+ ```
+ 
+-![Signature Field Settings](../../../../pdfviewer/images/SignatureField.png)
++![Signature Field Settings](../.././images/SignatureField.png)
+ 
+ The following code example explains how to update the properties of the initial field added to the document from the form designer toolbar.
+ 
+@@ -369,4 +369,4 @@ viewer.initialFieldSettings = {
+ 
+ ```
+ 
+-![Initial Field Settings](../../../../pdfviewer/images/InitialField.png)
+\ No newline at end of file
++![Initial Field Settings](../.././images/InitialField.png)
+\ No newline at end of file
+diff --git a/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md b/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
+index 1623e54..6d6f668 100644
+--- a/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
++++ b/ej2-javascript/pdfviewer/js/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
+@@ -40,35 +40,35 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ Click the Form Field icon on the toolbar and then click on to the PDF document to draw a Form Field. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/addformfield.gif)
++![Alt text](../.././images/addformfield.gif)
+ 
+ ## Drag the form field
+ 
+ We provide options to drag the Form Field which is currently selected in the PDF document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/dragformfield.gif)
++![Alt text](../.././images/dragformfield.gif)
+ 
+ ## Resize the form field
+ 
+ We provide options to resize the Form Field which is currently selected in the PDF document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../../pdfviewer/images/resizeformfield.gif)
++![Alt text](../.././images/resizeformfield.gif)
+ 
+ ## Edit or Update the form field dynamically
+ 
+ The properties of the Form Fields can be edited using the Form Field Properties window. It can be opened by selecting the Properties option in the context menu that appears on the right by clicking the Form Field object. Refer the below image for the properties available to customize the appearance of the Form Field.
+ 
+-![Alt text](../../../../pdfviewer/images/generalproperties.png)
++![Alt text](../.././images/generalproperties.png)
+ 
+-![Alt text](../../../../pdfviewer/images/appearanceproperties.png)
++![Alt text](../.././images/appearanceproperties.png)
+ 
+-![Alt text](../../../../pdfviewer/images/dropdownproperties.png)
++![Alt text](../.././images/dropdownproperties.png)
+ 
+ ## Clipboard operation with form field
+ 
+ The PDF Viewer control supports the clipboard operations such as cut, copy and paste for Form Fields. You can right click on the Form Field object to view the context menu and select to the clipboard options that you would like to perform. Refer the below image for the options in the context menu.
+ 
+-![Alt text](../../../../pdfviewer/images/clipboardformfield.png)
++![Alt text](../.././images/clipboardformfield.png)
+ 
+ ## Undo and Redo
+ 
+diff --git a/ej2-javascript/pdfviewer/js/interaction-mode.md b/ej2-javascript/pdfviewer/js/interaction-mode.md
+index d6458db..691106e 100644
+--- a/ej2-javascript/pdfviewer/js/interaction-mode.md
++++ b/ej2-javascript/pdfviewer/js/interaction-mode.md
+@@ -47,13 +47,13 @@ ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearc
+ pdfviewer.appendTo('#PdfViewer');
+ ```
+ 
+-![Alt text](../images/selection.png)
++![Alt text](./images/selection.png)
+ 
+ ## Panning Mode
+ 
+ In this mode, the panning and scrolling of the pages by touch can be performed in the PDF document loaded in the PDF Viewer, but the text selection cannot be performed.
+ 
+-![Alt text](../images/pan.png)
++![Alt text](./images/pan.png)
+ 
+ You can switch the interaction mode of PDF Viewer by using the following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/js/magnification.md b/ej2-javascript/pdfviewer/js/magnification.md
+index 4637e0a..c6b38b3 100644
+--- a/ej2-javascript/pdfviewer/js/magnification.md
++++ b/ej2-javascript/pdfviewer/js/magnification.md
+@@ -54,7 +54,7 @@ The following magnification options are available in the default toolbar of PDF
+ * [**FitPage**](https://ej2.syncfusion.com/documentation/api/pdfviewer/magnification/#fittopage):- Fits the page width with in the available view port size.
+ * [**FitWidth**](https://ej2.syncfusion.com/documentation/api/pdfviewer/magnification/#fittowidth):- Fits the view port width based on the page content size.
+ 
+-![Alt text ](../images/zoom.png)
++![Alt text ](./images/zoom.png)
+ 
+ >PDF Viewer can support the zoom value ranges from 50 to 400.
+ 
+diff --git a/ej2-javascript/pdfviewer/js/navigation.md b/ej2-javascript/pdfviewer/js/navigation.md
+index a47e086..83b91c2 100644
+--- a/ej2-javascript/pdfviewer/js/navigation.md
++++ b/ej2-javascript/pdfviewer/js/navigation.md
+@@ -56,7 +56,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/navigation.png)
++![Alt text](./images/navigation.png)
+ 
+ Also, you can programmatically perform page navigation options as follows.
+ 
+@@ -141,7 +141,7 @@ ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearc
+ pdfviewer.appendTo('#PdfViewer');
+ ```
+ 
+-![Alt text](../images/bookmark.png)
++![Alt text](./images/bookmark.png)
+ 
+ To perform bookmark navigation, you can use the **goToBookmark** method. It's important to note that the **goToBookmark** method will throw an error if the specified bookmark does not exist in the PDF document.
+ 
+@@ -193,13 +193,13 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/thumbnail.png)
++![Alt text](./images/thumbnail.png)
+ 
+ ## Hyperlink navigation
+ 
+ Hyperlink navigation features enables navigation to the URLs (website links) in a PDF file.
+ 
+-![Alt text](../images/link.png)
++![Alt text](./images/link.png)
+ 
+ ## Table of content navigation
+ 
+@@ -234,7 +234,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/toc.png)
++![Alt text](./images/toc.png)
+ 
+ ## See also
+ 
+diff --git a/ej2-javascript/pdfviewer/js/print.md b/ej2-javascript/pdfviewer/js/print.md
+index 0396aa7..4ffeaf3 100644
+--- a/ej2-javascript/pdfviewer/js/print.md
++++ b/ej2-javascript/pdfviewer/js/print.md
+@@ -46,7 +46,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/print.png)
++![Alt text](./images/print.png)
+ 
+ You can invoke print action using the following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/js/text-markup-annotation.md b/ej2-javascript/pdfviewer/js/text-markup-annotation.md
+index 9946a5d..3e3bb1c 100644
+--- a/ej2-javascript/pdfviewer/js/text-markup-annotation.md
++++ b/ej2-javascript/pdfviewer/js/text-markup-annotation.md
+@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
+ 
+ The PDF Viewer control provides the options to add, edit, and delete text markup annotations such as highlight, underline, and strikethrough annotations in the PDF document.
+ 
+-![Alt text](../images/text_markup_annotation.png)
++![Alt text](./images/text_markup_annotation.png)
+ 
+ ## Highlight a text
+ 
+@@ -23,7 +23,7 @@ There are two ways to highlight a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Highlight** option in the context menu that appears.
+ 
+-![Alt text](../images/highlight_context.png)
++![Alt text](./images/highlight_context.png)
+ 
+ <!-- markdownlint-disable MD029 -->
+ 2. Using the annotation toolbar
+@@ -32,7 +32,7 @@ There are two ways to highlight a text in the PDF document:
+     * Select the text and the highlight annotation will be added.
+     * You can also select the text and apply the highlight annotation using the **Highlight** button.
+ 
+-![Alt text](../images/highlight_button.PNG)
++![Alt text](./images/highlight_button.PNG)
+ 
+ In the pan mode, if the highlight mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for highlighting the text.
+ 
+@@ -64,7 +64,7 @@ There are two ways to underline a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Underline** option in the context menu that appears.
+ 
+-![Alt text](../images/underline_context.png)
++![Alt text](./images/underline_context.png)
+ 
+ 2. Using the annotation toolbar
+     * Click the **Edit Annotation** button in the PDF Viewer toolbar. A toolbar appears below it.
+@@ -72,7 +72,7 @@ There are two ways to underline a text in the PDF document:
+     * Select the text and the underline annotation will be added.
+     * You can also select the text and apply the underline annotation using the **Underline** button.
+ 
+-![Alt text](../images/underline_button.png)
++![Alt text](./images/underline_button.png)
+ 
+ In the pan mode, if the underline mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for underlining the text.
+ 
+@@ -104,7 +104,7 @@ There are two ways to strikethrough a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Strikethrough** option in the context menu that appears.
+ 
+-![Alt text](../images/strikethrough_context.png)
++![Alt text](./images/strikethrough_context.png)
+ 
+ 2. Using the annotation toolbar
+     * Click the **Edit Annotation** button in the PDF Viewer toolbar. A toolbar appears below it.
+@@ -112,7 +112,7 @@ There are two ways to strikethrough a text in the PDF document:
+     * Select the text and the strikethrough annotation will be added.
+     * You can also select the text and apply the strikethrough annotation using the **Strikethrough** button.
+ 
+-![Alt text](../images/strikethrough_button.png)
++![Alt text](./images/strikethrough_button.png)
+ 
+ In the pan mode, if the strikethrough mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for striking through the text.
+ 
+@@ -148,7 +148,7 @@ The selected annotation can be deleted by the following ways:
+     * Select the annotation to be deleted.
+     * Click the **Delete Annotation** button in the annotation toolbar. The selected annotation will be deleted.
+ 
+-![Alt text](../images/delete_button.png)
++![Alt text](./images/delete_button.png)
+ 
+ ## Editing the properties of the text markup annotation
+ 
+@@ -158,13 +158,13 @@ The color and the opacity of the text markup annotation can be edited using the
+ 
+ The color of the annotation can be edited using the color palette provided in the Edit Color tool.
+ 
+-![Alt text](../images/edit_color.png)
++![Alt text](./images/edit_color.png)
+ 
+ ### Editing opacity
+ 
+ The opacity of the annotation can be edited using the range slider provided in the Edit Opacity tool.
+ 
+-![Alt text](../images/edit_opacity.png)
++![Alt text](./images/edit_opacity.png)
+ 
+ ## Setting default properties during control initialization
+ 
+diff --git a/ej2-javascript/pdfviewer/js/text-search.md b/ej2-javascript/pdfviewer/js/text-search.md
+index ad0a189..a383c9b 100644
+--- a/ej2-javascript/pdfviewer/js/text-search.md
++++ b/ej2-javascript/pdfviewer/js/text-search.md
+@@ -53,7 +53,7 @@ The following text search methods are available in the PDF Viewer,
+ * [**Search previous**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#searchprevious):- Searches the previous occurrence of the searched text from the current occurrence of the PdfViewer.
+ * [**Cancel text search**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#canceltextsearch):- The text search can be cancelled and the highlighted occurrences from the PDF Viewer can be removed .
+ 
+-![Alt text](../images/search.png)
++![Alt text](./images/search.png)
+ 
+ ## See also
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/annotations/annotations-in-mobile-view.md b/ej2-javascript/pdfviewer/ts/annotations/annotations-in-mobile-view.md
+index 5eaa91c..8a58fd3 100644
+--- a/ej2-javascript/pdfviewer/ts/annotations/annotations-in-mobile-view.md
++++ b/ej2-javascript/pdfviewer/ts/annotations/annotations-in-mobile-view.md
+@@ -14,75 +14,75 @@ domainurl: ##DomainURL##
+ 
+ **Step 1:** To enable the annotation toolbar, click the editAnnotation toolbar.
+ 
+-![Alt text](../../images/edit-annotation.png)
++![Alt text](.././images/edit-annotation.png)
+ 
+ **Step 2:** After enabling the annotation toolbar.
+ 
+-![Alt text](../../images/after-enabling-annotation-toolbar.png)
++![Alt text](.././images/after-enabling-annotation-toolbar.png)
+ 
+ ## To add sticky notes annotation
+ 
+ **Step 1:** click sticky notes icon and then click in the page where you want to add this.
+ 
+-![Alt text](../../images/add-sticky-notes.png)
++![Alt text](.././images/add-sticky-notes.png)
+ 
+ **Step 2:** Click in the page to add the sticky notes annotation.
+ 
+-![Alt text](../../images/sticky-notes-in-page.png)
++![Alt text](.././images/sticky-notes-in-page.png)
+ 
+ ## To add text markup annotation
+ 
+ **Step 1:** click any one of the text markup icon, then select the text you want to mark, then touch the selected text to apply the markup annotation.
+ 
+-![Alt text](../../images/select-text.png)
++![Alt text](.././images/select-text.png)
+ 
+ **Step 2:** Add the text markup annotation in the PDF page
+ 
+-![Alt text](../../images/add-text-markup.png)
++![Alt text](.././images/add-text-markup.png)
+ 
+ ## To add shape and measure annotations
+ 
+ **Step 1:** click the shape/measure icon in the toolbar. It will show the toolbar with shape/measure types.
+ 
+-![Alt text](../../images/add-shapes.png)
++![Alt text](.././images/add-shapes.png)
+ 
+ **Step 2:** Click the shape/measure type and add annotation to the page.
+ 
+-![Alt text](../../images/open-radius.png)
++![Alt text](.././images/open-radius.png)
+ 
+ **Step 3:** Add the annotation in the PDF page.
+ 
+-![Alt text](../../images/radius-annotation.png)
++![Alt text](.././images/radius-annotation.png)
+ 
+ ## To add the stamp annotation
+ 
+ **Step 1:** click the stamp icon and select the stamp type from the menu items.
+ 
+-![Alt text](../../images/open-stamp.png)
++![Alt text](.././images/open-stamp.png)
+ 
+ **Step 2:** Add the stamp annotation in the page.
+ 
+-![Alt text](../../images/add-revised.png)
++![Alt text](.././images/add-revised.png)
+ 
+ ## To add signature
+ 
+ **Step 1:** click the signature icon. This will open the signature canvas to draw signature. After drawn the sign, should click the create button and touch the viewer to add the signature.
+ 
+-![Alt text](../../images/add-signature.png)
++![Alt text](.././images/add-signature.png)
+ 
+ **Step 2:** Add the signature in the page.
+ 
+-![Alt text](../../images/adding-signature.png)
++![Alt text](.././images/adding-signature.png)
+ 
+ ## To add ink annotation
+ 
+ **Step 1:** Click the ink icon tool and draw in the page.
+ 
+-![Alt text](../../images/open-ink.png)
++![Alt text](.././images/open-ink.png)
+ 
+ **Step 2:** Add the ink annotation in the page.
+ 
+-![Alt text](../../../pdfviewer/how-to/images/ink-annotation.png)
++![Alt text](../.././pdfviewer/how-to/images/ink-annotation.png)
+ 
+ ## Change Annotation Change (Before adding)
+ 
+@@ -90,7 +90,7 @@ domainurl: ##DomainURL##
+ 
+ **Step 2:** Click the annotation icon, this will show the toolbar with corresponding properties. We can change the property and add the annotation in the page.
+ 
+-![Alt text](../../images/open-fillcolor.png)
++![Alt text](.././images/open-fillcolor.png)
+ 
+ ## Change Annotation Property (After Adding)
+ 
+@@ -98,26 +98,26 @@ domainurl: ##DomainURL##
+ 
+ **Step 2:** Select the added annotation, it will show the corresponding property tool. This will help us to change the property of the annotation.
+ 
+-![Alt text](../../images/change-property.png)
++![Alt text](.././images/change-property.png)
+ 
+ ## Delete Annotation
+ 
+ **Step 1:** To delete the annotation, first select the annotation, it will show the property toolbar. In the property tool there is an icon to delete the annotation.
+ 
+-![Alt text](../../images/delete-icon.png)
++![Alt text](.././images/delete-icon.png)
+ 
+ ## Open Comment Panel
+ 
+ **Step 1:** We can open the comment panel through the icon in the property tool or through the annotation toolbar.
+ 
+-![Alt text](../../images/open-comment.png)
++![Alt text](.././images/open-comment.png)
+ 
+ **Step 1:** After opening the comment panel
+ 
+-![Alt text](../../images/comment-panel.png)
++![Alt text](.././images/comment-panel.png)
+ 
+ ## Close the comment panel
+ 
+ **Step 1:** To close the comment panel, click the close button.
+ 
+-![Alt text](../../images/close-comment-panel.png)
+\ No newline at end of file
++![Alt text](.././images/close-comment-panel.png)
+\ No newline at end of file
+diff --git a/ej2-javascript/pdfviewer/ts/annotations/text-markup-annotation.md b/ej2-javascript/pdfviewer/ts/annotations/text-markup-annotation.md
+index cae6cec..fac4cca 100644
+--- a/ej2-javascript/pdfviewer/ts/annotations/text-markup-annotation.md
++++ b/ej2-javascript/pdfviewer/ts/annotations/text-markup-annotation.md
+@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
+ 
+ The PDF Viewer control provides the options to add, edit, and delete text markup annotations such as highlight, underline, and strikethrough annotations in the PDF document.
+ 
+-![Alt text](../../images/text_markup_annotation.png)
++![Alt text](.././images/text_markup_annotation.png)
+ 
+ ## Highlight a text
+ 
+@@ -23,7 +23,7 @@ There are two ways to highlight a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Highlight** option in the context menu that appears.
+ 
+-![Alt text](../../images/highlight_context.png)
++![Alt text](.././images/highlight_context.png)
+ 
+ <!-- markdownlint-disable MD029 -->
+ 2. Using the annotation toolbar
+@@ -32,7 +32,7 @@ There are two ways to highlight a text in the PDF document:
+     * Select the text and the highlight annotation will be added.
+     * You can also select the text and apply the highlight annotation using the **Highlight** button.
+ 
+-![Alt text](../../images/highlight_button.PNG)
++![Alt text](.././images/highlight_button.PNG)
+ 
+ In the pan mode, if the highlight mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for highlighting the text.
+ 
+@@ -64,7 +64,7 @@ There are two ways to underline a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Underline** option in the context menu that appears.
+ 
+-![Alt text](../../images/underline_context.png)
++![Alt text](.././images/underline_context.png)
+ 
+ <!-- markdownlint-disable MD029 -->
+ 2. Using the annotation toolbar
+@@ -73,7 +73,7 @@ There are two ways to underline a text in the PDF document:
+     * Select the text and the underline annotation will be added.
+     * You can also select the text and apply the underline annotation using the **Underline** button.
+ 
+-![Alt text](../../images/underline_button.png)
++![Alt text](.././images/underline_button.png)
+ 
+ In the pan mode, if the underline mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for underlining the text.
+ 
+@@ -105,7 +105,7 @@ There are two ways to strikethrough a text in the PDF document:
+     * Select a text in the PDF document and right-click it.
+     * Select **Strikethrough** option in the context menu that appears.
+ 
+-![Alt text](../../images/strikethrough_context.png)
++![Alt text](.././images/strikethrough_context.png)
+ 
+ <!-- markdownlint-disable MD029 -->
+ 2. Using the annotation toolbar
+@@ -114,7 +114,7 @@ There are two ways to strikethrough a text in the PDF document:
+     * Select the text and the strikethrough annotation will be added.
+     * You can also select the text and apply the strikethrough annotation using the **Strikethrough** button.
+ 
+-![Alt text](../../images/strikethrough_button.png)
++![Alt text](.././images/strikethrough_button.png)
+ 
+ In the pan mode, if the strikethrough mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for striking through the text.
+ 
+@@ -150,7 +150,7 @@ The selected annotation can be deleted by the following ways:
+     * Select the annotation to be deleted.
+     * Click the **Delete Annotation** button in the annotation toolbar. The selected annotation will be deleted.
+ 
+-![Alt text](../../images/delete_button.png)
++![Alt text](.././images/delete_button.png)
+ 
+ ## Editing the properties of the text markup annotation
+ 
+@@ -160,13 +160,13 @@ The color and the opacity of the text markup annotation can be edited using the
+ 
+ The color of the annotation can be edited using the color palette provided in the Edit Color tool.
+ 
+-![Alt text](../../images/edit_color.png)
++![Alt text](.././images/edit_color.png)
+ 
+ ### Editing opacity
+ 
+ The opacity of the annotation can be edited using the range slider provided in the Edit Opacity tool.
+ 
+-![Alt text](../../images/edit_opacity.png)
++![Alt text](.././images/edit_opacity.png)
+ 
+ ## Setting default properties during control initialization
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/download.md b/ej2-javascript/pdfviewer/ts/download.md
+index 751bc92..efbe986 100644
+--- a/ej2-javascript/pdfviewer/ts/download.md
++++ b/ej2-javascript/pdfviewer/ts/download.md
+@@ -54,7 +54,7 @@ pdfviewer.appendTo('#PdfViewer');
+ pdfviewer.load('PDF_Succinctly.pdf', null);
+ ```
+ 
+-![Alt text](../images/download.png)
++![Alt text](./images/download.png)
+ 
+ You can invoke download action using following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-programmatically.md b/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-programmatically.md
+index 844d860..7b95839 100644
+--- a/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-programmatically.md
++++ b/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-programmatically.md
+@@ -71,7 +71,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
+ 
+ When the download icon is selected on the toolbar, the Form Fields will be saved in the PDF document and this action will not affect the original document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/saveformfield.gif)
++![Alt text](../.././images/saveformfield.gif)
+ 
+ You can invoke download action using following code snippet.
+ 
+@@ -92,7 +92,7 @@ pdfviewer.download();
+ 
+ When the print icon is selected on the toolbar, the PDF document will be printed along with the Form Fields added to the pages and this action will not affect the original document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/printformfield.gif)
++![Alt text](../.././images/printformfield.gif)
+ 
+ You can invoke print action using the following code snippet.,
+ 
+@@ -113,7 +113,7 @@ pdfviewer.print.print();
+ 
+ We can open the already saved PDF document contains Form Fields in it by clicking the open icon in the toolbar. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/openexistingpdf.gif)
++![Alt text](../.././images/openexistingpdf.gif)
+ 
+ ## Validate form fields
+ 
+@@ -332,7 +332,7 @@ viewer.signatureFieldSettings = {
+ 
+ ```
+ 
+-![Signature Field Settings](../../../images/SignatureField.png)
++![Signature Field Settings](../.././images/SignatureField.png)
+ 
+ The following code example explains how to update the properties of the initial field added to the document from the form designer toolbar.
+ 
+@@ -372,4 +372,4 @@ viewer.initialFieldSettings = {
+ 
+ ```
+ 
+-![Initial Field Settings](../../../images/InitialField.png)
+\ No newline at end of file
++![Initial Field Settings](../.././images/InitialField.png)
+\ No newline at end of file
+diff --git a/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md b/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
+index d32ba40..e5d324e 100644
+--- a/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
++++ b/ej2-javascript/pdfviewer/ts/form-designer/create-fillable-PDF-forms/create-with-user-interface-interaction.md
+@@ -39,35 +39,35 @@ pdfviewer.enableFormDesignerToolbar= true;
+ 
+ Click the Form Field icon on the toolbar and then click on to the PDF document to draw a Form Field. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/addformfield.gif)
++![Alt text](../.././images/addformfield.gif)
+ 
+ ## Drag the form field
+ 
+ We provide options to drag the Form Field which is currently selected in the PDF document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/dragformfield.gif)
++![Alt text](../.././images/dragformfield.gif)
+ 
+ ## Resize the form field
+ 
+ We provide options to resize the Form Field which is currently selected in the PDF document. Refer the below GIF for further reference.
+ 
+-![Alt text](../../../images/resizeformfield.gif)
++![Alt text](../.././images/resizeformfield.gif)
+ 
+ ## Edit or Update the form field dynamically
+ 
+ The properties of the Form Fields can be edited using the Form Field Properties window. It can be opened by selecting the Properties option in the context menu that appears on the right by clicking the Form Field object. Refer the below image for the properties available to customize the appearance of the Form Field.  
+ 
+-![Alt text](../../../images/generalproperties.png)
++![Alt text](../.././images/generalproperties.png)
+ 
+-![Alt text](../../../images/appearanceproperties.png)
++![Alt text](../.././images/appearanceproperties.png)
+ 
+-![Alt text](../../../images/dropdownproperties.png)
++![Alt text](../.././images/dropdownproperties.png)
+ 
+ ## Clipboard operation with form field
+ 
+ The PDF Viewer control supports the clipboard operations such as cut, copy and paste for Form Fields. You can right click on the Form Field object to view the context menu and select to the clipboard options that you would like to perform. Refer the below image for the options in the context menu.
+ 
+-![Alt text](../../../images/clipboardformfield.png)
++![Alt text](../.././images/clipboardformfield.png)
+ 
+ ## Undo and Redo
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/interaction-mode.md b/ej2-javascript/pdfviewer/ts/interaction-mode.md
+index b029b28..bdf26e0 100644
+--- a/ej2-javascript/pdfviewer/ts/interaction-mode.md
++++ b/ej2-javascript/pdfviewer/ts/interaction-mode.md
+@@ -57,13 +57,13 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/selection.png)
++![Alt text](./images/selection.png)
+ 
+ ## Panning Mode
+ 
+ In this mode, the panning and scrolling of the pages by touch can be performed in the PDF document loaded in the PDF Viewer, but the text selection cannot be performed.
+ 
+-![Alt text](../images/pan.png)
++![Alt text](./images/pan.png)
+ 
+ You can switch the interaction mode of PDF Viewer by using the following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/magnification.md b/ej2-javascript/pdfviewer/ts/magnification.md
+index 5cb8583..bcfcad2 100644
+--- a/ej2-javascript/pdfviewer/ts/magnification.md
++++ b/ej2-javascript/pdfviewer/ts/magnification.md
+@@ -64,7 +64,7 @@ The following magnification options are available in the default toolbar of PDF
+ * [**FitPage**](https://ej2.syncfusion.com/documentation/api/pdfviewer/magnification/#fittopage):- Fits the page width with in the available view port size.
+ * [**FitWidth**](https://ej2.syncfusion.com/documentation/api/pdfviewer/magnification/#fittowidth):- Fits the view port width based on the page content size.
+ 
+-![Alt text ](../images/zoom.png)
++![Alt text ](./images/zoom.png)
+ 
+ >PDF Viewer can support the zoom value ranges from 50 to 400.
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/navigation.md b/ej2-javascript/pdfviewer/ts/navigation.md
+index 9610e86..eababf7 100644
+--- a/ej2-javascript/pdfviewer/ts/navigation.md
++++ b/ej2-javascript/pdfviewer/ts/navigation.md
+@@ -66,7 +66,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/navigation.png)
++![Alt text](./images/navigation.png)
+ 
+ Also, you can programmatically perform page navigation options as follows.
+ 
+@@ -156,7 +156,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/bookmark.png)
++![Alt text](./images/bookmark.png)
+ 
+ To perform bookmark navigation, you can use the **goToBookmark** method. It's important to note that the **goToBookmark** method will throw an error if the specified bookmark does not exist in the PDF document.
+ 
+@@ -208,13 +208,13 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/thumbnail.png)
++![Alt text](./images/thumbnail.png)
+ 
+ ## Hyperlink navigation
+ 
+ Hyperlink navigation features enables navigation to the URLs (website links) in a PDF file.
+ 
+-![Alt text](../images/link.png)
++![Alt text](./images/link.png)
+ 
+ ## Table of content navigation
+ 
+@@ -248,7 +248,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/toc.png)
++![Alt text](./images/toc.png)
+ 
+ ## See also
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/print.md b/ej2-javascript/pdfviewer/ts/print.md
+index 98edcea..6ad1425 100644
+--- a/ej2-javascript/pdfviewer/ts/print.md
++++ b/ej2-javascript/pdfviewer/ts/print.md
+@@ -52,7 +52,7 @@ pdfviewer.appendTo('#PdfViewer');
+ 
+ ```
+ 
+-![Alt text](../images/print.png)
++![Alt text](./images/print.png)
+ 
+ You can invoke print action using the following code snippet.,
+ 
+diff --git a/ej2-javascript/pdfviewer/ts/text-search.md b/ej2-javascript/pdfviewer/ts/text-search.md
+index dbf52b7..a998021 100644
+--- a/ej2-javascript/pdfviewer/ts/text-search.md
++++ b/ej2-javascript/pdfviewer/ts/text-search.md
+@@ -61,7 +61,7 @@ The following text search methods are available in the PDF Viewer,
+ * [**Search previous**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#searchprevious):- Searches the previous occurrence of the searched text from the current occurrence of the PdfViewer.
+ * [**Cancel text search**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#canceltextsearch):- The text search can be cancelled and the highlighted occurrences from the PDF Viewer can be removed .
+ 
+-![Alt text](../images/search.png)
++![Alt text](./images/search.png)
+ 
+ ## See also
+ 

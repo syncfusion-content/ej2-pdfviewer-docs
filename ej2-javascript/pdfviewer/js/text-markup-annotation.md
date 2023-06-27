@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 
 The PDF Viewer control provides the options to add, edit, and delete text markup annotations such as highlight, underline, and strikethrough annotations in the PDF document.
 
-![Alt text](../images/text_markup_annotation.png)
+![Alt text](./images/text_markup_annotation.png)
 
 ## Highlight a text
 
@@ -23,7 +23,7 @@ There are two ways to highlight a text in the PDF document:
     * Select a text in the PDF document and right-click it.
     * Select **Highlight** option in the context menu that appears.
 
-![Alt text](../images/highlight_context.png)
+![Alt text](./images/highlight_context.png)
 
 <!-- markdownlint-disable MD029 -->
 2. Using the annotation toolbar
@@ -32,7 +32,7 @@ There are two ways to highlight a text in the PDF document:
     * Select the text and the highlight annotation will be added.
     * You can also select the text and apply the highlight annotation using the **Highlight** button.
 
-![Alt text](../images/highlight_button.PNG)
+![Alt text](./images/highlight_button.PNG)
 
 In the pan mode, if the highlight mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for highlighting the text.
 
@@ -64,7 +64,7 @@ There are two ways to underline a text in the PDF document:
     * Select a text in the PDF document and right-click it.
     * Select **Underline** option in the context menu that appears.
 
-![Alt text](../images/underline_context.png)
+![Alt text](./images/underline_context.png)
 
 2. Using the annotation toolbar
     * Click the **Edit Annotation** button in the PDF Viewer toolbar. A toolbar appears below it.
@@ -72,7 +72,7 @@ There are two ways to underline a text in the PDF document:
     * Select the text and the underline annotation will be added.
     * You can also select the text and apply the underline annotation using the **Underline** button.
 
-![Alt text](../images/underline_button.png)
+![Alt text](./images/underline_button.png)
 
 In the pan mode, if the underline mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for underlining the text.
 
@@ -104,7 +104,7 @@ There are two ways to strikethrough a text in the PDF document:
     * Select a text in the PDF document and right-click it.
     * Select **Strikethrough** option in the context menu that appears.
 
-![Alt text](../images/strikethrough_context.png)
+![Alt text](./images/strikethrough_context.png)
 
 2. Using the annotation toolbar
     * Click the **Edit Annotation** button in the PDF Viewer toolbar. A toolbar appears below it.
@@ -112,7 +112,7 @@ There are two ways to strikethrough a text in the PDF document:
     * Select the text and the strikethrough annotation will be added.
     * You can also select the text and apply the strikethrough annotation using the **Strikethrough** button.
 
-![Alt text](../images/strikethrough_button.png)
+![Alt text](./images/strikethrough_button.png)
 
 In the pan mode, if the strikethrough mode is entered, the PDF Viewer control will switch to text select mode to enable the text selection for striking through the text.
 
@@ -148,7 +148,7 @@ The selected annotation can be deleted by the following ways:
     * Select the annotation to be deleted.
     * Click the **Delete Annotation** button in the annotation toolbar. The selected annotation will be deleted.
 
-![Alt text](../images/delete_button.png)
+![Alt text](./images/delete_button.png)
 
 ## Editing the properties of the text markup annotation
 
@@ -158,13 +158,13 @@ The color and the opacity of the text markup annotation can be edited using the 
 
 The color of the annotation can be edited using the color palette provided in the Edit Color tool.
 
-![Alt text](../images/edit_color.png)
+![Alt text](./images/edit_color.png)
 
 ### Editing opacity
 
 The opacity of the annotation can be edited using the range slider provided in the Edit Opacity tool.
 
-![Alt text](../images/edit_opacity.png)
+![Alt text](./images/edit_opacity.png)
 
 ## Setting default properties during control initialization
 

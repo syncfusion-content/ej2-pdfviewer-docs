@@ -17,7 +17,7 @@ This article describes API migration process of PDF Viewer component from Essent
 
 <!-- markdownlint-disable MD010 -->
 | Behavior | API in Essential JS 1 | API in Essential JS 2 |
-| --- | --- | --- |
+|---|---|---|
 | Localization | **Property**: *locale* <br/>`$("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', locale:"es-ES" });` | **Property**: *locale* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({locale: 'es-ES',                    serviceUrl:https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);   pdfviewer.appendTo('#PdfViewer');`|
 |To set the PDF document path for initial loading | **Property**: *documentPath* <br/>`$("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', documentPath: "HTTP Succinctly.pdf" });` | **Property**: *documentPath* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({ documentPath: "PDF_Succinctly.pdf",                    serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);pdfviewer.appendTo('#PdfViewer');`|
 | To get the number of the page being displayed in the PDF Viewer | **Property**: *currentPageNumber* <br/>`$var pdfviewerObj = $("#viewer").data("ejPdfViewer");var currentPage = pdfviewerObj.currentPageNumber;` | **Property**: *currentPageNumber* <br/>`var pdfviewerObj = document.getElementById("PdfViewer").ej2_instances[0];var currentPage = pdfviewerObj.currentPageNumber;`|
