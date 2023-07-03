@@ -52,7 +52,7 @@ pdfviewer.appendTo('#PdfViewer');
 
 ```
 
-![Alt text](../images/print.png)
+![Alt text](./images/print.png)
 
 You can invoke print action using the following code snippet.,
 

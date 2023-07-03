@@ -61,7 +61,7 @@ The following text search methods are available in the PDF Viewer,
 * [**Search previous**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#searchprevious):- Searches the previous occurrence of the searched text from the current occurrence of the PdfViewer.
 * [**Cancel text search**](https://ej2.syncfusion.com/documentation/api/pdfviewer/textSearch/#canceltextsearch):- The text search can be cancelled and the highlighted occurrences from the PDF Viewer can be removed .
 
-![Alt text](../images/search.png)
+![Alt text](./images/search.png)
 
 ## See also
 
