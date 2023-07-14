@@ -82,9 +82,8 @@ public async Task<IActionResult> Load([FromBody] Dictionary<string, string> json
       var response = await s3Client.GetObjectAsync(_bucketName, document);
       
       Stream responseStream = response.ResponseStream;
-      MemoryStream memStream = new MemoryStream();
-      responseStream.CopyTo(memStream);
-      memStream.Seek(0, SeekOrigin.Begin);
+      responseStream.CopyTo(stream);
+      stream.Seek(0, SeekOrigin.Begin);
     }
     else
     {
