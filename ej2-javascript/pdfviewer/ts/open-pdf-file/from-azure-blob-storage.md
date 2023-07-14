@@ -46,7 +46,7 @@ public PdfViewerController(IConfiguration configuration, ILogger<PdfViewerContro
 }
 ```
 
-5. Modify the `Load` method to load the PDF files from  Azure Blob Storage
+5. Modify the `Load()` method to load the PDF files from  Azure Blob Storage
 
 ```csharp
 

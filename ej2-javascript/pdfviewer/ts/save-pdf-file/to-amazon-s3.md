@@ -51,7 +51,7 @@ public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache 
 }
 ```
 
-5. Modify the `Download` method to save the downloaded PDF files to AWS S3 bucket
+5. Modify the `Download()` method to save the downloaded PDF files to AWS S3 bucket
 
 ```csharp
 

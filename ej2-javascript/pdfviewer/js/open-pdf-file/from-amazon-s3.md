@@ -51,9 +51,14 @@ public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache 
 }
 ```
 
-5. Modify the `Load` method to load the PDF files from AWS S3.
+5. Modify the `Load()` method to load the PDF files from AWS S3.
 
 ```csharp
+
+[HttpPost("Load")]
+[Microsoft.AspNetCore.Cors.EnableCors("MyPolicy")]
+[Route("[controller]/Load")]
+//Post action for Loading the PDF documents 
 
 public async Task<IActionResult> Load([FromBody] Dictionary<string, string> jsonObject)
 {

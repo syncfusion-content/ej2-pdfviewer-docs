@@ -46,7 +46,7 @@ public PdfViewerController(IConfiguration configuration, ILogger<PdfViewerContro
 }
 ```
 
-5. Modify the `Download` method to save the downloaded PDF files to Azure Blob Storage container
+5. Modify the `Download()` method to save the downloaded PDF files to Azure Blob Storage container
 
 ```csharp
 

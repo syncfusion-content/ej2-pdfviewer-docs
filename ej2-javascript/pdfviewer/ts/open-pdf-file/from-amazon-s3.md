@@ -51,7 +51,7 @@ public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache 
 }
 ```
 
-5. Modify the `Load` method to load the PDF files from AWS S3.
+5. Modify the `Load()` method to load the PDF files from AWS S3.
 
 ```csharp
 
@@ -77,9 +77,8 @@ public async Task<IActionResult> Load([FromBody] Dictionary<string, string> json
       var response = await s3Client.GetObjectAsync(_bucketName, document);
       
       Stream responseStream = response.ResponseStream;
-      MemoryStream memStream = new MemoryStream();
-      responseStream.CopyTo(memStream);
-      memStream.Seek(0, SeekOrigin.Begin);
+      responseStream.CopyTo(stream);
+      stream.Seek(0, SeekOrigin.Begin);
     }
     else
     {
