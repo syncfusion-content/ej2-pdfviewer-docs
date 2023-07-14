@@ -108,11 +108,11 @@ Set the `serviceUrl` property of the PDF viewer component to the URL of your web
 
 ```typescript
 
-import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
-TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,
+         BookmarkView, TextSelection, Annotation, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
-PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
-TextSelection, Annotation);
+PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,
+                  BookmarkView, TextSelection, Annotation, FormFields, FormDesigner);
 
 let viewer: PdfViewer = new PdfViewer();
 // Replace the "localhost:44309" with the actual URL of your server
