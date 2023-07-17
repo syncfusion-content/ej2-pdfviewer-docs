@@ -9,9 +9,9 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Open PDF files from AWS S3
+# Open PDF file from AWS S3
 
-To load a PDF files from AWS S3 in a PDF Viewer, you can follow the steps below
+To load a PDF file from AWS S3 in a PDF Viewer, you can follow the steps below
 
 **Step 1:** Create a Simple PDF Viewer Sample in JavaScript
 

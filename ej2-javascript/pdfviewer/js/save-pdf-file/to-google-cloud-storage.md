@@ -9,9 +9,9 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Save PDF files to Google Cloud Storage
+# Save PDF file to Google Cloud Storage
 
-To save a PDF files to Google Cloud Storage, you can follow the steps below
+To save a PDF file to Google Cloud Storage, you can follow the steps below
 
 **Step 1:** Create a PDF Viewer sample in JavaScript
 

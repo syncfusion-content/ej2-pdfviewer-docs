@@ -9,9 +9,9 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Open PDF files from Azure Blob Storage
+# Open PDF file from Azure Blob Storage
 
-To load a PDF files from Azure Blob Storage in a PDF Viewer, you can follow the steps below
+To load a PDF file from Azure Blob Storage in a PDF Viewer, you can follow the steps below
 
 **Step 1:** Create a Simple PDF Viewer Sample in Typescript
 

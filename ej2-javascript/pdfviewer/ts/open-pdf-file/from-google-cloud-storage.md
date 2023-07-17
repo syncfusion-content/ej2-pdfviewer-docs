@@ -9,9 +9,9 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Open PDF files from Google Cloud Storage
+# Open PDF file from Google Cloud Storage
 
-To load a PDF files from Google Cloud Storage in a PDF Viewer, you can follow the steps below
+To load a PDF file from Google Cloud Storage in a PDF Viewer, you can follow the steps below
 
 **Step 1:** Create a Simple PDF Viewer Sample in Typescript
 

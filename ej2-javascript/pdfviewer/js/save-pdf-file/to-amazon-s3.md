@@ -9,9 +9,9 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Save PDF files to AWS S3
+# Save PDF file to AWS S3
 
-To save a PDF files to AWS S3, you can follow the steps below
+To save a PDF file to AWS S3, you can follow the steps below
 
 **Step 1:** Create a PDF Viewer sample in JavaScript
 

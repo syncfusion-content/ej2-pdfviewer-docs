@@ -9,7 +9,7 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Save PDF files to Azure Blob Storage
+# Save PDF file to Azure Blob Storage
 
 To save a PDF file to Azure Blob Storage, you can follow the steps below
 
