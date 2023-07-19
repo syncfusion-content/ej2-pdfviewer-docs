@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Open PDF files from Google Cloud Storage in ##Platform_Name## Pdfviewer control | Syncfusion
+title: Open PDF files from Google Cloud Storage in ##Platform_Name## Pdfviewer control | Syncfusion
 description: Learn here all about Open PDF files from Google Cloud Storage in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: Open PDF files from Google Cloud Storage
