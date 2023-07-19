@@ -104,8 +104,6 @@ N> Replace **Your Connection string from Azure** with the actual connection stri
 
 Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the documentPath property of the PDF viewer component to the name of the PDF file you want to load from Azure Blob Storage. Ensure that you pass the document name from the bucket to the documentPath property.
 
-{% raw %}
-
 ```typescript
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,

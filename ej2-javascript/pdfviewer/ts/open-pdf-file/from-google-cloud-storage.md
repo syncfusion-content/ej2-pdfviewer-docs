@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Open PDF files from Google Cloud Storage in ##Platform_Name## Pdfviewer control | Syncfusion
+title: Open PDF files from Google Cloud Storage in ##Platform_Name## Pdfviewer control | Syncfusion
 description: Learn here all about Open PDF files from Google Cloud Storage in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: Open PDF files from Google Cloud Storage
@@ -137,4 +137,4 @@ N> The **Google.Cloud.Storage.V1** NuGet package must be installed in your appli
 
 N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Google Cloud Storage. Make sure to pass the document name from the bucket to the `documentPath` property of the PDF viewer component
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-google-cloud-storage)
