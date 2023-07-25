@@ -135,6 +135,8 @@ N> Replace **Your Google Drive Folder ID**, **Your Application name**, and **You
 
 N> The **FolderId** part is the unique identifier for the folder. For example, if your folder URL is: `https://drive.google.com/drive/folders/abc123xyz456`, then the folder ID is `abc123xyz456`.
 
+N> You must use a unique `Client_ID` from json file to interface your application with the Google Drive API in order to save PDFs directly to Google Drive. This Client_ID will serve as the authentication key, allowing you to save files securely.
+
 **Step 4:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
 
 Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from Google Drive. Ensure that you pass the document name from the Google Drive bucket to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
