@@ -160,4 +160,4 @@ N> The **Google.Apis.Drive.v3** NuGet package must be installed in your applicat
 
 N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Google Drive. Make sure to pass the document name from the folder to the `documentPath` property of the PDF viewer component
 
-[View sample in GitHub]().
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-google-drive).
