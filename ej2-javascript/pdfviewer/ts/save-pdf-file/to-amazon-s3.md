@@ -109,7 +109,7 @@ N> Replace **Your Access Key from AWS S3**, **Your Secret Key from AWS S3**, and
 
 **Step 3:**  Set the PDF Viewer Properties in Typescript PDF viewer component
 
-Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from AWS S3. Ensure that you pass the document name from the AWS S3 bucket to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
+Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from AWS S3. Ensure that you pass the document name from the bucket to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
 
 ```typescript
 

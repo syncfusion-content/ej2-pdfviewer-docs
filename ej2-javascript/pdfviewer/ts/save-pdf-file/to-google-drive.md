@@ -138,7 +138,7 @@ N> You must use a unique `Client_ID` from json file to interface your applicatio
 
 **Step 4:**  Set the PDF Viewer Properties in Typescript PDF viewer component
 
-Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from Google Drive. Ensure that you pass the document name from the Google Drive bucket to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
+Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from Google Drive. Ensure that you pass the document name from drive folder to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
 
 ```typescript
 
@@ -158,6 +158,6 @@ viewer.load('PDF_Succinctly.pdf', null);
 
 N> The **Google.Apis.Drive.v3** NuGet package must be installed in your application to use the previous code example.
 
-N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Google Drive. Make sure to pass the document name from the folder to the `documentPath` property of the PDF viewer component
+N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Google Drive. Make sure to pass the document name from the drive folder to the `documentPath` property of the PDF viewer component
 
 [View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-google-drive).

@@ -102,7 +102,7 @@ N> Replace **Your Connection string from Azure** with the actual connection stri
 
 **Step 3:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
 
-Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the documentPath property of the PDF viewer component to the name of the PDF file you want to load from Azure Blob Storage. Ensure that you pass the document name from the bucket to the documentPath property.
+Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the documentPath property of the PDF viewer component to the name of the PDF file you want to load from Azure Blob Storage. Ensure that you pass the document name from the azure contanier to the documentPath property.
 
 ```javascript
 
@@ -122,6 +122,6 @@ viewer.load('PDF_Succinctly.pdf', null);
 
 N> The **Azure.Storage.Blobs** NuGet package must be installed in your application to use the previous code example.
 
-N> replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Azure blob storage container. Make sure to pass the document name from the bucket to the `documentPath` property of the PDF viewer component
+N> replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Azure blob storage container. Make sure to pass the document name from the azure contanier to the `documentPath` property of the PDF viewer component
 
 [View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-azure-blob-storage).
