@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 
 To save a PDF file to Google Drive, you can follow the steps below
 
-**Step 1** : Set up Google Drive API
+**Step 1** Set up Google Drive API
 
 You must set up a project in the Google Developers Console and enable the Google Drive API. Obtain the necessary credentials to access the API. For more information, view the official [link](https://developers.google.com/drive/api/guides/enable-sdk).
 
@@ -150,7 +150,7 @@ PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView
                   BookmarkView, TextSelection, Annotation, FormFields, FormDesigner);
 
 let viewer: PdfViewer = new PdfViewer();
-// Replace the "localhost:44309" with the actual URL of your server
+// Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
 viewer.load('PDF_Succinctly.pdf', null);

@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 
 To load a PDF file from Google Drive in a PDF Viewer, you can follow the steps below
 
-**Step 1** : Set up Google Drive API
+**Step 1** Set up Google Drive API
 
 You must set up a project in the Google Developers Console and enable the Google Drive API. Obtain the necessary credentials to access the API. For more information, view the official [link](https://developers.google.com/drive/api/guides/enable-sdk).
 

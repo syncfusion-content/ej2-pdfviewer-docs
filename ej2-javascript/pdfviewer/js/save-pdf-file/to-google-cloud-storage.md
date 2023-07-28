@@ -121,7 +121,7 @@ PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView
                   BookmarkView, TextSelection, Annotation, FormFields, FormDesigner);
 
 let viewer: PdfViewer = new PdfViewer();
-// Replace the "localhost:44309" with the actual URL of your server
+// Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
 viewer.load('PDF_Succinctly.pdf', null);
