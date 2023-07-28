@@ -116,7 +116,7 @@ N> Replace **Your_Dropbox_Access_Token** with your actual Dropbox access token a
 
 **Step 4:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
 
-Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the documentPath property of the PDF viewer component to the name of the PDF file you want to load from Dropbox cloud file storage. Ensure that you pass the document name from the dropbox folder to the documentPath property.
+Modify the `serviceUrl` property of the PDF viewer component with the accurate URL of your web service project, replacing `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the `documentPath` property of the PDF viewer component to the desired name of the PDF file you wish to load from Dropbox cloud file storage. Ensure that you correctly pass the document name from the files available in your dropbox folder to the documentPath property.
 
 ```javascript
 
@@ -135,7 +135,5 @@ viewer.load('PDF_Succinctly.pdf', null);
 ```
 
 N> The **Dropbox.Api** NuGet package must be installed in your application to use the previous code example.
-
-N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Dropbox cloud file storage. Make sure to pass the document name from the dropbox folder to the `documentPath` property of the PDF viewer component
 
 [View sample in GitHub]()
