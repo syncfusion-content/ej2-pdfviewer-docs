@@ -136,4 +136,4 @@ viewer.load('PDF_Succinctly.pdf', null);
 
 N> The **Dropbox.Api** NuGet package must be installed in your application to use the previous code example.
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-dropbox-cloud-file-storage)
