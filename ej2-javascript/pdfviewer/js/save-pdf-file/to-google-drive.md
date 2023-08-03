@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 
 To save a PDF file to Google Drive, you can follow the steps below
 
-**Step 1** : Set up Google Drive API
+**Step 1** Set up Google Drive API
 
 You must set up a project in the Google Developers Console and enable the Google Drive API. Obtain the necessary credentials to access the API. For more information, view the official [link](https://developers.google.com/drive/api/guides/enable-sdk).
 
@@ -139,7 +139,7 @@ N> You must use a unique `Client_ID` from json file to interface your applicatio
 
 **Step 4:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
 
-Set the `serviceUrl` property of the PDF viewer component to the URL of your web service project. Replace `https://localhost:44396/pdfviewer` with the URL of your web service project that hosts in the web service project, set the `documentPath` property to the PDF file name you want to load from Google Drive. Ensure that you pass the document name from the Google Drive bucket to the `documentPath` property. This specifies the location of the PDF file to be loaded by the viewer component.
+Modify the `serviceUrl` property of the PDF viewer component with the accurate URL of your web service project, replacing `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the `documentPath` property of the PDF viewer component to the desired name of the PDF file you wish to load from Google Drive. Ensure that you correctly pass the document name from the files available in your drive folder to the documentPath property.
 
 ```javascript
 
@@ -150,7 +150,7 @@ PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView
                   BookmarkView, TextSelection, Annotation, FormFields, FormDesigner);
 
 let viewer: PdfViewer = new PdfViewer();
-// Replace the "localhost:44309" with the actual URL of your server
+// Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
 viewer.load('PDF_Succinctly.pdf', null);
@@ -159,6 +159,4 @@ viewer.load('PDF_Succinctly.pdf', null);
 
 N> The **Google.Apis.Drive.v3** NuGet package must be installed in your application to use the previous code example.
 
-N> Replace `PDF_Succinctly.pdf` with the actual document name that you want to load from Google Drive. Make sure to pass the document name from the folder to the `documentPath` property of the PDF viewer component
-
-[View sample in GitHub]().
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-google-drive).
