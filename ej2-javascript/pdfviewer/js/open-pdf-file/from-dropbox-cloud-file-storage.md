@@ -1,23 +1,27 @@
 ---
 layout: post
-title: Open PDF files from AWS S3 in ##Platform_Name## Pdfviewer control | Syncfusion
-description: Learn about how to Open PDF files from AWS S3 in ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more details.
+title: Open PDF files from Dropbox cloud file storage in ##Platform_Name## Pdfviewer control | Syncfusion
+description: Learn about how to Open PDF files from Dropbox cloud file storage in ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more details.
 platform: ej2-javascript
-control: Open PDF files from AWS S3
+control: Open PDF files from Dropbox cloud file storage
 publishingplatform: ##Platform_Name##
 documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Open PDF file from AWS S3
+# Open PDF file from Dropbox cloud file storage
 
-To load a PDF file from AWS S3 in a PDF Viewer, you can follow the steps below
+To load a PDF file from Dropbox cloud file storage in a PDF Viewer, you can follow the steps below
 
-**Step 1:** Create a Simple PDF Viewer Sample in JavaScript
+**Step 1** Create a Dropbox API
+
+To create a Dropbox API App, you should follow the official documentation provided by Dropbox [link](https://www.dropbox.com/developers/documentation/dotnet#tutorial). The process involves visiting the Dropbox Developer website and using their App Console to set up your API app. This app will allow you to interact with Dropbox programmatically, enabling secure access to files and data.
+
+**Step 2:** Create a Simple PDF Viewer Sample in JavaScript
 
 Start by following the steps provided in this [link](https://ej2.syncfusion.com/javascript/documentation/pdfviewer/getting-started) to create a simple PDF viewer sample in JavaScript. This will give you a basic setup of the PDF viewer component.
 
-**Step 2:** Modify the `PdfViewerController.cs` File in the Web Service Project
+**Step 3:** Modify the `PdfViewerController.cs` File in the Web Service Project
 
 1. Create a web service project in .NET Core 3.0 or above. You can refer to this [link](https://www.syncfusion.com/kb/11063/how-to-create-pdf-viewer-web-service-in-net-core-3-0-and-above) for instructions on how to create a web service project.
 
@@ -27,31 +31,28 @@ Start by following the steps provided in this [link](https://ej2.syncfusion.com/
 
 ```csharp
 using System.IO;
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
+using Dropbox.Api;
+using Dropbox.Api.Files;
 ```
 
 4. Add the following private fields and constructor parameters to the `PdfViewerController` class, In the constructor, assign the values from the configuration to the corresponding fields
 
 ```csharp
 private IConfiguration _configuration;
-public readonly string _accessKey;
-public readonly string _secretKey;
-public readonly string _bucketName;
+public readonly string _accessToken;
+public readonly string _folderName;
 
 public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache cache, IConfiguration configuration)
 {
   _hostingEnvironment = hostingEnvironment;
   _cache = cache;
-  _configuration = configuration;
-  _accessKey = _configuration.GetValue<string>("AccessKey");
-  _secretKey = _configuration.GetValue<string>("SecretKey");
-  _bucketName = _configuration.GetValue<string>("BucketName");
+   _configuration = configuration;
+  _accessToken = _configuration.GetValue<string>("AccessToken");
+  _folderName = _configuration.GetValue<string>("FolderName");
 }
 ```
 
-5. Modify the `Load()` method to load the PDF files from AWS S3.
+5. Modify the `Load()` method to load the PDF files from Dropbox cloud file storage.
 
 ```csharp
 
@@ -62,28 +63,27 @@ public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache 
 
 public async Task<IActionResult> Load([FromBody] Dictionary<string, string> jsonObject)
 {
-  // Initialize the PDF viewer object with memory cache object
+  //Initialize the PDF viewer object with memory cache object
   PdfRenderer pdfviewer = new PdfRenderer(_cache);
   MemoryStream stream = new MemoryStream();
   object jsonResult = new object();
-
   if (jsonObject != null && jsonObject.ContainsKey("document"))
   {
     if (bool.Parse(jsonObject["isFileName"]))
     {
-      RegionEndpoint bucketRegion = RegionEndpoint.USEast1;
-      
-      // Configure the AWS SDK with your access credentials and other settings
-      var s3Client = new AmazonS3Client(_accessKey, _secretKey, bucketRegion);
-      
-      string document = jsonObject["document"];
-      
-      // Specify the document name or retrieve it from a different source
-      var response = await s3Client.GetObjectAsync(_bucketName, document);
-      
-      Stream responseStream = response.ResponseStream;
-      responseStream.CopyTo(stream);
-      stream.Seek(0, SeekOrigin.Begin);
+      // Get the file name from the jsonObject, which should contain the Dropbox file name
+      string fileName = jsonObject["document"];
+
+      using (var dropBox = new DropboxClient(_accessToken))
+     {
+        using (var response = await dropBox.Files.DownloadAsync(_folderName + "/" + fileName))
+        {
+          var byteArray = await response.GetContentAsByteArrayAsync();
+
+          // Load the PDF file into the PDF viewer
+          stream = new MemoryStream(byteArray);
+        }
+      }
     }
     else
     {
@@ -91,11 +91,9 @@ public async Task<IActionResult> Load([FromBody] Dictionary<string, string> json
       stream = new MemoryStream(bytes);
     }
   }
-  
   jsonResult = pdfviewer.Load(stream, jsonObject);
-  
   return Content(JsonConvert.SerializeObject(jsonResult));
-}
+} 
 ```
 
 6. Open the `appsettings.json` file in your web service project, Add the following lines below the existing `"AllowedHosts"` configuration
@@ -109,17 +107,16 @@ public async Task<IActionResult> Load([FromBody] Dictionary<string, string> json
     }
   },
   "AllowedHosts": "*",
-  "AccessKey": "Your Access Key from AWS S3",
-  "SecretKey": "Your Secret Key from AWS S3",
-  "BucketName": "Your Bucket name from AWS S3"
+  "AccessToken": "Your_Dropbox_Access_Token",
+  "FolderName": "Your_Folder_Name"
 }
 ```
 
-N> Replace **Your Access Key from AWS S3**, **Your Secret Key from AWS S3**, and **Your Bucket name from AWS S3** with your actual AWS access key, secret key and bucket name
+N> Replace **Your_Dropbox_Access_Token** with your actual Dropbox access token and **Your_Folder_Name** with your folder name.
 
-**Step 3:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
+**Step 4:**  Set the PDF Viewer Properties in JavaScript PDF viewer component
 
-Modify the `serviceUrl` property of the PDF viewer component with the accurate URL of your web service project, replacing `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the `documentPath` property of the PDF viewer component to the desired name of the PDF file you wish to load from AWS S3. Ensure that you correctly pass the document name from the files available in your AWS S3 bucket to the documentPath property.
+Modify the `serviceUrl` property of the PDF viewer component with the accurate URL of your web service project, replacing `https://localhost:44396/pdfviewer` with the actual URL of your server. Set the `documentPath` property of the PDF viewer component to the desired name of the PDF file you wish to load from Dropbox cloud file storage. Ensure that you correctly pass the document name from the files available in your dropbox folder to the documentPath property.
 
 ```javascript
 
@@ -137,6 +134,6 @@ viewer.load('PDF_Succinctly.pdf', null);
 
 ```
 
-N> The **AWSSDK.S3** NuGet package must be installed in your application to use the previous code example.
+N> The **Dropbox.Api** NuGet package must be installed in your application to use the previous code example.
 
-[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-aws-s3)
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-dropbox-cloud-file-storage)
