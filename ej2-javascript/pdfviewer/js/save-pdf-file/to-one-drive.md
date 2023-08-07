@@ -143,7 +143,6 @@ viewer.load('PDF_Succinctly.pdf', null);
 ```
 
 N> The following NuGet packages are required to use the previous code example
-
 * **Microsoft.Identity.Client**
 * **Microsoft.Graph**
 * **Microsoft.Extensions.Configuration**
@@ -152,4 +151,4 @@ N> The following NuGet packages are required to use the previous code example
 
 You can install these packages using the NuGet Package Manager in Visual Studio or Visual Studio Code.
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-one-drive)
