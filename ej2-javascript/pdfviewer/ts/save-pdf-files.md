@@ -89,8 +89,8 @@ PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView
                   BookmarkView, TextSelection, Annotation, FormFields, FormDesigner);
 
 let viewer: PdfViewer = new PdfViewer();
-// Replace correct PDF Document URL want to load
-viewer.documentPath="https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf"
+// Replace PDF_Succinctly.pdf with the actual document name that you want to load
+viewer.documentPath="PDF_Succinctly.pdf"
 // Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
@@ -115,5 +115,3 @@ document.getElementById('download').addEventListener('click', function () {
 });
 
 ```
-
-[View sample in GitHub]()
