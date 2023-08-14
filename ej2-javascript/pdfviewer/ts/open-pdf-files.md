@@ -102,7 +102,9 @@ viewer.appendTo('#pdfViewer');
 
 The following code steps how the PDF file can be loaded in PDF Viewer as base64 string.
 
-**Step 1:** Follow the steps provided in the [link](https://ej2.syncfusion.com/documentation/pdfviewer/getting-started/) to create a simple PDF Viewer sample.
+**Step 1:** Create a Simple PDF Viewer Sample in Angular
+
+Start by following the steps provided in this [link](https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started) to create a simple PDF viewer sample in Angular. This will give you a basic setup of the PDF viewer component.
 
 **Step 2:** Use the following code snippet to load PDF document using base64 string.
 
@@ -117,7 +119,5 @@ document.getElementById('load').addEventListener('click', () => {
     'data:application/pdf;base64,'+ AddBase64String, null);
 }
 ```
-
-[View sample in GitHub]()
 
 [View sample in GitHub]()

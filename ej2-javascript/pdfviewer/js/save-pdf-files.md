@@ -1,21 +1,20 @@
 ---
 layout: post
-title: Open PDF files ##Platform_Name## Pdfviewer control | Syncfusion
-description: This page helps you to learn about how to load PDF files from various locations in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
+title: Saving PDF files ##Platform_Name## Pdfviewer control | Syncfusion
+description: This page helps you to learn here all about saving PDF files in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
-control: Open PDF files 
+control: Saving PDF files 
 publishingplatform: ##Platform_Name##
 documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Open PDF files
+# Saving PDF file
+After editing the PDF file with various annotation tools, you will need to save the updated PDF to the server, database, or local file system.
 
-You might need to open and view the PDF files from various location. In this section, you can find the information about how to open PDF files from URL, database, local file system, and as base64 string.
+## Save PDF file to Server
 
-## Opening a PDF from URL
-
-If you have your PDF files in the web, you can open it in the viewer using URL.
+Need to save the modified PDF back to a server. To achieve this, proceed with the following steps
 
 **Step 1:** Create a Simple PDF Viewer Sample in JavaScript
 
@@ -37,8 +36,7 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
   PdfRenderer pdfviewer = new PdfRenderer(_cache);
   MemoryStream stream = new MemoryStream();
   object jsonResult = new object();
-
-  if (jsonObject != null && jsonObject.ContainsKey("document"))
+ if (jsonObject != null && jsonObject.ContainsKey("document"))
   {
     if (bool.Parse(jsonObject["isFileName"]))
     {
@@ -48,19 +46,20 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
         byte[] bytes = System.IO.File.ReadAllBytes(documentPath);
         stream = new MemoryStream(bytes);
       }
-      else
+      string documentName = jsonObject["document"];
+      string result = Path.GetFileNameWithoutExtension(documentName);
+      string fileName = result + "_downloaded.pdf";
+
+      // Save the file on the server
+      string serverFilePath = @"Path to where you need to save your file in the server";
+
+      string filePath = Path.Combine(serverFilePath, fileName);
+
+      using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
       {
-        string fileName = jsonData["document"].Split(new string[] { "://" }, StringSplitOptions.None)[0];
-        if (fileName == "http" || fileName == "https")
-        {
-          WebClient WebClient = new WebClient();
-          byte[] pdfDoc = WebClient.DownloadData(jsonData["document"]);
-          stream = new MemoryStream(pdfDoc);
-        }
-        else
-        {
-          return this.Content(jsonData["document"] + " is not found");
-        }
+        //Saving the new file in root path of application
+        stream.CopyTo(fileStream);
+        fileStream.Close();
       }
     }
     else
@@ -98,25 +97,22 @@ viewer.appendTo('#pdfViewer');
 
 [View sample in GitHub]()
 
-## Opening a PDF from base64 data
+## Download PDF file as a copy
 
-The following steps explains how the PDF file can be loaded in PDF Viewer as base64 string.
+In the built-in toolbar, you have an option to download the updated PDF to the local file system, you can use it to download the PDF file.
 
-**Step 1:** Create a Simple PDF Viewer Sample in Angular
+```html
+<button id="download">Download</button>
 
-Start by following the steps provided in this [link](https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started) to create a simple PDF viewer sample in Angular. This will give you a basic setup of the PDF viewer component.
-
-**Step 2:** Use the following code snippet to load PDF document using base64 string.
-
-```
-<button id='load'>LoadDocumentFromBase64</button>
 ```
 
 ```javascript
-// Load PDF document from Base64 string
-document.getElementById('load').addEventListener('click', () => {
-  viewer.load(
-    'data:application/pdf;base64,'+ AddBase64String, null);
-}
+
+document.getElementById('download').addEventListener('click', function () {
+  //API to perform download action.
+  viewer.download();
+});
+
+```
 
 [View sample in GitHub]()
