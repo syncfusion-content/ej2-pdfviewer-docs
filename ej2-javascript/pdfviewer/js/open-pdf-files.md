@@ -97,3 +97,25 @@ viewer.appendTo('#pdfViewer');
 ```
 
 [View sample in GitHub]()
+
+## Opening a PDF from base64 data
+
+The following steps explains how the PDF file can be loaded in PDF Viewer as base64 string.
+
+**Step 1:** Follow the steps provided in the [link](https://ej2.syncfusion.com/javascript/documentation/pdfviewer/getting-started/) to create a simple PDF Viewer sample.
+
+**Step 2:** Use the following code snippet to load PDF document using base64 string.
+
+```
+<button id='load'>LoadDocumentFromBase64</button>
+```
+
+```javascript
+// Load PDF document from Base64 string
+document.getElementById('load').addEventListener('click', () => {
+  viewer.load(
+    'data:application/pdf;base64,'+ AddBase64String, null);
+}
+
+[View sample in GitHub]()
+[View sample in GitHub]()
