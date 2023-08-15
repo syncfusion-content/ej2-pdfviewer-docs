@@ -27,51 +27,33 @@ Start by following the steps provided in this [link](https://ej2.syncfusion.com/
 
 2. Open the `PdfViewerController.cs` file in your web service project.
 
-3. Modify the `Load()` method to open it in the viewer using URL
+3. Modify the `Download()` method to open it in the viewer using URL
 
 ```csharp
 
-public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
+public IActionResult Download([FromBody] Dictionary<string, string> jsonObject)
 {
-  // Initialize the PDF viewer object with memory cache object
+  //Initialize the PDF Viewer object with memory cache object
   PdfRenderer pdfviewer = new PdfRenderer(_cache);
+  string documentBase = pdfviewer.GetDocumentAsBase64(jsonObject);
   MemoryStream stream = new MemoryStream();
-  object jsonResult = new object();
 
-  if (jsonObject != null && jsonObject.ContainsKey("document"))
+  string documentName = jsonObject["document"];
+  string result = Path.GetFileNameWithoutExtension(documentName);
+  string fileName = result + "_downloaded.pdf";
+
+  // Save the file on the server
+  string serverFilePath = @"Path to where you need to save your file in the server";
+
+  string filePath = Path.Combine(serverFilePath, fileName);
+
+  using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
   {
-    if (bool.Parse(jsonObject["isFileName"]))
-    {
-      string documentPath = GetDocumentPath(jsonData["document"]);
-      if (!string.IsNullOrEmpty(documentPath))
-      {
-        byte[] bytes = System.IO.File.ReadAllBytes(documentPath);
-        stream = new MemoryStream(bytes);
-      }
-      string documentName = jsonObject["document"];
-      string result = Path.GetFileNameWithoutExtension(documentName);
-      string fileName = result + "_downloaded.pdf";
-
-      // Save the file on the server
-      string serverFilePath = @"Path to where you need to save your file in the server";
-
-      string filePath = Path.Combine(serverFilePath, fileName);
-
-      using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
-      {
-        //Saving the new file in root path of application
-        stream.CopyTo(fileStream);
-        fileStream.Close();
-      }
-    }
-    else
-    {
-      byte[] bytes = Convert.FromBase64String(jsonObject["document"]);
-      stream = new MemoryStream(bytes);
-    }
+    //Saving the new file in root path of application
+    stream.CopyTo(fileStream);
+    fileStream.Close();
   }
-  jsonResult = pdfviewer.Load(stream, jsonObject);
-  return Content(JsonConvert.SerializeObject(jsonResult));
+  return Content(documentBase);
 }
 
 ```
