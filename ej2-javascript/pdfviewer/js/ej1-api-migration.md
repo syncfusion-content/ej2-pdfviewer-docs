@@ -16,6 +16,7 @@ This article describes API migration process of PDF Viewer component from Essent
 ## Properties
 
 <!-- markdownlint-disable MD010 -->
+
 | Behavior | API in Essential JS 1 | API in Essential JS 2 |
 |---|---|---|
 | Localization | **Property**: *locale* <br/>`$("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', locale:"es-ES" });` | **Property**: *locale* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({locale: 'es-ES',                    serviceUrl:https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);   pdfviewer.appendTo('#PdfViewer');`|
@@ -39,6 +40,7 @@ This article describes API migration process of PDF Viewer component from Essent
 ## Methods
 
 <!-- markdownlint-disable MD010 -->
+
 | Behavior | API in Essential JS 1 | API in Essential JS 2 |
 | --- | --- | --- |
 | Downloads the PDF document being loaded in the ejPdfViewer control | **Property**: *download()* <br/>`var pdfviewerObj = $("#viewer").data("ejPdfViewer");pdfviewerObj.download();` | **Property**: *download()* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({locale: 'es-ES',               serviceUrl:https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);pdfviewer.appendTo('#PdfViewer');pdfviewer.download();`|
@@ -65,6 +67,7 @@ This article describes API migration process of PDF Viewer component from Essent
 ## Events
 
 <!-- markdownlint-disable MD010 -->
+
 | Behavior | API in Essential JS 1 | API in Essential JS 2 |
 | --- | --- | --- |
 |Triggers when the PDF document gets loaded and is ready to view in the Control| **Property**: *documentLoad* <br/>`$(function () {var obj = $("#viewer").ejPdfViewer({ serviceUrl: '../api/PdfViewer', documentLoad:"documentLoaded" });});function documentLoaded(args) {alert("The document" +args.fileName + "is ready to view");}` | **Property**: *documentLoad* <br/>`var pdfviewer = new ej.pdfviewer.PdfViewer({ serviceUrl:https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',documentLoad: function () {alert("The PDF document is Loaded")}}); ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch,ej.pdfviewer.Navigation,ej.pdfviewer.Print);pdfviewer.appendTo('#PdfViewer');`|
