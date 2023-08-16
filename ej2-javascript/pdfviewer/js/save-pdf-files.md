@@ -10,6 +10,7 @@ domainurl: ##DomainURL##
 ---
 
 # Saving PDF file
+
 After editing the PDF file with various annotation tools, you will need to save the updated PDF to the server, database, or local file system.
 
 ## Save PDF file to Server
@@ -70,13 +71,12 @@ PdfViewer.Inject( Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView
 let viewer: PdfViewer = new PdfViewer();
 // Replace PDF_Succinctly.pdf with the actual document name that you want to load
 viewer.documentPath="PDF_Succinctly.pdf"
-// Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
 
 ```
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/javascript-pdf-viewer-examples/tree/master/Save%20and%20Load/Save%20PDF%20file%20to%20server)
 
 ## Download PDF file as a copy
 
@@ -95,3 +95,68 @@ document.getElementById('download').addEventListener('click', function () {
 });
 
 ```
+
+## Save PDF file to Database
+
+If you have plenty of PDF files stored in database and you want to save the updated PDF file back to the database, use the following code example.
+
+**Step 1:** Create a Simple PDF Viewer Sample in JavaScript
+
+Start by following the steps provided in this [link](https://ej2.syncfusion.com/javascript/documentation/pdfviewer/getting-started) to create a simple PDF viewer sample in JavaScript. This will give you a basic setup of the PDF viewer component.
+
+**Step 2:** Modify the `PdfViewerController.cs` File in the Web Service Project
+
+1. Create a web service project in .NET Core 3.0 or above. You can refer to this [link](https://www.syncfusion.com/kb/11063/how-to-create-pdf-viewer-web-service-in-net-core-3-0-and-above) for instructions on how to create a web service project.
+
+2. Open the `PdfViewerController.cs` file in your web service project.
+
+3. Import the required namespaces at the top of the file:
+
+```csharp
+using System.IO;
+using System.Data.SqlClient;
+```
+
+4. Modify the `Download()` method to open it in the viewer using URL
+
+```csharp
+
+[HttpPost("Download")]
+[Microsoft.AspNetCore.Cors.EnableCors("MyPolicy")]
+[Route("[controller]/Download")]
+//Post action for downloading the PDF documents
+
+public async Task<IActionResult> Download([FromBody] Dictionary<string, string> jsonObject)
+{
+  //Initialize the PDF Viewer object with memory cache object
+  PdfRenderer pdfviewer = new PdfRenderer(_cache);
+
+  string documentBase = pdfviewer.GetDocumentAsBase64(jsonObject);
+  byte[] documentBytes = Convert.FromBase64String(documentBase.Split(",")[1]);
+
+  string documentId = jsonObject["documentId"];
+  string result = Path.GetFileNameWithoutExtension(documentId);
+  string fileName = result + "_downloaded.pdf";
+
+  string connectionString = "Your Connection string from SQL server";
+
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+    connection.Open();
+
+    using (SqlCommand cmd = new SqlCommand("INSERT INTO Table (FileName, fileData) VALUES (@FileName, @fileData)", connection))
+    {
+      cmd.Parameters.AddWithValue("@FileName", fileName);
+      cmd.Parameters.AddWithValue("@fileData", documentBytes);
+
+      cmd.ExecuteNonQuery();
+    }
+    connection.Close();
+  }
+  return Content(documentBase);
+}
+```
+
+N> Replace **Your Connection string from SQL server** with the actual connection string for your SQL Server database 
+
+N> The **System.Data.SqlClient** package must be installed in your application to use the previous code example. You need to modify the connectionString variable in the previous code example as per the connection string of your database.

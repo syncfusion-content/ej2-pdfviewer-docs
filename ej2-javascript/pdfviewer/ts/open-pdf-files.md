@@ -121,3 +121,80 @@ document.getElementById('load').addEventListener('click', () => {
 ```
 
 [View sample in GitHub]()
+
+## Opening a PDF from database
+
+To load a PDF file from SQL Server database in a PDF Viewer, you can follow the steps below
+
+**Step 1:** Create a Simple PDF Viewer Sample in Typescript
+
+Start by following the steps provided in this [link](https://ej2.syncfusion.com/documentation/pdfviewer/getting-started) to create a simple PDF viewer sample in Typescript. This will give you a basic setup of the PDF viewer component.
+
+**Step 2:** Modify the `PdfViewerController.cs` File in the Web Service Project
+
+1. Create a web service project in .NET Core 3.0 or above. You can refer to this [link](https://www.syncfusion.com/kb/11063/how-to-create-pdf-viewer-web-service-in-net-core-3-0-and-above) for instructions on how to create a web service project.
+
+2. Open the `PdfViewerController.cs` file in your web service project.
+
+3. Import the required namespaces at the top of the file:
+
+```csharp
+using System.IO;
+using System.Data.SqlClient;
+```
+
+4. Modify the `Load()` method to open it in the viewer using URL
+
+```csharp
+
+public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
+{
+  // Initialize the PDF viewer object with memory cache object
+  PdfRenderer pdfviewer = new PdfRenderer(_cache);
+  MemoryStream stream = new MemoryStream();
+  object jsonResult = new object();
+
+  if (jsonObject != null && jsonObject.ContainsKey("document"))
+  {
+    if (bool.Parse(jsonObject["isFileName"]))
+    {
+      string documentPath = GetDocumentPath(jsonData["document"]);
+      if (!string.IsNullOrEmpty(documentPath))
+      {
+        byte[] bytes = System.IO.File.ReadAllBytes(documentPath);
+        stream = new MemoryStream(bytes);
+      }
+      string documentName = jsonObject["document"];
+
+      string connectionString = "Your Connection string from SQL server";
+      System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(connectionString);
+
+      //Searches for the PDF document from the database
+      string query = "SELECT Data FROM Table WHERE FileName = '" + documentName + "'";
+      System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(query, connection);
+      connection.Open();
+      System.Data.SqlClient.SqlDataReader read = command.ExecuteReader();
+      read.Read();
+
+      byte[] byteArray = (byte[])read["FileData"];
+      string base64String = Convert.ToBase64String(byteArray);
+
+      // Convert the base64 string back to a byte array
+      byte[] decodedBytes = Convert.FromBase64String(base64String);
+      stream = new MemoryStream(decodedBytes);
+    }
+    else
+    {
+      byte[] bytes = Convert.FromBase64String(jsonObject["document"]);
+      stream = new MemoryStream(bytes);
+    }
+  }
+  jsonResult = pdfviewer.Load(stream, jsonObject);
+  return Content(JsonConvert.SerializeObject(jsonResult));
+}
+
+```
+
+N> Replace **Your Connection string from SQL server** with the actual connection string for your SQL Server database 
+
+N> The **System.Data.SqlClient** package must be installed in your application to use the previous code example. You need to modify the connectionString variable in the previous code example as per the connection string of your database.
