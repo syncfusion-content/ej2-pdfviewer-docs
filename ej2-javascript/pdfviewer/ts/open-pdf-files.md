@@ -143,7 +143,22 @@ using System.IO;
 using System.Data.SqlClient;
 ```
 
-4. Modify the `Load()` method to open it in the viewer using URL
+4. Add the following private fields and constructor parameters to the `PdfViewerController` class, In the constructor, assign the values from the configuration to the corresponding fields
+
+```csharp
+private IConfiguration _configuration;
+public readonly string _connectionString;
+
+public PdfViewerController(IWebHostEnvironment hostingEnvironment, IMemoryCache cache, IConfiguration configuration)
+{
+  _hostingEnvironment = hostingEnvironment;
+  _cache = cache;
+  _configuration = configuration;
+  _connectionString = _configuration.GetValue<string>("ConnectionString");
+}
+```
+
+5. Modify the `Load()` method to open it in the viewer using URL
 
 ```csharp
 
@@ -166,7 +181,7 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
       }
       string documentName = jsonObject["document"];
 
-      string connectionString = "Your Connection string from SQL server";
+      string connectionString = _connectionString;
       System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(connectionString);
 
       //Searches for the PDF document from the database
@@ -193,6 +208,21 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
   return Content(JsonConvert.SerializeObject(jsonResult));
 }
 
+```
+
+6. Open the `appsettings.json` file in your web service project, Add the following lines below the existing `"AllowedHosts"` configuration
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionString": "Your connection string for SQL server"
+}
 ```
 
 N> Replace **Your Connection string from SQL server** with the actual connection string for your SQL Server database 
