@@ -172,15 +172,15 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
       string query = "SELECT Data FROM Table WHERE FileName = '" + documentName + "'";
       System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(query, connection);
       connection.Open();
-      System.Data.SqlClient.SqlDataReader read = command.ExecuteReader();
-      read.Read();
-
-      byte[] byteArray = (byte[])read["FileData"];
-      string base64String = Convert.ToBase64String(byteArray);
-
-      // Convert the base64 string back to a byte array
-      byte[] decodedBytes = Convert.FromBase64String(base64String);
-      stream = new MemoryStream(decodedBytes);
+      
+      using (SqlDataReader reader = command.ExecuteReader())
+      {
+        if (reader.Read())
+        {
+          byte[] byteArray = (byte[])reader["FileData"];
+          stream = new MemoryStream(byteArray);
+        }
+      }
     }
     else
     {
