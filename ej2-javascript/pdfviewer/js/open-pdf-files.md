@@ -169,10 +169,10 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
       System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(connectionString);
 
       //Searches for the PDF document from the database
-      string query = "SELECT Data FROM Table WHERE FileName = '" + documentName + "'";
+      string query = "SELECT FileData FROM Table WHERE FileName = '" + documentName + "'";
       System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand(query, connection);
       connection.Open();
-      
+
       using (SqlDataReader reader = command.ExecuteReader())
       {
         if (reader.Read())
