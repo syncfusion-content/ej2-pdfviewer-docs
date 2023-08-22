@@ -96,7 +96,7 @@ viewer.appendTo('#pdfViewer');
 
 ```
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/typescript-pdf-viewer-examples/tree/master/Save%20and%20Load/Load%20PDF%20file%20from%20URL)
 
 ## Opening a PDF from base64 data
 
@@ -120,7 +120,7 @@ document.getElementById('load').addEventListener('click', () => {
 }
 ```
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/typescript-pdf-viewer-examples/tree/master/Save%20and%20Load/Load%20PDF%20file%20from%20base64%20string)
 
 ## Opening a PDF from database
 
