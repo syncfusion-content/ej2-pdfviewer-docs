@@ -190,3 +190,5 @@ public async Task<IActionResult> Download([FromBody] Dictionary<string, string> 
 N> Replace **Your Connection string from SQL server** with the actual connection string for your SQL Server database 
 
 N> The **System.Data.SqlClient** package must be installed in your application to use the previous code example. You need to modify the connectionString variable in the previous code example as per the connection string of your database.
+
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-database)

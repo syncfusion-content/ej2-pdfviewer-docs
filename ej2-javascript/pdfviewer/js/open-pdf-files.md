@@ -11,7 +11,7 @@ domainurl: ##DomainURL##
 
 # Open PDF files
 
-You might need to open and view the PDF files from various location. In this section, you can find the information about how to open PDF files from URL, database, local file system, and as base64 string.
+You might need to open and view the PDF files from various location. In this section, you can find the information about how to open PDF files from URL, database and as base64 string.
 
 ## Opening a PDF from URL
 
@@ -227,3 +227,5 @@ public IActionResult Load([FromBody] Dictionary<string, string> jsonData)
 N> Replace **Your Connection string from SQL server** with the actual connection string for your SQL Server database 
 
 N> The **System.Data.SqlClient** package must be installed in your application to use the previous code example. You need to modify the connectionString variable in the previous code example as per the connection string of your database.
+
+[View sample in GitHub](https://github.com/SyncfusionExamples/open-save-pdf-documents-in-database)
