@@ -57,7 +57,7 @@ The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaS
 
 ```javascript
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "PDF_Succinctly.pdf",
+    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
     serviceUrl: 'https://localhost:5001/pdfviewer'
 });
 ```

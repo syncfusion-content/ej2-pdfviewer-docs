@@ -19,18 +19,20 @@ The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaS
 
 **Step 2:** The Essential JS 2 component's global scripts and styles are already hosted in the below CDN link formats.
 
-> Script: [`https://cdn.syncfusion.com/ej2/dist/ej2.min.js`](https://cdn.syncfusion.com/ej2/dist/ej2.min.js)
+> Script: [`https://cdn.syncfusion.com/ej2/staging/pdfium/ej2.min.js`](https://cdn.syncfusion.com/ej2/staging/pdfium/ej2.min.js)
 >
 > Styles: [`https://cdn.syncfusion.com/ej2/material.css`](https://cdn.syncfusion.com/ej2/material.css)
+
+N> While referring the scripts from the downloaded resources in your application, make sure to place the 'ej2-pdfviewer-lib' assets in the same directory as the 'ej2.min.js' script.
 
 **Step 3:** Create a HTML page (index.html) in `myapp` location and add the CDN link references. Now, add the `Div` element and initiate the `Essential JS 2 PDF Viewer` component in the index.html by using following code.
 
 {% tabs %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/es5-getting-started-cs1/index.html %}
+{% include code-snippet/pdfviewer/es5-getting-started-cs2/index.html %}
 {% endhighlight %}
 {% endtabs %}
         
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-getting-started-cs1" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-getting-started-cs2" %}
 
 **Step 4:** Now, run the `index.html` in web browser, it will render the `Essential JS 2 PDF Viewer` component.

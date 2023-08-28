@@ -22,6 +22,15 @@ git clone https://github.com/syncfusion/ej2-quickstart.git quickstart
 cd quickstart
 npm install
 ```
+* Duplicate the content of the 'ej2-pdfviewer-lib' folder located in './node_modules/@syncfusion/ej2-pdfviewer/dist' to the 'src' directory using the following command:
+
+```bash
+cp -R ./node_modules/@syncfusion/ej2-pdfviewer/dist/ej2-pdfviewer-lib src/ej2-pdfviewer-lib
+```
+
+* Ensure that within your 'src' directory, there exists a directory named 'ej2-pdfviewer-lib' containing the assets of the PDF Viewer library.
+
+* Validate that your server has been configured to utilize the Content-Type: application/wasm MIME type. Additional information can be found in the [Troubleshooting](./troubleshooting) section.
 
 ## Configuration system JS
 
@@ -139,14 +148,14 @@ Output will be displayed as follows.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/getting-started-cs1/index.ts %}
+{% include code-snippet/pdfviewer/getting-started-cs2/index.ts %}
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/getting-started-cs1/index.html %}
+{% include code-snippet/pdfviewer/getting-started-cs2/index.html %}
 {% endhighlight %}
 {% endtabs %}
           
-{% previewsample "page.domainurl/code-snippet/pdfviewer/getting-started-cs1" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/getting-started-cs2" %}
 
 ## Module injection
 
