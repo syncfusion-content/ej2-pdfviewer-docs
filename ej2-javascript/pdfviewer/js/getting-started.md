@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Getting started with ##Platform_Name## Pdfviewer control | Syncfusion
-description:  Checkout and learn about Getting started with ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more details.
+title: Getting started with ##Platform_Name## PDF Viewer control | Syncfusion
+description:  Checkout and learn about Getting started with ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more details.
 platform: ej2-javascript
-control: Getting started 
+control: PDF Viewer 
 publishingplatform: ##Platform_Name##
 documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Getting started in ##Platform_Name## Pdfviewer control
+# Getting started in ##Platform_Name## PDF Viewer control
 
 The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaScript framework which can be directly used in latest web browsers.
 

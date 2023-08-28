@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Getting started with ##Platform_Name## Pdfviewer control | Syncfusion
-description:  Checkout and learn about Getting started with ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more details.
+title: Getting started with ##Platform_Name## PDF Viewer control | Syncfusion
+description:  Checkout and learn about Getting started with ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more details.
 platform: ej2-javascript
-control: Getting started 
+control: PDF Viewer 
 publishingplatform: ##Platform_Name##
 documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Getting started in ##Platform_Name## Pdfviewer control
+# Getting started in ##Platform_Name## PDF Viewer control
 
 This section explains the steps to create a simple TypeScript PDF Viewer within your application and demonstrate its basic usage.
 
@@ -25,7 +25,7 @@ npm install
 
 ## Configuration system JS
 
-[Syncfusion PdfViewer packages](#dependencies) should be mapped in the `system.config.js` configuration file.
+[Syncfusion PDF Viewer packages](#dependencies) should be mapped in the `system.config.js` configuration file.
 
 ```javascript
 System.config({
@@ -82,9 +82,9 @@ Add the components CSS in `[src/styles/styles.css]` using the following code.
 @import "../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css";
 ```
 
-## Adding PdfViewer component
+## Adding PDF Viewer component
 
-* Add the PdfViewer component following code in the `app.ts`
+* Add the PDF Viewer component following code in the `app.ts`
 
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
@@ -121,7 +121,7 @@ pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null
 </head>
 
 <body>
-    <!--Element which will render as PdfViewer -->
+    <!--Element which will render as PDF Viewer -->
     <div id="PdfViewer"></div>
 </body>
 
