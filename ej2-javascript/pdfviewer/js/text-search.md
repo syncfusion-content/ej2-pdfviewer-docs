@@ -34,17 +34,30 @@ The Text Search option in PDF Viewer is used to find and highlight the text cont
 
 ```
 
-```javascript
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableTextSearch: true,
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableTextSearch: true,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 The following text search methods are available in the PDF Viewer,
 

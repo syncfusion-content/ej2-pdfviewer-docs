@@ -78,6 +78,31 @@ PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkVie
 
 **Step 4:** Hide the default toolbar of PDF Viewer using below code snippet,
 
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+  PdfViewer viewer = new PdfViewer({
+        enableToolbar: false,
+        enableThumbnail: false,
+        documentPath: 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf',
+    });
+    viewer.appendTo('#pdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+  PdfViewer viewer = new PdfViewer({
+        enableToolbar: false,
+        enableThumbnail: false,
+        documentPath: 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf',
+        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+    });
+    viewer.appendTo('#pdfViewer');
+
+{% endhighlight %}
+{% endtabs %}
+
+
 ```ts
 
   PdfViewer viewer = new PdfViewer({
@@ -685,14 +710,48 @@ Customize the default toolbar with the required tools by using the `toolbarSetti
 
 The following code illustrates how to render the default toolbar with specific tools.
 
-```
+{% tabs %}
+{% highlight html tabtitle="Standalone" %}
+
 <!--Add the PDF Viewer-->
 <div id="pdfViewer" style="height: 640px; width: 100%"></div>
 
 <script>
     var viewer = new ej.pdfviewer.PdfViewer({
         //Set the document path for initial loading.
-        documentPath: "PDF_Succinctly.pdf",
+        documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+    });
+    //Inject the required dependencies to load the PDF Viewer.
+    ej.pdfviewer.PdfViewer.Inject(
+        ej.pdfviewer.Toolbar,
+        ej.pdfviewer.Magnification,
+        ej.pdfviewer.BookmarkView,
+        ej.pdfviewer.ThumbnailView,
+        ej.pdfviewer.TextSelection,
+        ej.pdfviewer.TextSearch,
+        ej.pdfviewer.Print,
+        ej.pdfviewer.Navigation,
+        ej.pdfviewer.LinkAnnotation,
+        ej.pdfviewer.Annotation,
+        ej.pdfviewer.FormFields,
+        ej.pdfviewer.FormDesigner);
+    //Cusomized toolbar.
+    viewer.toolbarSettings.formDesignerToolbarItems = ["TextboxTool", "PasswordTool"];
+    viewer.toolbarSettings.toolbarItems = ["PanTool", "OpenOption", "AnnotationEditTool", "FormDesignerEditTool"];
+    viewer.toolbarSettings.annotationToolbarItems = ["HandWrittenSignatureTool"];
+    viewer.appendTo('#pdfViewer');
+</script>
+
+{% endhighlight %}
+{% highlight html tabtitle="Server-Backed" %}
+
+<!--Add the PDF Viewer-->
+<div id="pdfViewer" style="height: 640px; width: 100%"></div>
+
+<script>
+    var viewer = new ej.pdfviewer.PdfViewer({
+        //Set the document path for initial loading.
+        documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
         serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
     });
     //Inject the required dependencies to load the PDF Viewer.
@@ -715,6 +774,8 @@ The following code illustrates how to render the default toolbar with specific t
     viewer.toolbarSettings.annotationToolbarItems = ["HandWrittenSignatureTool"];
     viewer.appendTo('#pdfViewer');
 </script>
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 [View sample in GitHub](https://github.com/SyncfusionExamples/javascript-pdf-viewer-examples/tree/master/Toolbar/Toolbar%20customization).

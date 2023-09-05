@@ -26,15 +26,29 @@ The PDF viewer control provides the option for interaction with Form Fields such
 
 We should inject FormDesigner module and set enableFormDesignerToolbar as true to enable the Form designer icon on the toolbar. By default, enableFormDesignerToolbar is set as true. Use the following code to inject FormDesigner module and to enable the enableFormDesignerToolbar property.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "FormDesigner.pdf",
-    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
-    enableFormDesignerToolbar: true
-});
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.FormDesigner);
+                    enableFormDesignerToolbar: true
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableFormDesignerToolbar: true
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Add the form field dynamically
 
@@ -74,13 +88,28 @@ The PDF Viewer control supports the clipboard operations such as cut, copy and p
 
 We provided support to undo/redo the Form Field actions that are performed at runtime. Use the following code example to perform undo/redo actions.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "FormDesigner.pdf",
-    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
-});
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.FormDesigner);
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.undo();
 pdfviewer.redo();
-```
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.undo();
+pdfviewer.redo();
+
+{% endhighlight %}
+{% endtabs %}

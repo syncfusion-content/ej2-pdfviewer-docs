@@ -113,15 +113,29 @@ The different locale value for the PDF Viewer can be specified using the locale 
 </html>
 ```
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     locale: 'ar-AE',
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    locale: 'ar-AE',
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 You have to map the text content based on locale like following script in sample level.,
 

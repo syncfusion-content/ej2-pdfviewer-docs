@@ -37,7 +37,9 @@ npm install
 
 **Step 4:** Add the `Div` element and initiate the `Essential JS 2 PDF Viewer` component with script and style references in the `index.html` by using following code
 
-```html
+
+{% tabs %}
+{% highlight html tabtitle="Standalone" %}
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
        <head>
@@ -57,15 +59,46 @@ npm install
           <script>
                //Initialize PDF Viewer component
                var pdfviewer = new ej.pdfviewer.PdfViewer({
-                    documentPath: "PDF_Succinctly.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                });
                //PDF Viewer control rendering starts
                pdfviewer.appendTo('#PdfViewer');
           </script>
        </body>
   </html>
-```
+
+{% endhighlight %}
+{% highlight html tabtitle="Server-Backed" %}
+
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+       <head>
+          <title>Essential JS 2</title>
+          <!-- Essential JS 2 material theme -->
+          <link href="resources/ej2-js-es5/styles/material.css" rel="stylesheet" type="text/css"/>
+
+          <!-- Essential JS 2 PDF Viewer's script -->
+          <script src="resources/ej2.min.js" type="text/javascript"></script>
+       </head>
+       <body>
+          <!--element which is going to render-->
+          <div id="container">
+               <div id="PdfViewer" style="display:block;height:580px;width:100%;">
+               </div>
+          </div>
+          <script>
+               //Initialize PDF Viewer component
+               var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+               });
+               //PDF Viewer control rendering starts
+               pdfviewer.appendTo('#PdfViewer');
+          </script>
+       </body>
+  </html>
+
+{% endhighlight %}
+{% endtabs %}
 
 **Step 6:** Now, run the `index.html` in web browser, it will render the **Essential JS 2 PDF Viewer** component as below.
 
