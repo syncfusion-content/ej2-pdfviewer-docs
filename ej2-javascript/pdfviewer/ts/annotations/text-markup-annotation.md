@@ -176,20 +176,39 @@ The properties of the text markup annotation can be set before creating the cont
 
 Refer to the following code snippet to set the default annotation settings.
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'PDF_Succinctly.pdf',
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
+underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
+strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
 highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
 underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Performing undo and redo
 
@@ -228,16 +247,36 @@ When the print tool is selected in the toolbar, the PDF document will be printed
 
 The PDF Viewer control provides an option to disable the text markup annotation feature. The code snippet for disabling the feature is as follows.
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'PDF_Succinctly.pdf', enableTextMarkupAnnotation: false });
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% endtabs %}
+
+```ts
+
 ```
 
 ## See also

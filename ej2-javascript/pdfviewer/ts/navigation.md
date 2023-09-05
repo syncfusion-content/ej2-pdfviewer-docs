@@ -54,17 +54,35 @@ The default toolbar of PDF Viewer contains the following navigation options
 
 You can enable/disable page navigation option in PDF Viewer using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableNavigation: true, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableNavigation: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableNavigation: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ![Alt text](./images/navigation.png)
 
@@ -104,16 +122,16 @@ Also, you can programmatically perform page navigation options as follows.
 </html>
 ```
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 import {PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print TextSelection, TextSearch, Annotation, FormFields } from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection, TextSearch, Annotation, FormFields );
 
 let viewer: PdfViewer = new PdfViewer();
-viewer.serviceUrl =
-  'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 viewer.appendTo('#pdfViewer');
-viewer.load('PDF_Succinctly.pdf', null);
+viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 
 // Go To First Page
 document.getElementById('goToFirstPage').addEventListener('click', () => {
@@ -135,7 +153,43 @@ document.getElementById('goToPage').addEventListener('click', () => {
 document.getElementById('goToPreviousPage').addEventListener('click', () => {
   viewer.navigation.goToPreviousPage();
 });
-```
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import {PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print TextSelection, TextSearch, Annotation, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection, TextSearch, Annotation, FormFields );
+
+let viewer: PdfViewer = new PdfViewer();
+viewer.serviceUrl =
+  'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+viewer.appendTo('#pdfViewer');
+viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
+
+// Go To First Page
+document.getElementById('goToFirstPage').addEventListener('click', () => {
+  viewer.navigation.goToFirstPage();
+});
+// Go To Last Page
+document.getElementById('goToLastPage').addEventListener('click', () => {
+  viewer.navigation.goToLastPage();
+});
+// Go To Next Page
+document.getElementById('goToNextPage').addEventListener('click', () => {
+  viewer.navigation.goToNextPage();
+});
+// Go To Page
+document.getElementById('goToPage').addEventListener('click', () => {
+  viewer.navigation.goToPage(4);
+});
+// Go To Previous Page
+document.getElementById('goToPreviousPage').addEventListener('click', () => {
+  viewer.navigation.goToPreviousPage();
+});
+
+{% endhighlight %}
+{% endtabs %}
 
 Find the [here](https://stackblitz.com/edit/5dqbkd?file=index.ts) to perform the page navigation options programmatically.
 
@@ -144,17 +198,35 @@ Find the [here](https://stackblitz.com/edit/5dqbkd?file=index.ts) to perform the
 The Bookmarks saved in PDF files are loaded and made ready for easy navigation.
 You can enable/disable bookmark navigation by using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableBookmark: true, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableBookmark: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableBookmark: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ![Alt text](./images/bookmark.png)
 
@@ -196,17 +268,36 @@ document.getElementById('getBookmarks').addEventListener('click', () => {
 Thumbnails is the miniature representation of actual pages in PDF files. This feature displays thumbnails of the pages and allows navigation.
 You can enable/disable thumbnail navigation by using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableThumbnail: true, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({
+  enableThumbnail: true, 
+  documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+  enableThumbnail: true, 
+  documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
+
 
 ![Alt text](./images/thumbnail.png)
 
@@ -222,31 +313,70 @@ Table of contents navigation allows users to navigate to different parts of a PD
 
 You can enable/disable link navigation by using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableHyperlink: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableHyperlink: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+  });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 You can change the open state of the hyperlink in the PDF Viewer by using the following code snippet,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'PDF_Succinctly.pdf', hyperlinkOpenState:'NewTab'});
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableHyperlink: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    hyperlinkOpenState:'NewTab'
+   });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+    enableHyperlink: true, 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    hyperlinkOpenState:'NewTab'
+   });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
+
 
 ![Alt text](./images/toc.png)
 

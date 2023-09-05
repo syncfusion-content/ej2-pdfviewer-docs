@@ -41,22 +41,55 @@ The PDF Viewer supports printing the loaded PDF file. You can enable/disable the
 </html>
 ```
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enablePrint: true, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({
+        enablePrint: true, 
+        documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+    });
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer({
+        enablePrint: true, 
+        documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'
+    });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ![Alt text](./images/print.png)
 
 You can invoke print action using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
+pdfviewer.print.print();
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -64,10 +97,11 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 pdfviewer.print.print();
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## See also
 

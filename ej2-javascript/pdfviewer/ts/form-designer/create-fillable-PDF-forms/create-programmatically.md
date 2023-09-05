@@ -83,7 +83,7 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('FormDesigner.pdf', null);
+pdfviewer.load("https://cdn.syncfusion.com/content/pdf/form-designer.pdf", null);
 pdfviewer.download();
 
 ```
@@ -96,7 +96,21 @@ When the print icon is selected on the toolbar, the PDF document will be printed
 
 You can invoke print action using the following code snippet.,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load("https://cdn.syncfusion.com/content/pdf/form-designer.pdf", null);
+pdfviewer.print.print();
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -104,10 +118,11 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('FormDesigner.pdf', null);
+pdfviewer.load("https://cdn.syncfusion.com/content/pdf/form-designer.pdf", null);
 pdfviewer.print.print();
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Open the existing PDF document
 
@@ -121,21 +136,41 @@ The form fields in the PDF Document will be validated when the `enableFormFields
 
 Add the following code snippet to validate the form fields,
 
-```ts
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'FormDesigner.pdf' });
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:"https://cdn.syncfusion.com/content/pdf/form-designer.pdf" });
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.enableFormFieldsValidation = true;
+viewer.validateFormFields= function (args) {
+var nonfilledFormFields = args.nonFillableFields;
+}
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:"https://cdn.syncfusion.com/content/pdf/form-designer.pdf" });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Export and import form fields
 
