@@ -30,29 +30,14 @@ The Essential JavaScript PDF Viewer supports to customize a single property of t
 
 You can change the author name and the other properties using the annotationSettings API as in the following code sample.
 
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields } from "../src/index";
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-
-    var pdfviewer = new ej.pdfviewer.PdfViewer({
-        documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-        annotationSettings :{ author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  },
-        freeTextSettings : { allowTextOnly : true }
-    });
-    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
-    pdfviewer.appendTo('#PdfViewer');
-
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
-
-    var pdfviewer = new ej.pdfviewer.PdfViewer({
-        documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer',
-        annotationSettings :{ author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  },
-        freeTextSettings : { allowTextOnly : true }
-    });
-    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
-    pdfviewer.appendTo('#PdfViewer');
-
-{% endhighlight %}
-{% endtabs %}
+PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields);
+let viewer: PdfViewer = new PdfViewer();
+viewer.serviceUrl = "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer";
+viewer.load('PDF_Succinctly.pdf', null);
+viewer.annotationSettings = { author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  };
+viewer.freeTextSettings = { allowTextOnly : true };
+viewer.appendTo("#pdfViewer");
+```
