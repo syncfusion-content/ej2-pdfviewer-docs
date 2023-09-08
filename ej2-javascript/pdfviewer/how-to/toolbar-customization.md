@@ -93,9 +93,6 @@ PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkVie
 **Step 5:** Add EJ2 Toolbar for perform primary actions like Open, Previous page, Next page, Go to page,Print and Download using the following code snippet,
 
 ```ts
-
-    var inputTemplate = '<div class=""><input type="text" class="e-input-group e-pv-current-page-number" id="currentPage" /></div>';
-    var ele = '<div class=""><span class="e-pv-total-page-number" id="totalPage">of 0</span></div>';
    Tool toolbarObj = new Tool({
         items: [
             { prefixIcon: 'e-pv-open-document', tooltipText: 'Open', id: 'openButton', click: openDocument.bind(this) },
