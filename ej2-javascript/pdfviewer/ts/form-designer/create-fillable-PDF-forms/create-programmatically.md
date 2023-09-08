@@ -75,6 +75,21 @@ When the download icon is selected on the toolbar, the Form Fields will be saved
 
 You can invoke download action using following code snippet.
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
+pdfviewer.download();
+
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -83,10 +98,12 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('FormDesigner.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
 
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## Printing the form fields
 
@@ -96,6 +113,21 @@ When the print icon is selected on the toolbar, the PDF document will be printed
 
 You can invoke print action using the following code snippet.,
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
+pdfviewer.print.print();
+
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -104,10 +136,12 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('FormDesigner.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## Open the existing PDF document
 
@@ -121,6 +155,8 @@ The form fields in the PDF Document will be validated when the `enableFormFields
 
 Add the following code snippet to validate the form fields,
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
@@ -128,7 +164,23 @@ TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@s
 PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'FormDesigner.pdf' });
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.enableFormFieldsValidation = true;
+viewer.validateFormFields= function (args) {
+var nonfilledFormFields = args.nonFillableFields;
+}
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.enableFormFieldsValidation = true;
@@ -136,6 +188,8 @@ viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## Export and import form fields
 
