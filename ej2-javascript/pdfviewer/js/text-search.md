@@ -12,7 +12,7 @@ domainurl: ##DomainURL##
 
 The Text Search option in PDF Viewer is used to find and highlight the text content from the document. You can enable/disable the text search using the following code snippet.
 
-```
+```html 
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
