@@ -44,7 +44,14 @@ Refer to the following code snippet to switch to highlight mode.
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 Refer to the following code snippet to switch back to normal mode from highlight mode.
 
@@ -54,7 +61,14 @@ Refer to the following code snippet to switch back to normal mode from highlight
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 ## Underline a text
 
@@ -85,7 +99,14 @@ Refer to the following code snippet to switch to underline mode.
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
@@ -95,7 +116,14 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 ## Strikethrough a text
 
@@ -126,7 +154,15 @@ Refer to the following code snippet to switch to strikethrough mode.
 {% endhighlight %}
 {% endtabs %}
           
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1-standalone" %}
+{% tabs %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1" %}
+{% tabs %}
+{% endhighlight %}
+{% endtabs %}
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
@@ -136,7 +172,14 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 ## Deleting a text markup annotation
 
@@ -176,6 +219,9 @@ The properties of the text markup annotation can be set before creating the cont
 
 Refer to the following code snippet to set the default annotation settings.
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
@@ -183,13 +229,31 @@ TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'PDF_Succinctly.pdf',
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
+underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
+strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
+pdfviewer.appendTo('#PdfViewer');
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
+
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
 highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
 underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## Performing undo and redo
 
@@ -214,7 +278,14 @@ Refer to the following code snippet for calling undo and redo actions from the c
 {% endhighlight %}
 {% endtabs %}
           
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1-standalone" %}
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 ## Saving the text markup annotation
 
@@ -228,6 +299,8 @@ When the print tool is selected in the toolbar, the PDF document will be printed
 
 The PDF Viewer control provides an option to disable the text markup annotation feature. The code snippet for disabling the feature is as follows.
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
@@ -235,10 +308,24 @@ TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'PDF_Succinctly.pdf', enableTextMarkupAnnotation: false });
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
+pdfviewer.appendTo('#PdfViewer');
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation);
+
+let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## See also
 
