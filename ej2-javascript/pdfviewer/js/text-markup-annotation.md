@@ -44,7 +44,18 @@ Refer to the following code snippet to switch to highlight mode.
 {% endhighlight %}
 {% endtabs %}
         
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 Refer to the following code snippet to switch back to normal mode from highlight mode.
 
@@ -53,8 +64,18 @@ Refer to the following code snippet to switch back to normal mode from highlight
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Underline a text
 
@@ -83,8 +104,18 @@ Refer to the following code snippet to switch to underline mode.
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
@@ -93,8 +124,17 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Strikethrough a text
 
@@ -123,8 +163,18 @@ Refer to the following code snippet to switch to strikethrough mode.
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
@@ -133,8 +183,18 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1" %}
+{% endhighlight %}
+{% endtabs %}     
+
+
 
 ## Deleting a text markup annotation
 
@@ -174,17 +234,33 @@ The properties of the text markup annotation can be set before creating the cont
 
 Refer to the following code snippet to set the default annotation settings.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "PDF_Succinctly.pdf",
+    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf"",
+    highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
+    underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
+    strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''}
+});
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf"",
     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
     highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
     underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
     strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''}
 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print,ej.pdfviewer.Annotation);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Performing undo and redo
 
@@ -208,8 +284,19 @@ Refer to the following code snippet for calling undo and redo actions from the c
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/undo-redo-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/undo-redo-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/undo-redo-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Saving the text markup annotation
 
@@ -223,15 +310,29 @@ When the print tool is selected in the toolbar, the PDF document will be printed
 
 The PDF Viewer control provides an option to disable the text markup annotation feature. The code snippet for disabling the feature is as follows.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    enableTextMarkupAnnotation: false,
-    documentPath: "PDF_Succinctly.pdf",
-    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
-});
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print,ej.pdfviewer.Annotation);
+                    enableTextMarkupAnnotation: false,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableTextMarkupAnnotation: false,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% endtabs %}
 
 ## See also
 

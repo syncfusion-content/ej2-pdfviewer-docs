@@ -26,15 +26,32 @@ The PDF viewer control provides the option for interaction with Form Fields such
 
 We should inject FormDesigner module and set enableFormDesignerToolbar as true to enable the Form designer icon on the toolbar. By default, enableFormDesignerToolbar is set as true. Use the following code to inject FormDesigner module and to enable the enableFormDesignerToolbar property.
 
-```javascript
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "FormDesigner.pdf",
+    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+    enableFormDesignerToolbar: true
+});
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
     enableFormDesignerToolbar: true
 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.FormDesigner);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Add the form field dynamically
 
@@ -74,13 +91,44 @@ The PDF Viewer control supports the clipboard operations such as cut, copy and p
 
 We provided support to undo/redo the Form Field actions that are performed at runtime. Use the following code example to perform undo/redo actions.
 
-```javascript
+```
+<button id="undo">Undo</button>
+<button id="redo">Redo</button>
+```
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "FormDesigner.pdf",
+    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+});
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+document.getElementById('undo').addEventListener('click', function () {
+   pdfviewer.undo();
+});
+
+document.getElementById('redo').addEventListener('click', function () {
+   pdfviewer.redo();
+});
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.FormDesigner);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.undo();
-pdfviewer.redo();
-```
+document.getElementById('undo').addEventListener('click', function () {
+   pdfviewer.undo();
+});
+
+document.getElementById('redo').addEventListener('click', function () {
+   pdfviewer.redo();
+});
+{% endhighlight %}
+{% endtabs %}

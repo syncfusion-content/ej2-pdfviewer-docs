@@ -96,7 +96,7 @@ Now the PDF Viewer server Docker instance runs in the localhost with the provide
             <script>
                // Initialize PDF Viewer component.
                 var pdfviewer = new ej.pdfviewer.PdfViewer({
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                     serviceUrl: "http://localhost:6001/api/pdfviewer"
                 });
                 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);

@@ -33,7 +33,7 @@ The following table shows built-in toolbar items and its actions:-
 
 The PDF Viewer has an option to show or hide the complete default toolbar. You can achieve this by using following two ways.,
 
-```
+```html
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -62,8 +62,18 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 {% include code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+        
+
 
 * **Show/Hide toolbar using showToolbar as in the following code snippet**
 
@@ -72,8 +82,18 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 {% include code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+        
+
 
 ## Show/Hide the default toolbaritem
 
@@ -86,8 +106,17 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 {% include code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+        
+
 
 * **Show/Hide toolbaritem using showToolbaritem as in the following code snippet**
 
@@ -96,8 +125,16 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 {% include code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1" %}
+{% endhighlight %}
+{% endtabs %}
 
 ## See also
 

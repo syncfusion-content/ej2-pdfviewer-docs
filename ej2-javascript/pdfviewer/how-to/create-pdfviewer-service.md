@@ -65,7 +65,7 @@ namespace MvcWebService.webapi
             PdfRenderer pdfviewer = new PdfRenderer();
             MemoryStream stream = new MemoryStream();
             object jsonResult = new object();
-            if (jsonObject != null && jsonObject.ContainsKey("document"))
+   if (jsonObject != null && jsonObject.ContainsKey("document"))
             {
                 if (bool.Parse(jsonObject["isFileName"]))
                 {
@@ -73,13 +73,23 @@ namespace MvcWebService.webapi
                     if (!string.IsNullOrEmpty(documentPath))
                     {
                         byte[] bytes = System.IO.File.ReadAllBytes(documentPath);
-
                         stream = new MemoryStream(bytes);
-
                     }
                     else
                     {
-                        return (jsonObject["document"] + " is not found");
+                        string fileName = jsonObject["document"].Split(new string[] { "://" }, StringSplitOptions.None)[0];
+
+                        if (fileName == "http" || fileName == "https")
+                        {
+                            WebClient WebClient = new WebClient();
+                            byte[] pdfDoc = WebClient.DownloadData(jsonObject["document"]);
+                            stream = new MemoryStream(pdfDoc);
+                        }
+
+                        else
+                        {
+                            return (jsonObject["document"] + " is not found");
+                        }
                     }
                 }
                 else
