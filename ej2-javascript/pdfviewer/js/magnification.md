@@ -15,7 +15,7 @@ The magnification tools of the PDF Viewer contains ZoomIn, ZoomOut, Zoom, FitPag
 
 The following code snippet describes how to enable the magnification in PDF Viewer.
 
-```
+```html
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,15 +36,29 @@ The following code snippet describes how to enable the magnification in PDF View
 </html>
 ```
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableMagnification: true,
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableMagnification: true,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 The following magnification options are available in the default toolbar of PDF Viewer,
 

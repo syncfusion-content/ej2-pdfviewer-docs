@@ -113,15 +113,29 @@ The different locale value for the PDF Viewer can be specified using the locale 
 </html>
 ```
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     locale: 'ar-AE',
-                    documentPath: "PDF_Succinctly.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
+pdfviewer.appendTo('#PdfViewer');
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    locale: 'ar-AE',
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 You have to map the text content based on locale like following script in sample level.,
 
@@ -180,7 +194,7 @@ You have to map the text content based on locale like following script in sample
                         'Underline context': 'أكد',
                         'Strikethrough context': 'يتوسطه',
                         // tslint:disable-next-line:max-line-length
-                        'Server error': 'خدمة الانترنت لا يستمع. يعتمد قوات الدفاع الشعبي المشاهد على خدمة الويب لجميع ميزاته. يرجى بدء خدمة الويب للمتابعة.'
+                        'Server error': 'خدمة الانترنت لا يستمع. يعتمد قوات الدفاع الشعبي المشاهد على خدمة الويب لجميع ميزاته. يرجى بدء خدمة الويب للمتابعة.',
                         'Open text': 'افتح',
                         'First text': 'الصفحة الأولى',
                         'Previous text': 'الصفحة السابقة',

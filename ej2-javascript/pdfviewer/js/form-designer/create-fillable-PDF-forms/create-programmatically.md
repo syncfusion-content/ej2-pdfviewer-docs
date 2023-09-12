@@ -34,8 +34,19 @@ Using addFormField method, the form fields can be added to the PDF document prog
 {% include code-snippet/pdfviewer/addformfield-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Edit/Update form field programmatically
 
@@ -49,8 +60,19 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 {% include code-snippet/pdfviewer/updateformfield-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Delete form field programmatically
 
@@ -64,8 +86,19 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 {% include code-snippet/pdfviewer/deleteformfield-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
+
+
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs1-standalone" %}
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs1" %}
+{% endhighlight %}
+{% endtabs %}
+
+
 
 ## Saving the form fields
 
@@ -75,17 +108,43 @@ When the download icon is selected on the toolbar, the Form Fields will be saved
 
 You can invoke download action using following code snippet.
 
-```javascript
-var pdfviewer = new ej.pdfviewer.PdfViewer({
-                    enableDownload: true,
-                    documentPath: "FormDesigner.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
-                });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.Annotation, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
-pdfviewer.appendTo('#PdfViewer');
-pdfviewer.download();
 
 ```
+<button id="download">Download</button> 
+
+```
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableDownload: true,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('download').addEventListener('click', function () {
+    pdfviewer.download()
+});
+
+{% endhighlight %}
+{% highlight html tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enableDownload: true,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('download').addEventListener('click', function () {
+    pdfviewer.download()
+});
+
+{% endhighlight %}
+{% endtabs %}
+
 
 ## Printing the form fields
 
@@ -95,18 +154,44 @@ When the print icon is selected on the toolbar, the PDF document will be printed
 
 You can invoke print action using the following code snippet.,
 
-```javascript
+```
+<button id="print">Print</button>
+
+```
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enablePrint: true,
-                    documentPath: "FormDesigner.pdf",
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('print').addEventListener('click', function () {
+   pdfviewer.print.print(); 
+});
+
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    enablePrint: true,
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
                     serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
                 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.print.print();
 
-```
+document.getElementById('print').addEventListener('click', function () {
+   pdfviewer.print.print(); 
+});
+
+{% endhighlight %}
+{% endtabs %}
+
 
 ## Open the existing PDF document
 
@@ -120,20 +205,37 @@ The form fields in the PDF Document will be validated when the `enableFormFields
 
 Add the following code snippet to validate the form fields,
 
-```javascript
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-                    documentPath: "FormDesigner.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
                 });
-ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
 viewer.enableFormFieldsValidation = true;
 viewer.validateFormFields = function (args) {
     var nonfilledFormFields = args.nonFillableFields;
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+viewer.enableFormFieldsValidation = true;
+viewer.validateFormFields = function (args) {
+    var nonfilledFormFields = args.nonFillableFields;
+};
+
+{% endhighlight %}
+{% endtabs %}
+
 
 ## Export and import form fields
 
