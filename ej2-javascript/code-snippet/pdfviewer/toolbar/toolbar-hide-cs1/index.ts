@@ -5,7 +5,7 @@ import { PdfViewer, Toolbar, Magnification, Annotation, Navigation, LinkAnnotati
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
-let pdfviewer: PdfViewer = new PdfViewer({enableToolbar: false, documentPath:'PDF_Succinctly.pdf'});
+let pdfviewer: PdfViewer = new PdfViewer({enableToolbar: false, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 

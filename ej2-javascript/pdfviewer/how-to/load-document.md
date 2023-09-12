@@ -40,7 +40,7 @@ document.getElementById('load1').addEventListener('click', () => {
 ```ts
 // Load PDF document using file name
 document.getElementById('load2').addEventListener('click', () => {
-  viewer.load('PDF_Succinctly.pdf', null);
+  viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 });
 
 ```

@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Getting started with ##Platform_Name## Pdfviewer control | Syncfusion
-description:  Checkout and learn about Getting started with ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more details.
+title: Getting started with ##Platform_Name## PDF Viewer control | Syncfusion
+description:  Checkout and learn about Getting started with ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more details.
 platform: ej2-javascript
-control: Getting started 
+control: PDF Viewer 
 publishingplatform: ##Platform_Name##
 documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Getting started in ##Platform_Name## Pdfviewer control
+# Getting started in ##Platform_Name## PDF Viewer control
 
 This section explains the steps to create a simple TypeScript PDF Viewer within your application and demonstrate its basic usage.
 
@@ -22,10 +22,19 @@ git clone https://github.com/syncfusion/ej2-quickstart.git quickstart
 cd quickstart
 npm install
 ```
+* Duplicate the content of the 'ej2-pdfviewer-lib' folder located in './node_modules/@syncfusion/ej2-pdfviewer/dist' to the 'src' directory using the following command:
+
+```bash
+cp -R ./node_modules/@syncfusion/ej2-pdfviewer/dist/ej2-pdfviewer-lib src/ej2-pdfviewer-lib
+```
+
+* Ensure that within your 'src' directory, there exists a directory named 'ej2-pdfviewer-lib' containing the assets of the PDF Viewer library.
+
+* Validate that your server has been configured to utilize the Content-Type: application/wasm MIME type. Additional information can be found in the [Troubleshooting](./troubleshooting) section.
 
 ## Configuration system JS
 
-[Syncfusion PdfViewer packages](#dependencies) should be mapped in the `system.config.js` configuration file.
+[Syncfusion PDF Viewer packages](#dependencies) should be mapped in the `system.config.js` configuration file.
 
 ```javascript
 System.config({
@@ -82,9 +91,9 @@ Add the components CSS in `[src/styles/styles.css]` using the following code.
 @import "../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css";
 ```
 
-## Adding PdfViewer component
+## Adding PDF Viewer component
 
-* Add the PdfViewer component following code in the `app.ts`
+* Add the PDF Viewer component following code in the `app.ts`
 
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
@@ -92,9 +101,8 @@ import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotati
 PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 ```
 
 * Add an HTML div element to act as the PDF Viewer element `index.html` using the following code.
@@ -121,7 +129,7 @@ pdfviewer.load('PDF_Succinctly.pdf', null);
 </head>
 
 <body>
-    <!--Element which will render as PdfViewer -->
+    <!--Element which will render as PDF Viewer -->
     <div id="PdfViewer"></div>
 </body>
 
@@ -140,18 +148,18 @@ Output will be displayed as follows.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/getting-started-cs1/index.ts %}
+{% include code-snippet/pdfviewer/getting-started-cs2/index.ts %}
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/getting-started-cs1/index.html %}
+{% include code-snippet/pdfviewer/getting-started-cs2/index.html %}
 {% endhighlight %}
 {% endtabs %}
           
-{% previewsample "page.domainurl/code-snippet/pdfviewer/getting-started-cs1" %}
+{% previewsample "page.domainurl/code-snippet/pdfviewer/getting-started-cs2" %}
 
 ## Module injection
 
-To create PDF Viewer with additional features, inject the required modules. The following modules are used to extend PdfViewer's basic functionality:-
+To create PDF Viewer with additional features, inject the required modules. The following modules are used to extend PDF Viewer's basic functionality:-
 
 * `LinkAnnotation`:-  Inject this module to use PDF Viewer link annotation.
 * `BookmarkView`:-  Inject this module to use bookmark view of the PDF Viewer.
@@ -167,34 +175,5 @@ To create PDF Viewer with additional features, inject the required modules. The 
 * `FormDesigner`:-  Inject this module to use pdfviewer form designer feature.
 
 These modules should be injected into the PDF Viewer using `PdfViewer.Inject` method.
-
-> For PDF Viewer serviceUrl creation, follow the steps provided in the [link](https://ej2.syncfusion.com/documentation/pdfviewer/how-to/create-pdfviewer-service/)
-
-## How to run the PDF Viewer web service
-
-1.Download the sample from the [Web service sample in GitHub](https://github.com/SyncfusionExamples/EJ2-PDFViewer-WebServices) link.
-
-2.Navigate to the `ASP.NET Core` folder and open it in the command prompt.
-
-3.Use the below command to restore the required packages.
-
-```
- dotnet restore
-```
-
-4.Use the below command to run the web service.
-
-```
- dotnet run
-```
-
-5.You can see that the PDF Viewer server instance runs in the localhost with the port number [`localhost:5001`](https://localhost:5001/) and navigate to the PDF Viewer Web control [`localhost:5001/pdfviewer`](https://localhost:5001/pdfviewer) which returns the default get response method. We can bind the link to the `serviceUrl` property of PDF Viewer as below.
-
-```ts
-let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://localhost:5001/pdfviewer';
-pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
-```
 
 > You can refer to our [JavaScript PDF Viewer](https://www.syncfusion.com/javascript-ui-controls/js-pdf-viewer) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript PDF Viewer example](https://ej2.syncfusion.com/demos/#/material/pdfviewer/default.html) to understand how to explains core features of PDF Viewer.

@@ -41,6 +41,21 @@ The PDF Viewer supports downloading the loaded PDF file. You can enable/disable 
 </html>
 ```
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+```ts
+import { PdfViewer, Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, TextSearch, Print} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, TextSearch, Print);
+
+let pdfviewer: PdfViewer = new PdfViewer({enableDownload: true});
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 ```ts
 import { PdfViewer, Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, TextSearch, Print} from '@syncfusion/ej2-pdfviewer';
@@ -51,12 +66,31 @@ TextSelection, TextSearch, Print);
 let pdfviewer: PdfViewer = new PdfViewer({enableDownload: true});
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ![Alt text](./images/download.png)
 
 You can invoke download action using following code snippet.,
+
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.appendTo('#PdfViewer');
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
+pdfviewer.download();
+
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
@@ -66,10 +100,12 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 pdfviewer.download();
 
 ```
+{% endhighlight %}
+{% endtabs %}
 
 ## How to get the base64 string while downloading the PDF document
 

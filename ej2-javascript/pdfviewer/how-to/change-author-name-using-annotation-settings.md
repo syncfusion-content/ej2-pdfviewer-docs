@@ -30,14 +30,30 @@ The Essential JavaScript PDF Viewer supports to customize a single property of t
 
 You can change the author name and the other properties using the annotationSettings API as in the following code sample.
 
+{% tabs %}
+{% highlight ts tabtitle="Standalone" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields } from "../src/index";
+
+PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields);
+let viewer: PdfViewer = new PdfViewer();
+viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
+viewer.annotationSettings = { author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  };
+viewer.freeTextSettings = { allowTextOnly : true };
+viewer.appendTo("#pdfViewer");
+```
+{% endhighlight %}
+{% highlight ts tabtitle="Server-Backed" %}
 ```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields } from "../src/index";
 
 PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields);
 let viewer: PdfViewer = new PdfViewer();
 viewer.serviceUrl = "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer";
-viewer.load('PDF_Succinctly.pdf', null);
+viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 viewer.annotationSettings = { author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  };
 viewer.freeTextSettings = { allowTextOnly : true };
 viewer.appendTo("#pdfViewer");
 ```
+{% endhighlight %}
+{% endtabs %}
