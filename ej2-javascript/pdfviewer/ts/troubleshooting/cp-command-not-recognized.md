@@ -16,7 +16,7 @@ The error message you're seeing, "'cp' is not recognized as an internal or exter
 On Windows, you should use the `copy` command to copy files and directories instead of `cp`. The equivalent command in Windows to copy a directory and its contents recursively is:
 
 ```batch
-xcopy /s /e /i .\node_modules\@syncfusion\ej2-pdfviewer\dist\ej2-pdfviewer-lib src\ej2-pdfviewer-libx
+xcopy /s /e /i .\node_modules\@syncfusion\ej2-pdfviewer\dist\ej2-pdfviewer-lib src\ej2-pdfviewer-lib
 ```
 
 Here, `/s` indicates that you want to copy directories and subdirectories recursively. Also, note that Windows uses backslashes `\` as path separators, not forward slashes `/`.
