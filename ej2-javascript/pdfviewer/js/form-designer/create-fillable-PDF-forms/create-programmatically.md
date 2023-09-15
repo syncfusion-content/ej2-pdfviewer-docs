@@ -35,18 +35,11 @@ Using addFormField method, the form fields can be added to the PDF document prog
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`    
 
-
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Edit/Update form field programmatically
 
@@ -61,18 +54,11 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Delete form field programmatically
 
@@ -87,18 +73,11 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Saving the form fields
 
