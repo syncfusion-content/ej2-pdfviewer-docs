@@ -153,14 +153,13 @@ Refer to the following code snippet to switch to strikethrough mode.
 {% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-          
+
+{% tabs %}          
 {% highlight ts tabtitle="Standalone" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1-standalone" %}
-{% tabs %}
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1" %}
-{% tabs %}
 {% endhighlight %}
 {% endtabs %}
 
