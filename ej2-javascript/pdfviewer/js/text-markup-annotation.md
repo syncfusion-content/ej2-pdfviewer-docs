@@ -43,19 +43,12 @@ Refer to the following code snippet to switch to highlight mode.
 {% include code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
-        
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`       
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 Refer to the following code snippet to switch back to normal mode from highlight mode.
 
@@ -65,17 +58,11 @@ Refer to the following code snippet to switch back to normal mode from highlight
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Underline a text
 
@@ -105,16 +92,11 @@ Refer to the following code snippet to switch to underline mode.
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
 
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
@@ -125,16 +107,11 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% endhighlight %}
 {% endtabs %}
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Strikethrough a text
 
@@ -164,17 +141,11 @@ Refer to the following code snippet to switch to strikethrough mode.
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
@@ -184,16 +155,11 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1" %}
-{% endhighlight %}
-{% endtabs %}     
-
 
 
 ## Deleting a text markup annotation
@@ -285,18 +251,7 @@ Refer to the following code snippet for calling undo and redo actions from the c
 {% endhighlight %}
 {% endtabs %}
 
-
-
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/undo-redo-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/undo-redo-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-
-
 
 ## Saving the text markup annotation
 
