@@ -155,6 +155,10 @@ Refer to the following code snippet to switch back to normal mode from underline
 {% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
+
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.ts` file
+`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`  
           
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1" %}
 
