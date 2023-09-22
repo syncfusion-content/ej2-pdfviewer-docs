@@ -34,15 +34,12 @@ Using addFormField method, the form fields can be added to the PDF document prog
 {% include code-snippet/pdfviewer/addformfield-cs3/index.html %}
 {% endhighlight %}
 {% endtabs %}
-          
-{% tabs %}
-{% highlight ts tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs3-standalone" %}
-{% endhighlight %}
-{% highlight ts tabtitle="Server-Backed" %}
+
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.ts` file
+`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`              
+
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs3" %}
-{% endhighlight %}
-{% endtabs %}
 
 ## Edit/Update form field programmatically
 
@@ -56,15 +53,12 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 {% include code-snippet/pdfviewer/updateformfield-cs3/index.html %}
 {% endhighlight %}
 {% endtabs %}
-          
-{% tabs %}
-{% highlight ts tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs3-standalone" %}
-{% endhighlight %}
-{% highlight ts tabtitle="Server-Backed" %}
+
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.ts` file
+`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`             
+
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs3" %}
-{% endhighlight %}
-{% endtabs %}
 
 ## Delete form field programmatically
 
@@ -78,15 +72,12 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 {% include code-snippet/pdfviewer/deleteformfield-cs3/index.html %}
 {% endhighlight %}
 {% endtabs %}
-          
-{% tabs %}
-{% highlight ts tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs3-standalone" %}
-{% endhighlight %}
-{% highlight ts tabtitle="Server-Backed" %}
+
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.ts` file
+`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`    
+
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs3" %}
-{% endhighlight %}
-{% endtabs %}
 
 ## Saving the form fields
 

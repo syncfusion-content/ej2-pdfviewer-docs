@@ -63,17 +63,11 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-        
-
 
 * **Show/Hide toolbar using showToolbar as in the following code snippet**
 
@@ -83,17 +77,11 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-        
-
 
 ## Show/Hide the default toolbaritem
 
@@ -107,16 +95,11 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 {% endhighlight %}
 {% endtabs %}
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1" %}
-{% endhighlight %}
-{% endtabs %}
-        
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
+{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1" %}
 
 * **Show/Hide toolbaritem using showToolbaritem as in the following code snippet**
 
@@ -126,15 +109,11 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 {% endhighlight %}
 {% endtabs %}
 
+N> To set up the **server-backed PDF Viewer**,
+Add the below `serviceUrl` in the `index.html` file
+`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
 
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-{% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1-standalone" %}
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1" %}
-{% endhighlight %}
-{% endtabs %}
 
 ## See also
 
