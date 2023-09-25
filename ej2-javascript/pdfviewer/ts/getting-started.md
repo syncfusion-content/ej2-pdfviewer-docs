@@ -24,7 +24,7 @@ npm install
 ```
 * Duplicate the content of the 'ej2-pdfviewer-lib' folder located in './node_modules/@syncfusion/ej2-pdfviewer/dist' to the 'src' directory using the following command:
 
-```bash
+```
 cp -R ./node_modules/@syncfusion/ej2-pdfviewer/dist/ej2-pdfviewer-lib src/ej2-pdfviewer-lib
 ```
 
@@ -43,10 +43,10 @@ System.config({
     },
     map: {
         app: 'app',
-
         //Syncfusion packages mapping
         "@syncfusion/ej2-base": "syncfusion:ej2-base/dist/ej2-base.umd.min.js",
         "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
+        "@syncfusion/ej2-pdf": "syncfusion:ej2-pdf/dist/ej2-pdf.umd.min.js",
         "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
         "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",
         "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
@@ -89,6 +89,7 @@ Add the components CSS in `[src/styles/styles.css]` using the following code.
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
 @import "../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-notifications/styles/material.css";
 ```
 
 ## Adding PDF Viewer component
@@ -101,8 +102,8 @@ import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotati
 PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
 
 let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.documentPath = "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf";
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 ```
 
 * Add an HTML div element to act as the PDF Viewer element `index.html` using the following code.
