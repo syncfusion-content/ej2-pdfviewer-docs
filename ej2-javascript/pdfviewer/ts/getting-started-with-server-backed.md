@@ -97,6 +97,8 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 ```
 
+N> From 23.1 version, it is must to call **pdfviewer.dataBind();** before load function. Refer [here](./troubleshooting/document-loading-issues) for more details.
+
 * Add an HTML div element to act as the PDF Viewer element `index.html` using the following code.
 
 ```html

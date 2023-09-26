@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 The PDF Viewer supports printing the loaded PDF file. You can enable/disable the print using the following code snippet.
 
 ```html
-
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -31,7 +31,7 @@ The PDF Viewer supports printing the loaded PDF file. You can enable/disable the
 </div>
 </body>
 </html>
-
+{% endraw %}
 ```
 
 {% tabs %}
