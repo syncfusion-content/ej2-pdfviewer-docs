@@ -13,6 +13,7 @@ domainurl: ##DomainURL##
 The PDF Viewer supports downloading the loaded PDF file. You can enable/disable the download using the following code snippet.
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,7 +31,7 @@ The PDF Viewer supports downloading the loaded PDF file. You can enable/disable 
 </div>
 </body>
 </html>
-
+{% endraw %}
 ```
 
 {% tabs %}

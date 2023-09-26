@@ -24,6 +24,7 @@ The default toolbar of PDF Viewer contains the following navigation options
 * [**Show last page**](https://ej2.syncfusion.com/documentation/api/pdfviewer/navigation/#gotolastpage):- Navigates to the last page of a PDF document.
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -40,6 +41,7 @@ The default toolbar of PDF Viewer contains the following navigation options
 </div>
 </body>
 </html>
+{% endraw %}
 ```
 
 You can enable/disable page navigation option in PDF Viewer using the following code snippet.,
@@ -73,6 +75,7 @@ pdfviewer.appendTo('#PdfViewer');
 Also, you can programmatically perform page navigation options as follows.
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -94,6 +97,7 @@ Also, you can programmatically perform page navigation options as follows.
 </div>
 </body>
 </html>
+{% endraw %}
 ```
 
 {% tabs %}

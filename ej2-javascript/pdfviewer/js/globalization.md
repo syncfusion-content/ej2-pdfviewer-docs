@@ -94,6 +94,7 @@ The following table shows the default text values used in PDF Viewer in 'en-US' 
 The different locale value for the PDF Viewer can be specified using the locale property.
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -111,6 +112,7 @@ The different locale value for the PDF Viewer can be specified using the locale 
 </div>
 </body>
 </html>
+{% endraw %}
 ```
 
 {% tabs %}
