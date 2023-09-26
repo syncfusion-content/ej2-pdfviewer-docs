@@ -34,7 +34,7 @@ The following table shows built-in toolbar items and its actions:-
 The PDF Viewer has an option to show or hide the complete default toolbar. You can achieve this by using following two ways.,
 
 ```html
-
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -52,7 +52,7 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 </div>
 </body>
 </html>
-
+{% endraw %}
 ```
 
 * **Show/Hide toolbar using enableToolbar API as in the following code snippet**

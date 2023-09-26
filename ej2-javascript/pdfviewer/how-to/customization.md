@@ -18,6 +18,7 @@ The PDF Viewer provides API for user interactions options provided in it's built
 **Step 2:** Now, add an HTML div element to render the PDF Viewer with custom toolbar using the following code.
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -59,7 +60,7 @@ The PDF Viewer provides API for user interactions options provided in it's built
     </div>
     </body>
 </html>
-
+{% endraw %}
 ```
 
 **Step 3:** Hide the default toolbar of PDF Viewer using below code snippet,
