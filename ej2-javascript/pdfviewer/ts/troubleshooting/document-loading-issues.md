@@ -22,7 +22,7 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 TextSelection, TextSearch, Print);
 
 let pdfviewer: PdfViewer = new PdfViewer({enableDownload: true});
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.dataBind();
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);

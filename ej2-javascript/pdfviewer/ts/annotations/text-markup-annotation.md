@@ -46,7 +46,7 @@ Refer to the following code snippet to switch to highlight mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1" %}
 
@@ -60,7 +60,7 @@ Refer to the following code snippet to switch back to normal mode from highlight
           
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1" %}
 
@@ -95,7 +95,7 @@ Refer to the following code snippet to switch to underline mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`          
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`          
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1" %}
 
@@ -109,7 +109,7 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`          
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`          
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1" %}
 
@@ -144,7 +144,7 @@ Refer to the following code snippet to switch to strikethrough mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`          
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`          
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1" %}
 
@@ -158,7 +158,7 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`  
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`  
           
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1" %}
 
@@ -230,7 +230,7 @@ let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.
 highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
 underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 ```
 {% endhighlight %}
@@ -261,7 +261,7 @@ Refer to the following code snippet for calling undo and redo actions from the c
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`         
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`         
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1" %}
 
@@ -299,7 +299,7 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,
 TextSelection, Annotation);
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 ```
 {% endhighlight %}

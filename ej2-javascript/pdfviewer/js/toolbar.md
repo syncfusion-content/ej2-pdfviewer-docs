@@ -65,7 +65,7 @@ The PDF Viewer has an option to show or hide the complete default toolbar. You c
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-hide-cs1" %}
 
@@ -79,7 +79,7 @@ Add the below `serviceUrl` in the `index.html` file
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-method-cs1" %}
 
@@ -97,7 +97,7 @@ The PDF Viewer has an option to show or hide these grouped items in the default 
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-cs1" %}
 
@@ -111,7 +111,7 @@ Add the below `serviceUrl` in the `index.html` file
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-toolbar/toolbar-items-method-cs1" %}
 

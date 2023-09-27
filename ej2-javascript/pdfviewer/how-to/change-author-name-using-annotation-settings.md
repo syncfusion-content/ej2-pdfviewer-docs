@@ -49,7 +49,7 @@ import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, Thumbnai
 
 PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, Print, Annotation, FormFields);
 let viewer: PdfViewer = new PdfViewer();
-viewer.serviceUrl = "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer";
+viewer.serviceUrl = "https://services.syncfusion.com/js/production/api/pdfviewer";
 viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 viewer.annotationSettings = { author: 'syncfusion', minHeight: 30, maxHeight: 500, minWidth: 30, maxWidth: 500, isLock: false, isPrint: true, isDownload: true  };
 viewer.freeTextSettings = { allowTextOnly : true };

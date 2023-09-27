@@ -83,7 +83,7 @@ var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableToolbar: false,
                     enableThumbnail: false,
                     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation,ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
@@ -935,7 +935,7 @@ this.default = function () {
         enableToolbar: true,
         enableThumbnail: true,
         documentPath: 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf',
-        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer/'
+        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer/'
     });
    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
     viewer.appendTo('#pdfViewer');

@@ -37,7 +37,7 @@ Using addFormField method, the form fields can be added to the PDF document prog
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`              
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`              
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs3" %}
 
@@ -56,7 +56,7 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`             
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`             
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs3" %}
 
@@ -75,7 +75,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`    
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`    
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs3" %}
 
@@ -108,7 +108,7 @@ import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotati
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
@@ -146,7 +146,7 @@ import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotati
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
@@ -193,7 +193,7 @@ PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView
 TextSelection, Annotation, FormDesigner, FormFields);
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {

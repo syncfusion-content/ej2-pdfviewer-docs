@@ -58,7 +58,7 @@ npm install
                //Initialize PDF Viewer component
                var pdfviewer = new ej.pdfviewer.PdfViewer({
                     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                });
                //PDF Viewer control rendering starts
                pdfviewer.appendTo('#PdfViewer');

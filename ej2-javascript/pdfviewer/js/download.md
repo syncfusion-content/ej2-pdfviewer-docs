@@ -51,7 +51,7 @@ pdfviewer.appendTo('#PdfViewer');
 var pdfviewer = new ej.pdfviewer.PdfViewer({
         enableDownload: true,
         documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
 });
 
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
@@ -88,7 +88,7 @@ document.getElementById('download').addEventListener('click', function () {
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableDownload: true,
                     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');
