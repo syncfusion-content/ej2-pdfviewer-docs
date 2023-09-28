@@ -46,7 +46,7 @@ Refer to the following code snippet to switch to highlight mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`       
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`       
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-mode-cs1" %}
 
@@ -60,7 +60,7 @@ Refer to the following code snippet to switch back to normal mode from highlight
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/highlight-normal-mode-cs1" %}
 
@@ -94,7 +94,7 @@ Refer to the following code snippet to switch to underline mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-mode-cs1" %}
 
@@ -109,7 +109,7 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/underline-normal-mode-cs1" %}
 
@@ -143,7 +143,7 @@ Refer to the following code snippet to switch to strikethrough mode.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-mode-cs1" %}
 
@@ -157,7 +157,7 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-text-markup-annotation/strikethrough-normal-mode-cs1" %}
 
@@ -217,7 +217,7 @@ pdfviewer.appendTo('#PdfViewer');
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf"",
-    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
+    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer',
     highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00', opacity: 0.9, modifiedDate: ''},
     underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
     strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''}
@@ -281,7 +281,7 @@ pdfviewer.appendTo('#PdfViewer');
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableTextMarkupAnnotation: false,
                     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.LinkAnnotation,ej.pdfviewer.ThumbnailView, ej.pdfviewer.BookmarkView, ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Navigation, ej.pdfviewer.Print);
 pdfviewer.appendTo('#PdfViewer');

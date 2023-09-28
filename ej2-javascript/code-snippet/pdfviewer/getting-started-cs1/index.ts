@@ -7,7 +7,7 @@ PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation
                   BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner );
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 

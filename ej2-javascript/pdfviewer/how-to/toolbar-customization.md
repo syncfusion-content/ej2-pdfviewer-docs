@@ -100,7 +100,7 @@ PdfViewer.Inject(Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkVie
         enableToolbar: false,
         enableThumbnail: false,
         documentPath: 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf',
-        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
     });
     viewer.appendTo('#pdfViewer');
 
@@ -1012,7 +1012,7 @@ function updateSearchInputIcon(isEnable: boolean): void {
         enableToolbar: false,
         enableThumbnail: false,
         documentPath: 'https://cdn.syncfusion.com/content/pdf/hive-succinctly.pdf',
-        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
     });
     viewer.appendTo('#pdfViewer');
     document.getElementById('fileUpload').addEventListener('change', readFile, false);
@@ -1125,7 +1125,7 @@ The following code illustrates how to render the default toolbar with specific t
     var viewer = new ej.pdfviewer.PdfViewer({
         //Set the document path for initial loading.
         documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-        serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+        serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
     });
     //Inject the required dependencies to load the PDF Viewer.
     ej.pdfviewer.PdfViewer.Inject(

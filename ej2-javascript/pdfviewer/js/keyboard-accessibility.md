@@ -116,7 +116,7 @@ viewer.appendTo('#pdfViewer');
         var viewer = new ej.pdfviewer.PdfViewer({
         //Sets the document path for initial loading
         documentPath: 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
-        serviceUrl:'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer',
+        serviceUrl:'https://services.syncfusion.com/js/production/api/pdfviewer',
 });
 //Inject the dependencies required to render the PDF Viewer
 ej.pdfviewer.PdfViewer.Inject(
