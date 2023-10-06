@@ -148,6 +148,8 @@ Output will be displayed as follows.
 {% include code-snippet/pdfviewer/getting-started-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
+
+N> After initializing the control and specifying the service URL, it is essential to call the dataBind() method. Ensure that this step is performed after version 23.1.36.
           
 {% previewsample "page.domainurl/code-snippet/pdfviewer/getting-started-cs1" %}
 

@@ -30,6 +30,8 @@ The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaS
 {% include code-snippet/pdfviewer/es5-getting-started-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
+
+N> After initializing the control and specifying the service URL, it is essential to call the dataBind() method. Ensure that this step is performed after version 23.1.36.
         
 {% previewsample "page.domainurl/code-snippet/pdfviewer/es5-getting-started-cs1" %}
 
