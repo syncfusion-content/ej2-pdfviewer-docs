@@ -83,7 +83,7 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 pdfviewer.download();
 
 ```
@@ -104,7 +104,7 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 pdfviewer.print.print();
 
 ```

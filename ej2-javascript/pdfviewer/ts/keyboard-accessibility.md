@@ -68,7 +68,6 @@ The Typescript PDF Viewer supports the following keyboard interactions.
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
 import {
   PdfViewer,
   Toolbar,
@@ -93,11 +92,9 @@ PdfViewer.Inject(
 let pdfviewer: PdfViewer = new PdfViewer({documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 import {
   PdfViewer,
   Toolbar,
@@ -123,6 +120,5 @@ let pdfviewer: PdfViewer = new PdfViewer({documentPath:'https://cdn.syncfusion.c
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}

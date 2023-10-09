@@ -45,7 +45,7 @@ The Text Search option in PDF Viewer is used to find and highlight the text cont
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
+ 
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -54,11 +54,10 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableTextSearch: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -68,7 +67,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableTextSearch: true, documentPath:'
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 

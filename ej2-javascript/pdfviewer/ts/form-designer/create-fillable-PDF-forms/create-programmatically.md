@@ -89,7 +89,7 @@ You can invoke download action using following code snippet.
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -99,10 +99,9 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -113,7 +112,7 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
 
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -127,7 +126,7 @@ You can invoke print action using the following code snippet.,
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -137,10 +136,9 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -151,7 +149,7 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -169,7 +167,7 @@ Add the following code snippet to validate the form fields,
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
 
@@ -182,10 +180,10 @@ pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
 
@@ -199,7 +197,7 @@ pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
-```
+
 {% endhighlight %}
 {% endtabs %}
 

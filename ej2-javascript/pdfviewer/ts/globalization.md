@@ -112,7 +112,6 @@ The different locale value for the PDF Viewer can be specified using the locale 
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -120,10 +119,10 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({locale: 'ar-AE'});
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -132,7 +131,7 @@ let pdfviewer: PdfViewer = new PdfViewer({locale: 'ar-AE'});
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -210,4 +209,5 @@ You have to map the text content based on locale like following script in sample
                 }
             });
 </script>
+
 ```

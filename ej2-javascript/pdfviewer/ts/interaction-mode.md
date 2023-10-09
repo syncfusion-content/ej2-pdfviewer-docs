@@ -48,7 +48,7 @@ In this mode, the text selection can be performed in the PDF document loaded in 
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -56,10 +56,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableTextSelection: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -68,7 +67,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableTextSelection: true, documentPat
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 
@@ -84,7 +82,7 @@ You can switch the interaction mode of PDF Viewer by using the following code sn
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Annotation, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -92,10 +90,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', interactionMode: InteractionMode.Pan});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Annotation, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -104,7 +101,6 @@ let pdfviewer: PdfViewer = new PdfViewer({documentPath:'https://cdn.syncfusion.c
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 

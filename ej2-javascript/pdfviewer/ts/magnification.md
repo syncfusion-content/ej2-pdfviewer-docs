@@ -47,8 +47,6 @@ The following code snippet describes how to enable the magnification in PDF View
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
-
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -56,11 +54,8 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableMagnification: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -70,7 +65,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableMagnification: true, documentPat
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 

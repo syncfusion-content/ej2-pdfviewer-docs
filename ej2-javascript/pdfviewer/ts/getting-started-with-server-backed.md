@@ -196,7 +196,7 @@ These modules should be injected into the PDF Viewer using `PdfViewer.Inject` me
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://localhost:5001/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-pdfviewer.load('PDF_Succinctly.pdf', null);
+pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 ```
 
 > You can refer to our [JavaScript PDF Viewer](https://www.syncfusion.com/javascript-ui-controls/js-pdf-viewer) feature tour page for its groundbreaking feature representations. You can also explore our [JavaScript PDF Viewer example](https://ej2.syncfusion.com/demos/#/material/pdfviewer/default.html) to understand how to explains core features of PDF Viewer.
