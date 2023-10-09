@@ -171,6 +171,43 @@ document.getElementById('print').addEventListener('click', function () {
 {% endhighlight %}
 {% endtabs %}
 
+## setFormFieldMode programmatically
+
+The **setFormFieldMode** method is a function in the Syncfusion PDF Viewer library that allows you to add a form field dynamically by passing the type of the form field. You can pass the form fields as a parameter like below.
+
+```
+<button id="addPasswordField">Add Password Field</button>
+
+```
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('addPasswordField').addEventListener('click', function () {
+    pdfviewer.formDesignerModule.setFormFieldMode("Password");
+});
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('addPasswordField').addEventListener('click', function () {
+    pdfviewer.formDesignerModule.setFormFieldMode("Password");
+});
+{% endhighlight %}
+{% endtabs %}
 
 ## Open the existing PDF document
 
@@ -365,6 +402,11 @@ Using the `updateFormField` method, the form fields can be updated programmatica
 
 The following code example explains how to update the signature field properties on a button click.
 
+```html
+<button id="updateProperties">Update Properties</button>
+
+```
+
 ```javascript
 
 document.getElementById('updateProperties').addEventListener('click',function() {
@@ -384,10 +426,16 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the signature field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
 // Properties to customize the signature field settings
-viewer.signatureFieldSettings = {
+pdfviewer.signatureFieldSettings = {
     // Set the name of the form field element.
     name: 'Signature',
     // Specify whether the signature field is in read-only or read-write mode.
@@ -419,16 +467,106 @@ viewer.signatureFieldSettings = {
     },
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the signature field settings
+pdfviewer.signatureFieldSettings = {
+    // Set the name of the form field element.
+    name: 'Signature',
+    // Specify whether the signature field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the signature field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'Signature',
+    // Set the thickness of the Signature field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Specify the properties of the signature Dialog Settings in the signature field.
+    signatureDialogSettings: {
+        displayMode: ej.pdfviewer.DisplayMode.Draw | ej.pdfviewer.DisplayMode.Upload
+                     | ej.pdfviewer.DisplayMode.Text,
+        hideSaveSignature: false,
+    },
+    // Specify the properties of the signature indicator in the signature field.
+    signatureIndicatorSettings: {
+        opacity: 1,
+        backgroundColor: '#237ba2',
+        height: 50,
+        fontSize: 15,
+        text: 'Signature Field',
+        color: 'white'
+    },
+};
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Signature Field Settings](../.././images/SignatureField.png)
 
 The following code example explains how to update the properties of the initial field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
-// Properties to customize the initial field settings
-viewer.initialFieldSettings = {
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the signature field settings
+pdfviewer.initialFieldSettings = {
+    // Set the name of the form field element.
+    name: 'Initial',
+    // Specify whether the initial field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the initial field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'Initial',
+    // Set the thickness of the initial field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Specifies the properties of the initial indicator in the initial field.
+    initialIndicatorSettings: {
+        opacity: 1,
+        backgroundColor: '#237ba2',
+        height: 50,
+        fontSize: 15,
+        text: 'Initial Field',
+        color: 'white'
+    },
+    // Specify the properties of the initial Dialog Settings in the intial field.
+    initialDialogSettings: {
+        displayMode: ej.pdfviewer.DisplayMode.Draw | ej.pdfviewer.DisplayMode.Upload
+                     | ej.pdfviewer.DisplayMode.Text,
+        hideSaveSignature: false
+    }
+};
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the signature field settings
+pdfviewer.initialFieldSettings = {
     // Set the name of the form field element.
     name: 'Initial',
     // Specify whether the initial field is in read-only or read-write mode.
@@ -460,7 +598,8 @@ viewer.initialFieldSettings = {
     }
 };
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ![Initial Field Settings](../.././images/InitialField.png)
 
@@ -506,10 +645,65 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the Textbox field added to the document from the form designer toolbar.
 
-```javascript
 
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
 // Properties to customize the Textbox field settings
-viewer.textFieldSettings = {
+pdfviewer.textFieldSettings = {
+ // Set the name of the form field element.
+    name: 'Textbox',
+    // Specify whether the Textbox field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the Textbox field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'Textbox',
+    // Set the thickness of the Textbox field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Set the value of the form field element.
+    value:'Textbox',
+    // Set the font family of the textbox field.
+    fontFamily: 'Courier',
+    // Set the font size of the textbox field.
+    fontSize: 10,
+    // Specify the font style
+    fontStyle: 'None',
+    // Set the font color of the textbox field.
+    color: 'black',
+    // Set the border color of the textbox field.
+    borderColor: 'black',
+    // Set the background color of the textbox field.
+    backgroundColor: 'White',
+    // Set the alignment of the text.
+    alignment: 'Left',
+    // Set the maximum character length.
+    maxLength: 0,
+    // Allows multiline input in the text field. FALSE, by default.
+    isMultiline: false
+};
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the Textbox field settings
+pdfviewer.textFieldSettings = {
  // Set the name of the form field element.
     name: 'Textbox',
     // Specify whether the Textbox field is in read-only or read-write mode.
@@ -546,7 +740,8 @@ viewer.textFieldSettings = {
     isMultiline: false
 };
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ![Textbox Field Settings](../.././images/Textbox.png)
 
@@ -591,10 +786,17 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the Password field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
 // Properties to customize the Password field settings
-viewer.passwordFieldSettings = {
+pdfviewer.passwordFieldSettings = {
  // Set the name of the form field element.
     name: 'Password',
     // Specify whether the Password field is in read-only or read-write mode.
@@ -629,7 +831,55 @@ viewer.passwordFieldSettings = {
     maxLength: 0,
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+    
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the Password field settings
+pdfviewer.passwordFieldSettings = {
+ // Set the name of the form field element.
+    name: 'Password',
+    // Specify whether the Password field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the Password field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'Password',
+    // Set the thickness of the Password field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Set the value of the form field element.
+    value:'Password',
+    // Set the font family of the Password field.
+    fontFamily: 'Courier',
+    // Set the font size of the Password field.
+    fontSize: 10,
+    // Specify the font style
+    fontStyle: 'None',
+    // Set the font color of the Password field.
+    color: 'black',
+    // Set the border color of the Password field.
+    borderColor: 'black',
+    // Set the background color of the Password field.
+    backgroundColor: 'white',
+    // Set the alignment of the text.
+    alignment: 'Left',
+    // Set the maximum character length.
+    maxLength: 0,
+};
+
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Password Field Settings](../.././images/Password.png)
 
@@ -668,10 +918,17 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the CheckBox field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
 // Properties to customize the CheckBox field settings
-viewer.checkBoxFieldSettings = {
+pdfviewer.checkBoxFieldSettings = {
    // Set the name of the form field element.
     name: 'CheckBox',
     // Specify whether the CheckBox field is in read-only or read-write mode.
@@ -695,7 +952,43 @@ viewer.checkBoxFieldSettings = {
     // Set the value of
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+    
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the CheckBox field settings
+pdfviewer.checkBoxFieldSettings = {
+   // Set the name of the form field element.
+    name: 'CheckBox',
+    // Specify whether the CheckBox field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the CheckBox field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'CheckBox',
+    // Set the thickness of the CheckBox field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Specifies whether the check box is in checked state or not.
+    isChecked: true,
+    // Set the background color of the check box in hexadecimal string format.
+    backgroundColor: 'white',
+    // Set the border color of the check box field.
+    borderColor: 'black',
+    // Set the value of
+};
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Checkbox Settings](../.././images/Checkbox.png)
 
@@ -734,10 +1027,17 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the RadioButton field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
 // Properties to customize the RadioButton field settings
-viewer.radioButtonFieldSettings = {
+pdfviewer.radioButtonFieldSettings = {
     // Set the name of the form field element.
     name: 'RadioButton',
     // Specify whether the RadioButton field is in read-only or read-write mode.
@@ -762,7 +1062,44 @@ viewer.radioButtonFieldSettings = {
     value: 'RadioButton'
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+    
+pdfviewer.appendTo('#PdfViewer');
+// Properties to customize the RadioButton field settings
+pdfviewer.radioButtonFieldSettings = {
+    // Set the name of the form field element.
+    name: 'RadioButton',
+    // Specify whether the RadioButton field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the RadioButton field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'RadioButton',
+    // Set the thickness of the RadioButton field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Specifies whether the radio button is in checked state or not.
+    isSelected: true,
+    // Set the background color of the radio button in hexadecimal string format.
+    backgroundColor: 'white',
+    // Set the border color of the radio button field.
+    borderColor: 'black',
+    // Set the value of the form field element.
+    value: 'RadioButton'
+};
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Radiobutton Settings](../.././images/Radiobutton.png)
 
@@ -801,16 +1138,22 @@ document.getElementById('updateProperties').addEventListener('click',function() 
     });
 });
 
-
 ```
 
 The following code example explains how to update the properties of the Listbox field added to the document from the form designer toolbar.
 
-```javascript
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
 
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
+ var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
 // Properties to customize the Listbox field settings
-viewer.listBoxFieldSettings = {
-    var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
+pdfviewer.listBoxFieldSettings = {   
     // Set the name of the form field element.
     name: 'ListBox',
     // Specify whether the ListBox field is in read-only or read-write mode.
@@ -845,7 +1188,56 @@ viewer.listBoxFieldSettings = {
     options: customOptions
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+    
+pdfviewer.appendTo('#PdfViewer');
+var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
+// Properties to customize the Listbox field settings
+pdfviewer.listBoxFieldSettings = {
+    // Set the name of the form field element.
+    name: 'ListBox',
+    // Specify whether the ListBox field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the ListBox field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'ListBox',
+    // Set the thickness of the ListBox field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Set the value of the form field element.
+    value:'ListBox',
+    // Set the font family of the ListBox field.
+    fontFamily: 'Courier',
+    // Set the font size of the ListBox field.
+    fontSize: 10,
+    // Specify the font style
+    fontStyle: 'None',
+    // Set the  font color of the ListBox field.
+    color: 'black',
+    // Set the border color of the ListBox field.
+    borderColor: 'black',
+    // Set the background color of the ListBox field.
+    backgroundColor: 'White',
+    // Set the alignment of the text.
+    alignment: 'Left',
+    // Set the listbox items.
+    options: customOptions
+};
+
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Listbox Settings](../.././images/Listbox.png)
 
@@ -889,11 +1281,19 @@ document.getElementById('updateProperties').addEventListener('click',function() 
 
 The following code example explains how to update the properties of the Dropdown field added to the document from the form designer toolbar.
 
-```javascript
 
-// Properties to customize the Dropdown field settings
-viewer.listBoxFieldSettings = {
-    var customOptions = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+
+pdfviewer.appendTo('#PdfViewer');
+ var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
+// Properties to customize the DropDown field settings
+pdfviewer.DropdownFieldSettings  = {   
     // Set the name of the form field element.
     name: 'DropDown',
     // Specify whether the DropDown field is in read-only or read-write mode.
@@ -928,6 +1328,54 @@ viewer.listBoxFieldSettings = {
     options: customOptions
 };
 
-```
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+var pdfviewer = new ej.pdfviewer.PdfViewer({
+                    documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
+                });
+    ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
+    
+pdfviewer.appendTo('#PdfViewer');
+var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
+// Properties to customize the DropDown field settings
+pdfviewer.DropdownFieldSettings  = {
+    // Set the name of the form field element.
+    name: 'DropDown',
+    // Specify whether the DropDown field is in read-only or read-write mode.
+    isReadOnly: false,
+    // Set the visibility of the form field.
+    visibility: 'visible',
+    // Specify whether the field is mandatory or not.
+    isRequired: false,
+    // Specify whether to print the DropDown field.
+    isPrint: true,
+    // Set the text to be displayed as a tooltip.
+    tooltip: 'DropDown',
+    // Set the thickness of the DropDown field. To hide the borders, set the value to 0 (zero).
+    thickness: 4,
+    // Set the value of the form field element.
+    value:'DropDown',
+    // Set the font family of the DropDown field.
+    fontFamily: 'Courier',
+    // Set the font size of the DropDown field.
+    fontSize: 10,
+    // Specify the font style
+    fontStyle: 'None',
+    // Set the  font color of the DropDown field.
+    color: 'black',
+    // Set the border color of the DropDown field.
+    borderColor: 'black',
+    // Set the background color of the DropDown field.
+    backgroundColor: 'White',
+    // Set the alignment of the text.
+    alignment: 'Left',
+    // Set the DropDown items.
+    options: customOptions
+};
+
+{% endhighlight %}
+{% endtabs %}
 
 ![Dropdown Settings](../.././images/Dropdown.png)
