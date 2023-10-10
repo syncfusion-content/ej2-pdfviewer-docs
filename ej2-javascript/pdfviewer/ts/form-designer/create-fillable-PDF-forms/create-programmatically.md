@@ -127,9 +127,11 @@ You can invoke print action using the following code snippet.,
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
-PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
 
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.appendTo('#PdfViewer');
@@ -139,9 +141,11 @@ pdfviewer.print.print();
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
-PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
+PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
 
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
@@ -149,6 +153,53 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
+
+{% endhighlight %}
+{% endtabs %}
+
+## setFormFieldMode programmatically
+
+The **setFormFieldMode** method is a function in the Syncfusion PDF Viewer library that allows you to add a form field dynamically by passing the type of the form field. You can pass the form fields as a parameter like below.
+
+```
+<button id="addPasswordField">Add Password Field</button>
+
+```
+
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.documentPath = 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf';
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('addPasswordField').addEventListener('click', function () {
+    pdfviewer.formDesignerModule.setFormFieldMode("Password");
+});
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
+                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
+
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.documentPath = 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('addPasswordField').addEventListener('click', function () {
+    pdfviewer.formDesignerModule.setFormFieldMode("Password");
+});
 
 {% endhighlight %}
 {% endtabs %}
