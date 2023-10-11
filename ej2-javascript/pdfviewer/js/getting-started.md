@@ -13,15 +13,21 @@ domainurl: ##DomainURL##
 
 The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaScript framework which can be directly used in latest web browsers.
 
-## Component Initialization with CDN link for script and style reference
+### Component Initialization with CDN link for script and style reference
 
 **Step 1:** Create an app folder `myapp` for the Essential JS 2 JavaScript components.
 
 **Step 2:** The Essential JS 2 component's global scripts and styles are already hosted in the below CDN link formats.
 
-> Script: [`https://cdn.syncfusion.com/ej2/staging/pdfium/ej2.min.js`](https://cdn.syncfusion.com/ej2/staging/pdfium/ej2.min.js)
+**Syntax:**
+> Script: `https://cdn.syncfusion.com/ej2/{Version}/dist/{PACKAGE_NAME}.min.js`
 >
-> Styles: [`https://cdn.syncfusion.com/ej2/material.css`](https://cdn.syncfusion.com/ej2/material.css)
+> Styles: `https://cdn.syncfusion.com/ej2/{Version}/{PACKAGE_NAME}/styles/material.css`
+
+**Example:**
+> Script: [`https://cdn.syncfusion.com/ej2/23.1.36/dist/ej2.min.js`](https://cdn.syncfusion.com/ej2/23.1.36/dist/ej2.min.js)
+>
+> Styles: [`https://cdn.syncfusion.com/ej2/23.1.36/ej2-base/styles/material.css`](https://cdn.syncfusion.com/ej2/23.1.36/ej2-base/styles/material.css)
 
 N> While referring the scripts from the downloaded resources in your application, make sure to place the 'ej2-pdfviewer-lib' assets in the same directory as the 'ej2.min.js' script.
 
