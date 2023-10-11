@@ -48,7 +48,8 @@ The resultant meta tag is included within the `<head>` tag and resolves the CSP 
 {% tabs %}
 {% highlight razor tabtitle="HTML" %}
 <head>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self';
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    script-src 'self';
     style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline' 'unsafe-eval';
     img-src 'self' data: https: blob: 'unsafe-inline'; object-src 'self'" />
 </head>
