@@ -13,7 +13,7 @@ domainurl: ##DomainURL##
 
 The Essential JS 2 for JavaScript (global script) is an ES5 formatted pure JavaScript framework which can be directly used in latest web browsers.
 
-### Component Initialization with CDN link for script and style reference
+## Component Initialization with CDN link for script and style reference
 
 **Step 1:** Create an app folder `myapp` for the Essential JS 2 JavaScript components.
 
