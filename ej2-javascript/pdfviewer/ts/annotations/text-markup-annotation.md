@@ -203,7 +203,6 @@ Refer to the following code snippet to set the default annotation settings.
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -215,11 +214,10 @@ highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00'
 underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -232,7 +230,7 @@ underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', co
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -279,7 +277,7 @@ The PDF Viewer control provides an option to disable the text markup annotation 
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -288,10 +286,10 @@ TextSelection, Annotation);
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -301,7 +299,7 @@ TextSelection, Annotation);
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% endtabs %}
 
