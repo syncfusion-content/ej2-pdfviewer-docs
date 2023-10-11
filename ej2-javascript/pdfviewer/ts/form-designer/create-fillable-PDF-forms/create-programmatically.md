@@ -37,7 +37,7 @@ Using addFormField method, the form fields can be added to the PDF document prog
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`              
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`              
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs3" %}
 
@@ -56,7 +56,7 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`             
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`             
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs3" %}
 
@@ -75,7 +75,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';`    
+`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`    
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs3" %}
 
@@ -89,7 +89,7 @@ You can invoke download action using following code snippet.
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-
+```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -99,20 +99,21 @@ pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
 
+```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-
+```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.download();
 
-
+```
 {% endhighlight %}
 {% endtabs %}
 
@@ -126,81 +127,31 @@ You can invoke print action using the following code snippet.,
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
-
-PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
+```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
+```ts
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
-
-PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
+PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
 
 let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
 
-
-{% endhighlight %}
-{% endtabs %}
-
-## setFormFieldMode programmatically
-
-The **setFormFieldMode** method is a function in the Syncfusion PDF Viewer library that allows you to add a form field dynamically by passing the type of the form field. You can pass the form fields as a parameter like below.
-
 ```
-<button id="addPasswordField">Add Password Field</button>
-
-```
-
-{% tabs %}
-{% highlight js tabtitle="Standalone" %}
-
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
-
-PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
-
-let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.documentPath = 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf';
-pdfviewer.appendTo('#PdfViewer');
-
-document.getElementById('addPasswordField').addEventListener('click', function () {
-    pdfviewer.formDesignerModule.setFormFieldMode("Password");
-});
-
-{% endhighlight %}
-{% highlight js tabtitle="Server-Backed" %}
-
-import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-         BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
-
-PdfViewer.Inject( Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
-                  BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
-
-let pdfviewer: PdfViewer = new PdfViewer();
-pdfviewer.documentPath = 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf';
-pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
-pdfviewer.appendTo('#PdfViewer');
-
-document.getElementById('addPasswordField').addEventListener('click', function () {
-    pdfviewer.formDesignerModule.setFormFieldMode("Password");
-});
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -218,7 +169,7 @@ Add the following code snippet to validate the form fields,
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-
+```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
 
@@ -231,10 +182,10 @@ pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
-
+```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-
+```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings} from '@syncfusion/ej2-pdfviewer';
 
@@ -242,13 +193,13 @@ PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView
 TextSelection, Annotation, FormDesigner, FormFields);
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
-pdfviewer.serviceUrl = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.enableFormFieldsValidation = true;
 viewer.validateFormFields= function (args) {
 var nonfilledFormFields = args.nonFillableFields;
 }
-
+```
 {% endhighlight %}
 {% endtabs %}
 
@@ -385,20 +336,8 @@ document.getElementById('importData').addEventListener('click', ()=> {
     //viewer.importFormFields (exportedData, FormFieldDataFormat.Json);
 });
 ```
-## Form field properties
 
-Form field properties in Syncfusion PDF Viewer allow you to customize and interact with form fields embedded within PDF documents. This documentation provides an overview of the form field properties supported by the Syncfusion PDF Viewer and explains how to use them effectively.
-
-    * Textbox
-    * Password
-    * CheckBox
-    * RadioButton
-    * ListBox
-    * DropDown
-    * SignatureField
-    * InitialField
-
-### Signature and initial fields settings
+## Signature and initial fields settings
 
 Using the `updateFormField` method, the form fields can be updated programmatically.
 
@@ -429,24 +368,24 @@ The following code example explains how to update the properties of the signatur
 viewer.signatureFieldSettings = {
     // Set the name of the form field element.
     name: 'Signature',
-    // Specify whether the signature field is in read-only or read-write mode.
+    // Specifies whether the signature field is in read-only or read-write mode.
     isReadOnly: false,
     // Set the visibility of the form field.
     visibility: 'visible',
-    // Specify whether the field is mandatory or not.
+    // Specifies whether the field is mandatory or not.
     isRequired: false,
-    // Specify whether to print the signature field.
+    // Specifies whether to print the signature field.
     isPrint: true,
-    // Set the text to be displayed as a tooltip.
+    // Set the text to be displayed as tooltip.
     tooltip: 'Signature',
     // Set the thickness of the Signature field. To hide the borders, set the value to 0 (zero).
     thickness: 4,
-    // Specify the properties of the signature Dialog Settings in the signature field.
+    // Specifies the properties of the signature Dialog Settings in the signature field.
     signatureDialogSettings: {
         displayMode: DisplayMode.Draw | DisplayMode.Upload | DisplayMode.Text,
         hideSaveSignature: false,
     },
-    // Specify the properties of the signature indicator in the signature field.
+    // Specifies the properties of the signature indicator in the signature field.
     signatureIndicatorSettings: {
         opacity: 1,
         backgroundColor: '#237ba2',
@@ -469,15 +408,15 @@ The following code example explains how to update the properties of the initial 
 viewer.initialFieldSettings = {
     // Set the name of the form field element.
     name: 'Initial',
-    // Specify whether the initial field is in read-only or read-write mode.
+    // Specifies whether the initial field is in read-only or read-write mode.
     isReadOnly: false,
     // Set the visibility of the form field.
     visibility: 'visible',
-    // Specify whether the field is mandatory or not.
+    // Specifies whether the field is mandatory or not.
     isRequired: false,
-    // Specify whether to print the initial field.
+    // Specifies whether to print the initial field.
     isPrint: true,
-    // Set the text to be displayed as a tooltip.
+    // Set the text to be displayed as tooltip.
     tooltip: 'Initial',
     // Set the thickness of the initial field. To hide the borders, set the value to 0 (zero).
     thickness: 4,
@@ -490,7 +429,7 @@ viewer.initialFieldSettings = {
         text: 'Initial Field',
         color: 'white'
     },
-    // Specify the properties of the initial Dialog Settings in the intial field.
+    // Specifies the properties of the initial Dialog Settings in the intial field.
     initialDialogSettings: {
         displayMode: DisplayMode.Draw | DisplayMode.Upload | DisplayMode.Text,
         hideSaveSignature: false
@@ -500,471 +439,3 @@ viewer.initialFieldSettings = {
 ```
 
 ![Initial Field Settings](../.././images/InitialField.png)
-
-### Textbox field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the Textbox field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    viewer.formDesignerModule.updateFormField(formField[0], {
-        name: 'Textbox',
-        isReadOnly: true,
-        visibility: 'visible',
-        isRequired: false,
-        isPrint: true,
-        tooltip: 'Textbox',
-        thickness: 4,
-        value:'Textbox',
-        fontFamily: 'Courier',
-        fontSize: 10,
-        fontStyle: 'None',
-        color: 'black',
-        borderColor: 'black',
-        backgroundColor: 'white',
-        alignment: 'Left',
-        maxLength: 0,
-        isMultiline: false,
-        bounds: { X: 146, Y: 229, Width: 150, Height: 24 }                    
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the Textbox field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the Textbox field settings
-viewer.textFieldSettings = {
- // Set the name of the form field element.
-    name: 'Textbox',
-    // Specify whether the Textbox field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the Textbox field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'Textbox',
-    // Set the thickness of the Textbox field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Set the value of the form field element.
-    value:'Textbox',
-    // Set the font family of the textbox field.
-    fontFamily: 'Courier',
-    // Set the font size of the textbox field.
-    fontSize: 10,
-    // Specify the font style
-    fontStyle: 'None',
-    // Set the font color of the textbox field.
-    color: 'black',
-    // Set the border color of the textbox field.
-    borderColor: 'black',
-    // Set the background color of the textbox field.
-    backgroundColor: 'White',
-    // Set the alignment of the text.
-    alignment: 'Left',
-    // Set the maximum character length.
-    maxLength: 0,
-    // Allows multiline input in the text field. FALSE, by default.
-    isMultiline: false
-};
-
-```
-
-![Textbox Field Settings](../.././images/Textbox.png)
-
-### Password field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the Password field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    viewer.formDesignerModule.updateFormField(formField[0], {
-      name: 'Password',
-      isReadOnly: true,
-      visibility: 'visible',
-      isRequired: false,
-      isPrint: true,
-      tooltip: 'Password',
-      thickness: 4,
-      value:'Password',
-      fontFamily: 'Courier',
-      fontSize: 10,
-      fontStyle: 'None',
-      color: 'black',
-      borderColor: 'black',
-      backgroundColor: 'white',
-      alignment: 'Left',
-      maxLength: 0,
-      bounds: { X: 148, Y: 229, Width: 150, Height: 24 }                
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the Password field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the Password field settings
-viewer.passwordFieldSettings = {
- // Set the name of the form field element.
-    name: 'Password',
-    // Specify whether the Password field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the Password field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'Password',
-    // Set the thickness of the Password field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Set the value of the form field element.
-    value:'Password',
-    // Set the font family of the Password field.
-    fontFamily: 'Courier',
-    // Set the font size of the Password field.
-    fontSize: 10,
-    // Specify the font style
-    fontStyle: 'None',
-    // Set the font color of the Password field.
-    color: 'black',
-    // Set the border color of the Password field.
-    borderColor: 'black',
-    // Set the background color of the Password field.
-    backgroundColor: 'white',
-    // Set the alignment of the text.
-    alignment: 'Left',
-    // Set the maximum character length.
-    maxLength: 0,
-};
-
-```
-
-![Password Field Settings](../.././images/Password.png)
-
-### CheckBox field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the CheckBox field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    viewer.formDesignerModule.updateFormField(formField[0], {
-      name: 'CheckBox',
-      isReadOnly: true,
-      visibility: 'visible',
-      isRequired: false,
-      isPrint: true,
-      tooltip: 'CheckBox',
-      thickness: 4,
-      isChecked: true,
-      backgroundColor: 'white',
-      borderColor: 'black',
-      value: 'CheckBox',   
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the CheckBox field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the CheckBox field settings
-viewer.checkBoxFieldSettings = {
-   // Set the name of the form field element.
-    name: 'CheckBox',
-    // Specify whether the CheckBox field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the CheckBox field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'CheckBox',
-    // Set the thickness of the CheckBox field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Specifies whether the check box is in checked state or not.
-    isChecked: true,
-    // Set the background color of the check box in hexadecimal string format.
-    backgroundColor: 'white',
-    // Set the border color of the check box field.
-    borderColor: 'black',
-    // Set the value of
-};
-
-```
-
-![Checkbox Settings](../.././images/Checkbox.png)
-
-### RadioButton field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the RadioButton field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    viewer.formDesignerModule.updateFormField(formField[0], {
-        name: 'RadioButton',
-        isReadOnly: true,
-        visibility: 'visible',
-        isRequired: false,
-        isPrint: true,
-        tooltip: 'RadioButton',
-        thickness: 4,
-        isSelected: true,
-        backgroundColor: 'white',
-        borderColor: 'black',
-        value: 'RadioButton'
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the RadioButton field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the RadioButton field settings
-viewer.radioButtonFieldSettings = {
-    // Set the name of the form field element.
-    name: 'RadioButton',
-    // Specify whether the RadioButton field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the RadioButton field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'RadioButton',
-    // Set the thickness of the RadioButton field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Specifies whether the radio button is in checked state or not.
-    isSelected: true,
-    // Set the background color of the radio button in hexadecimal string format.
-    backgroundColor: 'white',
-    // Set the border color of the radio button field.
-    borderColor: 'black',
-    // Set the value of the form field element.
-    value: 'RadioButton'
-};
-
-```
-
-![Radiobutton Settings](../.././images/Radiobutton.png)
-
-### ListBox field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the ListBox field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
-    viewer.formDesignerModule.updateFormField(formField[0], {
-      name: 'ListBox',
-      isReadOnly: false,
-      visibility: 'visible',
-      isRequired: false,
-      isPrint: true,
-      tooltip: 'ListBox',
-      thickness: 4,
-      fontFamily: 'Courier',
-      fontSize: 10,
-      fontStyle: 'None',
-      color: 'black',
-      borderColor: 'black',
-      backgroundColor: 'white',
-      alignment: 'Left',
-      options: customOptions,
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the Listbox field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the Listbox field settings
-viewer.listBoxFieldSettings = {
-    var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
-    // Set the name of the form field element.
-    name: 'ListBox',
-    // Specify whether the ListBox field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the ListBox field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'ListBox',
-    // Set the thickness of the ListBox field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Set the value of the form field element.
-    value:'ListBox',
-    // Set the font family of the ListBox field.
-    fontFamily: 'Courier',
-    // Set the font size of the ListBox field.
-    fontSize: 10,
-    // Specify the font style
-    fontStyle: 'None',
-    // Set the  font color of the ListBox field.
-    color: 'black',
-    // Set the border color of the ListBox field.
-    borderColor: 'black',
-    // Set the background color of the ListBox field.
-    backgroundColor: 'White',
-    // Set the alignment of the text.
-    alignment: 'Left',
-    // Set the listbox items.
-    options: customOptions
-};
-
-```
-
-![Listbox Settings](../.././images/Listbox.png)
-
-### DropDown field settings
-
-Using the `updateFormField` method, the form fields can be updated programmatically.
-
-The following code example explains how to update the DropDown field properties on a button click.
-
-```html
-<button id="updateProperties">Update Properties</button>
-
-```
-
-```ts
-
-document.getElementById('updateProperties').addEventListener('click',function() {
-    var formField = viewer.retrieveFormFields();
-    var customOptions  = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
-    viewer.formDesignerModule.updateFormField(formField[0], { 
-        name: 'DropDown',
-        isReadOnly: false,
-        visibility: 'visible',
-        isRequired: false,
-        isPrint: true,
-        tooltip: 'DropDown',
-        thickness: 4,
-        fontFamily: 'Courier',
-        fontSize: 10,
-        fontStyle: 'None',
-        color: 'black',
-        borderColor: 'black',
-        backgroundColor: 'white',
-        alignment: 'Left',
-        options: customOptions,
-    });
-});
-
-
-```
-
-The following code example explains how to update the properties of the Dropdown field added to the document from the form designer toolbar.
-
-```ts
-
-// Properties to customize the Dropdown field settings
-viewer.listBoxFieldSettings = {
-    var customOptions = [{itemName:'item1',itemValue:'item1'}, {itemName:'item2',itemValue:'item2'}, {itemName:'item3',itemValue:'item3'}]
-    // Set the name of the form field element.
-    name: 'DropDown',
-    // Specify whether the DropDown field is in read-only or read-write mode.
-    isReadOnly: false,
-    // Set the visibility of the form field.
-    visibility: 'visible',
-    // Specify whether the field is mandatory or not.
-    isRequired: false,
-    // Specify whether to print the DropDown field.
-    isPrint: true,
-    // Set the text to be displayed as a tooltip.
-    tooltip: 'DropDown',
-    // Set the thickness of the DropDown field. To hide the borders, set the value to 0 (zero).
-    thickness: 4,
-    // Set the value of the form field element.
-    value:'DropDown',
-    // Set the font family of the DropDown field.
-    fontFamily: 'Courier',
-    // Set the font size of the DropDown field.
-    fontSize: 10,
-    // Specify the font style
-    fontStyle: 'None',
-    // Set the  font color of the DropDown field.
-    color: 'black',
-    // Set the border color of the DropDown field.
-    borderColor: 'black',
-    // Set the background color of the DropDown field.
-    backgroundColor: 'White',
-    // Set the alignment of the text.
-    alignment: 'Left',
-    // Set the DropDown items.
-    options: customOptions
-};
-
-```
-
-![Dropdown Settings](../.././images/Dropdown.png)

@@ -154,7 +154,7 @@ let viewer: PdfViewer = new PdfViewer();
 // Replace the "localhost:44396" with the actual URL of your server
 viewer.serviceUrl = 'https://localhost:44396/pdfviewer';
 viewer.appendTo('#pdfViewer');
-viewer.load('PDF_Succinctly.pdf', null);
+viewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
 
 ```
 
