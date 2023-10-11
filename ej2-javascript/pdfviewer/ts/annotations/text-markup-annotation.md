@@ -39,6 +39,9 @@ In the pan mode, if the highlight mode is entered, the PDF Viewer control will s
 Refer to the following code snippet to switch to highlight mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.html %}
 {% endhighlight %}
@@ -53,6 +56,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from highlight mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -88,6 +94,9 @@ In the pan mode, if the underline mode is entered, the PDF Viewer control will s
 Refer to the following code snippet to switch to underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.html %}
 {% endhighlight %}
@@ -102,6 +111,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -137,8 +149,11 @@ In the pan mode, if the strikethrough mode is entered, the PDF Viewer control wi
 Refer to the following code snippet to switch to strikethrough mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.html %}
 {% endhighlight %}
 {% endtabs %}
 
@@ -151,6 +166,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -252,6 +270,9 @@ Undo and redo actions can be done by the following ways:
 Refer to the following code snippet for calling undo and redo actions from the client-side.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.html %}
 {% endhighlight %}
