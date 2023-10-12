@@ -39,6 +39,9 @@ In the pan mode, if the highlight mode is entered, the PDF Viewer control will s
 Refer to the following code snippet to switch to highlight mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.html %}
 {% endhighlight %}
@@ -53,6 +56,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from highlight mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -88,6 +94,9 @@ In the pan mode, if the underline mode is entered, the PDF Viewer control will s
 Refer to the following code snippet to switch to underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.html %}
 {% endhighlight %}
@@ -102,6 +111,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -137,8 +149,11 @@ In the pan mode, if the strikethrough mode is entered, the PDF Viewer control wi
 Refer to the following code snippet to switch to strikethrough mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.html %}
 {% endhighlight %}
 {% endtabs %}
 
@@ -151,6 +166,9 @@ Add the below `serviceUrl` in the `index.ts` file
 Refer to the following code snippet to switch back to normal mode from underline mode.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.html %}
 {% endhighlight %}
@@ -203,7 +221,6 @@ Refer to the following code snippet to set the default annotation settings.
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -215,11 +232,10 @@ highlightSettings: {author: 'Guest User', subject: 'Important', color: '#ffff00'
 underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', color: '#00ffff', opacity: 0.9, modifiedDate: ''},
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -232,7 +248,7 @@ underlineSettings: {author: 'Guest User', subject: 'Points to be remembered', co
 strikethroughSettings: {author: 'Guest User', subject: 'Not Important', color: '#ff00ff', opacity: 0.9, modifiedDate: ''} });
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -254,6 +270,9 @@ Undo and redo actions can be done by the following ways:
 Refer to the following code snippet for calling undo and redo actions from the client-side.
 
 {% tabs %}
+{% highlight ts tabtitle="index.ts" %}
+{% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.ts %}
+{% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 {% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.html %}
 {% endhighlight %}
@@ -279,7 +298,7 @@ The PDF Viewer control provides an option to disable the text markup annotation 
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -288,10 +307,10 @@ TextSelection, Annotation);
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -301,7 +320,7 @@ TextSelection, Annotation);
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', enableTextMarkupAnnotation: false });
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
-```
+
 {% endhighlight %}
 {% endtabs %}
 
