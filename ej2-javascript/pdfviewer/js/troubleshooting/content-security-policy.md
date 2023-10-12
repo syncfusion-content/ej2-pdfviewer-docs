@@ -48,12 +48,15 @@ The resultant meta tag is included within the `<head>` tag and resolves the CSP 
 {% tabs %}
 {% highlight razor tabtitle="HTML" %}
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-    script-src 'self';
-    style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline' 'unsafe-eval';
-    img-src 'self' data: https: blob: 'unsafe-inline'; object-src 'self'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.syncfusion.com;
+    script-src 'self' https://cdn.syncfusion.com 'unsafe-inline' 'unsafe-eval' blob:;
+    font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/ data: cdn.syncfusion.com 'unsafe-inline';
+    style-src 'self' https://cdn.syncfusion.com https://fonts.googleapis.com 'unsafe-inline';
+    img-src 'self' data:"/>
 </head>
 {% endhighlight %}
 {% endtabs %}
 
 N> From the release 2023 Vol2 - 22.1 version, the Content Security Policy for Syncfusion PDF Viewer control has been enhanced by implementing a [function template](../template#function-template) approach for template properties to eliminate the usage of the `unsafe-eval` directive in the CSP meta tag.
+
+[View sample in GitHub]()
