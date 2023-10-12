@@ -48,10 +48,10 @@ The resultant meta tag is included within the `<head>` tag and resolves the CSP 
 {% tabs %}
 {% highlight razor tabtitle="HTML" %}
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.syncfusion.com;
-    script-src 'self' https://cdn.syncfusion.com 'unsafe-inline' 'unsafe-eval' blob:;
-    font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/ data: cdn.syncfusion.com 'unsafe-inline';
-    style-src 'self' https://cdn.syncfusion.com https://fonts.googleapis.com 'unsafe-inline';
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:;
+    font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/ data: 'unsafe-inline';
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
     img-src 'self' data:"/>
 </head>
 {% endhighlight %}
