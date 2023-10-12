@@ -59,4 +59,4 @@ The resultant meta tag is included within the `<head>` tag and resolves the CSP 
 
 N> From the release 2023 Vol2 - 22.1 version, the Content Security Policy for Syncfusion PDF Viewer control has been enhanced by implementing a [function template](../template#function-template) approach for template properties to eliminate the usage of the `unsafe-eval` directive in the CSP meta tag.
 
-[View sample in GitHub]()
+[View sample in GitHub](https://github.com/SyncfusionExamples/javascript-pdf-viewer-examples/tree/master/Troubleshooting/Content%20Security%20Policy)
