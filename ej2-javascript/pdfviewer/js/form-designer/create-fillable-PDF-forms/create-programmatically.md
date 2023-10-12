@@ -37,7 +37,7 @@ Using addFormField method, the form fields can be added to the PDF document prog
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`    
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`    
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/addformfield-cs1" %}
 
@@ -56,7 +56,7 @@ Using updateFormField method, Form Field can be updated programmatically. We sho
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/updateformfield-cs1" %}
 
@@ -75,7 +75,7 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.html` file
-`serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'`
+`serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'`
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/deleteformfield-cs1" %}
 
@@ -112,7 +112,7 @@ document.getElementById('download').addEventListener('click', function () {
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enableDownload: true,
                     documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
@@ -159,7 +159,7 @@ document.getElementById('print').addEventListener('click', function () {
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     enablePrint: true,
                     documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
@@ -240,7 +240,7 @@ viewer.validateFormFields = function (args) {
 
 var pdfviewer = new ej.pdfviewer.PdfViewer({
                     documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
-                    serviceUrl: 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer'
+                    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
                 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar, ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);
 pdfviewer.appendTo('#PdfViewer');
