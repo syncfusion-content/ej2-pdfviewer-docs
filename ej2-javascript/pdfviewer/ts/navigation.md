@@ -57,7 +57,6 @@ You can enable/disable page navigation option in PDF Viewer using the following 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -66,11 +65,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,
 let pdfviewer: PdfViewer = new PdfViewer({enableNavigation: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -80,7 +77,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableNavigation: true, documentPath:'
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 
@@ -124,7 +120,7 @@ Also, you can programmatically perform page navigation options as follows.
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 import {PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print TextSelection, TextSearch, Annotation, FormFields } from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection, TextSearch, Annotation, FormFields );
@@ -153,10 +149,10 @@ document.getElementById('goToPage').addEventListener('click', () => {
 document.getElementById('goToPreviousPage').addEventListener('click', () => {
   viewer.navigation.goToPreviousPage();
 });
-```
+
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 import {PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print TextSelection, TextSearch, Annotation, FormFields } from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection, TextSearch, Annotation, FormFields );
@@ -187,7 +183,7 @@ document.getElementById('goToPage').addEventListener('click', () => {
 document.getElementById('goToPreviousPage').addEventListener('click', () => {
   viewer.navigation.goToPreviousPage();
 });
-```
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -200,7 +196,7 @@ You can enable/disable bookmark navigation by using the following code snippet.,
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
+
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -209,10 +205,8 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableBookmark: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, Annotation, ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -222,7 +216,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableBookmark: true, documentPath:'ht
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 
@@ -269,8 +262,6 @@ You can enable/disable thumbnail navigation by using the following code snippet.
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
-
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -278,11 +269,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableThumbnail: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -292,7 +281,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableThumbnail: true, documentPath:'h
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 
@@ -313,8 +301,6 @@ You can enable/disable link navigation by using the following code snippet.,
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
-```ts
-
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection);
@@ -322,11 +308,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -336,7 +320,6 @@ let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'h
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% endtabs %}
 
@@ -344,7 +327,6 @@ You can change the open state of the hyperlink in the PDF Viewer by using the fo
 
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
-```ts
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -353,10 +335,9 @@ PdfViewer.Inject(Toolbar,Magnification,Navigation, Annotation, LinkAnnotation,Th
 let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', hyperlinkOpenState:'NewTab'});
 pdfviewer.appendTo('#PdfViewer');
 
-```
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
-```ts
+
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
 
@@ -366,7 +347,7 @@ let pdfviewer: PdfViewer = new PdfViewer({enableHyperlink: true, documentPath:'h
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 
-```
+
 {% endhighlight %}
 {% endtabs %}
 

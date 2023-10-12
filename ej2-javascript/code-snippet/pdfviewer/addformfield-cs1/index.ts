@@ -1,9 +1,9 @@
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
-    TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings, 
-    RadioButtonFieldSettings, CheckBoxFieldSettings, InitialFieldSettings, SignatureFieldSettings} from '@syncfusion/ej2-pdfviewer';
+         TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings, RadioButtonFieldSettings, 
+         CheckBoxFieldSettings, InitialFieldSettings, SignatureFieldSettings } from '@syncfusion/ej2-pdfviewer';
 
-PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
-TextSelection, Annotation, FormDesigner, FormFields);
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+                  BookmarkView, TextSelection, Annotation, FormDesigner, FormFields );
 
 let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
 pdfviewer.appendTo('#PdfViewer');

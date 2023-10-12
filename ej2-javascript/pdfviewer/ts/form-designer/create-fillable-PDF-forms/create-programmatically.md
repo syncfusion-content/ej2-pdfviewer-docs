@@ -127,6 +127,8 @@ You can invoke print action using the following code snippet.,
 {% tabs %}
 {% highlight ts tabtitle="Standalone" %}
 
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
          BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
@@ -141,6 +143,9 @@ pdfviewer.print.print();
 {% endhighlight %}
 {% highlight ts tabtitle="Server-Backed" %}
 
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation,ThumbnailView,BookmarkView, TextSelection} from '@syncfusion/ej2-pdfviewer';
+
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
          BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
@@ -152,7 +157,6 @@ pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfvie
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/form-designer.pdf', null);
 pdfviewer.print.print();
-
 
 {% endhighlight %}
 {% endtabs %}
@@ -200,7 +204,6 @@ pdfviewer.appendTo('#PdfViewer');
 document.getElementById('addPasswordField').addEventListener('click', function () {
     pdfviewer.formDesignerModule.setFormFieldMode("Password");
 });
-
 {% endhighlight %}
 {% endtabs %}
 
