@@ -7,7 +7,10 @@ import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,Thumbnail
 PdfViewer.Inject(Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation, FormDesigner, FormFields);
 
-let pdfviewer: PdfViewer = new PdfViewer({ documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf' });
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2-pdfviewer-lib" 
+});
 pdfviewer.appendTo('#PdfViewer');
 
 pdfviewer.documentLoad = function (args) {
