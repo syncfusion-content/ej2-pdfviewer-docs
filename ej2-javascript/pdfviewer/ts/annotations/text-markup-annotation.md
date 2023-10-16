@@ -150,10 +150,10 @@ Refer to the following code snippet to switch to strikethrough mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.ts %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.ts %}
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html.html %}
+{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html %}
 {% endhighlight %}
 {% endtabs %}
 
