@@ -1,6 +1,3 @@
-
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, 
     ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
