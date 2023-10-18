@@ -35,7 +35,7 @@ pdfviewer.documentLoad = function (args) {
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Month',bounds: { X: 386, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Date',bounds: { X: 434, Y: 923, Width: 35, Height: 24 }as TextFieldSettings} );
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Year',bounds: { X: 482, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
-pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
+    pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
 }
 
 
