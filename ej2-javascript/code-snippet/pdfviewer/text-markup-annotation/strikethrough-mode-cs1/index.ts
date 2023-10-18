@@ -7,9 +7,10 @@ PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailVie
                   BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
 
 let pdfviewer: PdfViewer = new PdfViewer({ 
-documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf' 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2-pdfviewer-lib",
+    serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
 });
-pdfviewer.resourceUrl ="https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2-pdfviewer-lib";
 pdfviewer.appendTo('#PdfViewer');
 
 document.getElementById('set').addEventListener('click', ()=> {
