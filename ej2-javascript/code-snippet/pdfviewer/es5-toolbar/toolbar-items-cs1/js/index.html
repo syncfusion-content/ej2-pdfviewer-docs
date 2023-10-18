@@ -10,8 +10,8 @@
           <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet">    
           <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet">
 
-            <!-- Essential JS 2 PDF Viewer's global script -->
-            <script src="https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2.min.js" type="text/javascript"></script>
+          <!-- Essential JS 2 PDF Viewer's global script -->
+          <script src="https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2.min.js" type="text/javascript"></script>
 </head>
        <body>
             <!--element which is going to render-->
@@ -23,7 +23,7 @@
                // Initialize PDF Viewer component.
                var pdfviewer = new ej.pdfviewer.PdfViewer({
                     documentPath: "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf",
-                    toolbarSettings: { showTooltip : true, toolbarItem: ['OpenOption']}
+                    toolbarSettings: { showTooltip : true, toolbarItems: ['OpenOption']}
                 });
                ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar,
                                              ej.pdfviewer.Magnification, ej.pdfviewer.Annotation, ej.pdfviewer.FormDesigner, ej.pdfviewer.FormFields);                             
