@@ -9,7 +9,8 @@ TextSelection, Annotation, FormDesigner, FormFields);
 
 let pdfviewer: PdfViewer = new PdfViewer({ 
     documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf',
-    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2-pdfviewer-lib" 
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.40/dist/ej2-pdfviewer-lib",
+    serviceUrl :'https://services.syncfusion.com/js/production/api/pdfviewer'  
 });
 pdfviewer.appendTo('#PdfViewer');
 
@@ -35,7 +36,7 @@ pdfviewer.documentLoad = function (args) {
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Month',bounds: { X: 386, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Date',bounds: { X: 434, Y: 923, Width: 35, Height: 24 }as TextFieldSettings} );
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Year',bounds: { X: 482, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
-pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
+    pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
 }
 
 
