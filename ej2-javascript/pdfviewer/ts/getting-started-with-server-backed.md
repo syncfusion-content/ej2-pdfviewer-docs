@@ -11,82 +11,73 @@ domainurl: ##DomainURL##
 
 # Getting started in ##Platform_Name## PDF Viewer control
 
-This section explains the steps to create a simple TypeScript PDF Viewer within your application and demonstrate its basic usage.
+This section briefly explains how to create **PDF Viewer** component and configure its available functionalities in TypeScript using the Essential JS 2 [quickstart](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-) seed repository.
 
-## Installation and configuration
+> This application is integrated with the `webpack.config.js` configuration and uses the latest version of the [webpack-cli](https://webpack.js.org/api/cli/#commands). It requires node `v14.15.0` or higher. For more information about webpack and its features, refer to the [webpack documentation](https://webpack.js.org/guides/getting-started/).
 
-To get started with PDF Viewer component, you can clone the [`Essential JS 2 quickstart`](https://github.com/syncfusion/ej2-quickstart.git) project and install necessary packages by using the following commands.
+## Set up development environment
 
-```
-git clone https://github.com/syncfusion/ej2-quickstart.git quickstart
-cd quickstart
+Open the command prompt from the required directory, and run the following command to clone the Syncfusion JavaScript (Essential JS 2) quickstart project from [GitHub](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-).
+
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
+
+After cloning the application in the `ej2-quickstart` folder, run the following command line to navigate to the `ej2-quickstart` folder.
+
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+cd ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
+
+## Add Syncfusion JavaScript packages
+
+Syncfusion JavaScript (Essential JS 2) packages are available on the [npmjs.com](https://www.npmjs.com/~syncfusionorg) public registry. You can install all Syncfusion JavaScript (Essential JS 2) controls in a single [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package or individual packages for each control.
+
+The quickstart application is preconfigured with the dependent [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package in the `~/package.json` file. Use the following command to install the dependent npm packages from the command prompt.
+
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
 npm install
-```
 
-## Configuration system JS
+{% endhighlight %}
+{% endtabs %}
 
-[Syncfusion PDF Viewer packages](#dependencies) should be mapped in the `system.config.js` configuration file.
+## Import the Syncfusion CSS styles
 
-```javascript
-System.config({
-    paths: {
-        'syncfusion:': './node_modules/@syncfusion/',
-    },
-    map: {
-        app: 'app',
+Add the components CSS in the `~/src/styles/styles.css` file, as shown below: 
 
-        //Syncfusion packages mapping
-        "@syncfusion/ej2-base": "syncfusion:ej2-base/dist/ej2-base.umd.min.js",
-        "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
-        "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
-        "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",
-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
-        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js",
-        "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
-        "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
-        "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
-        "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",
-        "@syncfusion/ej2-notifications": "syncfusion:ej2-notifications/dist/ej2-notifications.umd.min.js",
-        "@syncfusion/ej2-pdfviewer": "syncfusion:ej2-pdfviewer/dist/ej2-pdfviewer.umd.min.js",
-        "@syncfusion/ej2-drawings": "syncfusion:ej2-drawings/dist/ej2-drawings.umd.min.js",
-        "@syncfusion/ej2-calendars": "syncfusion:ej2-calendars/dist/ej2-calendars.umd.min.js",
-        "@syncfusion/ej2-richtexteditor": "syncfusion:ej2-richtexteditor/dist/ej2-richtexteditor.umd.min.js",
-        "@syncfusion/ej2-filemanager": "syncfusion:ej2-filemanager/dist/ej2-filemanager.umd.min.js",
-        "@syncfusion/ej2-layouts": "syncfusion:ej2-layouts/dist/ej2-layouts.umd.min.js",
-        "@syncfusion/ej2-grids": "syncfusion:ej2-grids/dist/ej2-grids.umd.min.js",
-        "@syncfusion/ej2-excel-export": "syncfusion:ej2-excel-export/dist/ej2-excel-export.umd.min.js",
-        "@syncfusion/ej2-pdf-export": "syncfusion:ej2-pdf-export/dist/ej2-pdf-export.umd.min.js",
-        "@syncfusion/ej2-compression": "syncfusion:ej2-compression/dist/ej2-compression.umd.min.js",
-        "@syncfusion/ej2-file-utils": "syncfusion:ej2-file-utils/dist/ej2-file-utils.umd.min.js"
-    },
-    packages: {
-        'app': { main: 'app', defaultExtension: 'js' }
-    }
-});
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
 
-System.import('app');
-```
+@import '../../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import '../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+@import '../../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+@import '../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import "../../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-notifications/styles/material.css";
 
-## Adding CSS reference
-
-Add the components CSS in `[src/styles/styles.css]` using the following code.
-
-```
-@import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
-@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
-@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
-@import "../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css";
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Adding PDF Viewer component
 
 * Add the PDF Viewer component following code in the `app.ts`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
+
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
 PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner);
@@ -95,13 +86,17 @@ let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf', null);
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 N> From 23.1 version, it is must to call **pdfviewer.dataBind();** before load function. Refer [here](./troubleshooting/document-loading-issues) for more details.
 
 * Add an HTML div element to act as the PDF Viewer element `index.html` using the following code.
 
-```html
+{% tabs %}
+{% highlight html tabtitle="index.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,13 +108,6 @@ N> From 23.1 version, it is must to call **pdfviewer.dataBind();** before load f
     <meta name="author" content="Syncfusion" />
     <link rel="shortcut icon" href="resources/favicon.ico" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!--style reference from app-->
-    <link href="/styles/styles.css" rel="stylesheet" />
-
-    <!--system js reference and configuration-->
-    <script src="node_modules/systemjs/dist/system.src.js" type="text/javascript"></script>
-    <script src="system.config.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -128,15 +116,21 @@ N> From 23.1 version, it is must to call **pdfviewer.dataBind();** before load f
 </body>
 
 </html>
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Run the application
 
 The quickstart project is configured to compile and run the application in the browser. Use the following command to run the application.
 
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
 npm start
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 Output will be displayed as follows.
 
@@ -200,12 +194,16 @@ These modules should be injected into the PDF Viewer using `PdfViewer.Inject` me
 
 5.You can see that the PDF Viewer server instance runs in the localhost with the port number [`localhost:5001`](https://localhost:5001/) and navigate to the PDF Viewer Web control [`localhost:5001/pdfviewer`](https://localhost:5001/pdfviewer) which returns the default get response method. We can bind the link to the `serviceUrl` property of PDF Viewer as below.
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
+
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.serviceUrl = 'https://localhost:5001/pdfviewer';
 pdfviewer.appendTo('#PdfViewer');
 pdfviewer.load('PDF_Succinctly.pdf', null);
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 N> When configuring the server-backed PDF viewer, it's essential to understand that there is no need to include the pdfium.js and pdfium.wasm files. Unlike the standalone PDF viewer, which relies on these files for local rendering, the server-backed PDF viewer fetches and renders PDFs directly from the server. Consequently, you can exclude the copy command for deployment process, as they are not required to load and display PDFs in this context.
 
