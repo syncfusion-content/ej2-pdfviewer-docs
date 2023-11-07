@@ -1,5 +1,5 @@
 var pdfviewer = new ej.pdfviewer.PdfViewer({
-    documentPath: "https://cdn.syncfusion.com/content/pdf/form-designer.pdf",
+    documentPath: 'https://cdn.syncfusion.com/content/pdf/form-designer.pdf',
     serviceUrl: 'https://services.syncfusion.com/js/production/api/pdfviewer'
 });
 ej.pdfviewer.PdfViewer.Inject(ej.pdfviewer.TextSelection, ej.pdfviewer.TextSearch, ej.pdfviewer.Print, ej.pdfviewer.Navigation, ej.pdfviewer.Toolbar,
