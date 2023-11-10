@@ -40,10 +40,66 @@ Refer to the following code snippet to switch to highlight mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+         TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+    
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+                  BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Highlight');
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/highlight-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+
+<body>
+
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Highlight</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+        
+<script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -57,10 +113,69 @@ Refer to the following code snippet to switch back to normal mode from highlight
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+    TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+             BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Highlight');
+});
+
+document.getElementById('setNone').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('None');
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/highlight-normal-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+<body>
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Highlight</button>
+    <!--Element to set normal mode-->
+    <button id="setNone">Normal Mode</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+    <script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
           
@@ -95,10 +210,64 @@ Refer to the following code snippet to switch to underline mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+    TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+                  BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Underline');
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/underline-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+<body>
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Underline</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+    <script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -112,10 +281,69 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+    TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+             BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Underline');
+});
+
+document.getElementById('setNone').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('None');
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/underline-normal-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+<body>
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Underline</button>
+    <!--Element to set normal mode-->
+    <button id="setNone">Normal Mode</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+    <script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -150,10 +378,63 @@ Refer to the following code snippet to switch to strikethrough mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+         TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+                  BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Strikethrough');
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+<body>
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Strikethrough</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+    <script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -167,10 +448,68 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject(Toolbar,Magnification,Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
+TextSelection, Annotation);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('set').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('Strikethrough');
+});
+
+document.getElementById('setNone').addEventListener('click', ()=> {
+    pdfviewer.annotation.setAnnotationMode('None');
+});
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/strikethrough-normal-mode-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+
+<body>
+    <div id='loader'>Loading....</div>
+	<!--Element to set text markup annotation mode-->
+    <button id="set">Strikethrough</button>
+    <!--Element to set normal mode-->
+    <button id="setNone">Normal Mode</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+    <script src="index.ts" type="text/typescript"></script>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
@@ -271,10 +610,68 @@ Refer to the following code snippet for calling undo and redo actions from the c
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.ts %}
+
+
+import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
+    TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
+PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation,ThumbnailView,
+             BookmarkView, TextSelection, Annotation, FormDesigner, FormFields);
+
+let pdfviewer: PdfViewer = new PdfViewer({ 
+    documentPath:'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+    resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
+});
+pdfviewer.appendTo('#PdfViewer');
+
+document.getElementById('undo').addEventListener('click', ()=> {
+    pdfviewer.undo();
+});
+
+document.getElementById('redo').addEventListener('click', ()=> {
+    pdfviewer.redo();
+});
+
+
+
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
-{% include code-snippet/pdfviewer/text-markup-annotation/undo-redo-cs1/index.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 PDF Viewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Typescript PDF Viewer Control" />
+    <meta name="author" content="Syncfusion" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+ 	<script src="systemjs.config.js"></script>
+</head>
+<body>
+    <div id='loader'>Loading....</div>
+    <!--Element to call undo-->
+    <button id="undo">Undo</button>
+    <!--Element to call redo-->
+    <button id="redo"> Redo</button>
+    <div id='container'>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
+    </div>
+</body>
+</html>
+
 {% endhighlight %}
 {% endtabs %}
 
