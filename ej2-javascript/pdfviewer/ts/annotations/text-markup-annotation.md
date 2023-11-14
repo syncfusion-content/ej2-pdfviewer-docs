@@ -94,7 +94,6 @@ document.getElementById('set').addEventListener('click', ()=> {
 <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -165,7 +164,6 @@ document.getElementById('setNone').addEventListener('click', ()=> {
     <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
           
@@ -252,7 +250,6 @@ document.getElementById('set').addEventListener('click', ()=> {
     <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -323,7 +320,6 @@ document.getElementById('setNone').addEventListener('click', ()=> {
     <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -409,7 +405,6 @@ document.getElementById('set').addEventListener('click', ()=> {
     <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -482,7 +477,6 @@ document.getElementById('setNone').addEventListener('click', ()=> {
     <script src="index.ts" type="text/typescript"></script>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -639,7 +633,6 @@ document.getElementById('redo').addEventListener('click', ()=> {
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 

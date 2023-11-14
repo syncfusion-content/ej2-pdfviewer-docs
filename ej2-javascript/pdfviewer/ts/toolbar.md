@@ -112,7 +112,6 @@ pdfviewer.appendTo('#PdfViewer');
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -175,7 +174,6 @@ document.getElementById('set').addEventListener('click', ()=> {
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -239,7 +237,6 @@ pdfviewer.appendTo('#PdfViewer');
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -302,7 +299,6 @@ document.getElementById('set').addEventListener('click', ()=> {
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 

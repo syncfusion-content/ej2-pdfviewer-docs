@@ -92,7 +92,6 @@ pdfviewer.appendTo('#PdfViewer');
 
 {% tabs %}
 {% highlight html tabtitle="index.html" %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,7 +111,6 @@ pdfviewer.appendTo('#PdfViewer');
 </body>
 
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -175,7 +173,6 @@ pdfviewer.appendTo('#PdfViewer');
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
           

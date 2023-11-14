@@ -97,7 +97,6 @@ pdfviewer.documentLoad = function (args) {
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -183,7 +182,6 @@ pdfviewer.formDesignerModule.updateFormField(pdfviewer.formFieldCollections[0], 
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
@@ -269,7 +267,6 @@ pdfviewer.documentLoad = function (args) {
     </div>
 </body>
 </html>
-
 {% endhighlight %}
 {% endtabs %}
 
