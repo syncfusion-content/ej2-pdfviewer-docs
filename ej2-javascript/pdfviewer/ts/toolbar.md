@@ -78,7 +78,6 @@ let pdfviewer: PdfViewer = new PdfViewer({
     resourceUrl:"https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib"
 });
 pdfviewer.appendTo('#PdfViewer');
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -127,7 +126,6 @@ Add the below `serviceUrl` in the `index.ts` file
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, 
     BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner} from '@syncfusion/ej2-pdfviewer';
 
@@ -141,12 +139,7 @@ let pdfviewer: PdfViewer = new PdfViewer({
 pdfviewer.appendTo('#PdfViewer');
 document.getElementById('set').addEventListener('click', ()=> {
     pdfviewer.toolbar.showToolbar(false);
-}); 
-
-
-
-
-
+});
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -212,10 +205,6 @@ let pdfviewer: PdfViewer = new PdfViewer({
     toolbarSettings: { showTooltip : true, toolbarItems: ['OpenOption']}
 });
 pdfviewer.appendTo('#PdfViewer');
-
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -277,9 +266,7 @@ let pdfviewer: PdfViewer = new PdfViewer({
 pdfviewer.appendTo('#PdfViewer');
 document.getElementById('set').addEventListener('click', ()=> {
     pdfviewer.toolbar.showToolbarItem(["OpenOption"],false);
-}); 
-
-
+});
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>

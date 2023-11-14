@@ -150,9 +150,6 @@ pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Date',bounds: {
 pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Year',bounds: { X: 482, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
 pdfviewer.formDesignerModule.updateFormField(pdfviewer.formFieldCollections[0], { backgroundColor: 'red' } as TextFieldSettings);
 }
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -202,8 +199,6 @@ Using deleteFormField method, the form field can be deleted programmatically. We
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
     TextSelection, Annotation, FormDesigner, FormFields, TextFieldSettings, 
     RadioButtonFieldSettings, CheckBoxFieldSettings, InitialFieldSettings, SignatureFieldSettings} from '@syncfusion/ej2-pdfviewer';
@@ -241,9 +236,6 @@ pdfviewer.documentLoad = function (args) {
     pdfviewer.formDesignerModule.addFormField('Textbox', {name: 'DOS Year',bounds: { X: 482, Y: 923, Width: 35, Height: 24 }as TextFieldSettings,});
     pdfviewer.formDesignerModule.deleteFormField(pdfviewer.formFieldCollections[0]);
 }
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>

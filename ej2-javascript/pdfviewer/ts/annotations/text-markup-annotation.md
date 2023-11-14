@@ -40,8 +40,6 @@ Refer to the following code snippet to switch to highlight mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
          TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
     
@@ -57,9 +55,6 @@ pdfviewer.appendTo('#PdfViewer');
 document.getElementById('set').addEventListener('click', ()=> {
     pdfviewer.annotation.setAnnotationMode('Highlight');
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -113,8 +108,6 @@ Refer to the following code snippet to switch back to normal mode from highlight
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
     TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
 
@@ -134,9 +127,6 @@ document.getElementById('set').addEventListener('click', ()=> {
 document.getElementById('setNone').addEventListener('click', ()=> {
     pdfviewer.annotation.setAnnotationMode('None');
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -210,8 +200,6 @@ Refer to the following code snippet to switch to underline mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
     TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
 
@@ -227,9 +215,6 @@ pdfviewer.appendTo('#PdfViewer');
 document.getElementById('set').addEventListener('click', ()=> {
     pdfviewer.annotation.setAnnotationMode('Underline');
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -281,8 +266,6 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
     TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
 
@@ -302,9 +285,6 @@ document.getElementById('set').addEventListener('click', ()=> {
 document.getElementById('setNone').addEventListener('click', ()=> {
     pdfviewer.annotation.setAnnotationMode('None');
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -378,8 +358,6 @@ Refer to the following code snippet to switch to strikethrough mode.
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
          TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
 
@@ -395,9 +373,6 @@ pdfviewer.appendTo('#PdfViewer');
 document.getElementById('set').addEventListener('click', ()=> {
     pdfviewer.annotation.setAnnotationMode('Strikethrough');
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
@@ -448,8 +423,6 @@ Refer to the following code snippet to switch back to normal mode from underline
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView,BookmarkView,
 TextSelection, Annotation} from '@syncfusion/ej2-pdfviewer';
 
@@ -610,8 +583,6 @@ Refer to the following code snippet for calling undo and redo actions from the c
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
-
-
 import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
     TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
 
@@ -631,9 +602,6 @@ document.getElementById('undo').addEventListener('click', ()=> {
 document.getElementById('redo').addEventListener('click', ()=> {
     pdfviewer.redo();
 });
-
-
-
 {% endhighlight %}
 {% highlight html tabtitle="index.html" %}
 <!DOCTYPE html>
