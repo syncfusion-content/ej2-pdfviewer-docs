@@ -32,3 +32,28 @@ Use the following CSS to customize the PDF Viewer container
         background-color: red;
 }
 ```
+## Customizing the PDF Viewer container
+
+Use the following CSS to customize the PDF Viewer container
+
+```
+/* To specify background color*/
+.e-pv-viewer-container  {
+        background-color: red;
+}
+```
+
+## Customizing the bookmark of the PDF Viewer
+
+Use the following CSS to customize the bookmark of the PDF Viewer
+
+```
+/* To specify color of the bookmark */
+  .e-pdfviewer .e-pv-bookmark-icon{
+    color: rgb(24, 182, 231);
+  }
+  .e-pdfviewer .e-pv-bookmark-icon:hover{
+    color: rgb(226, 76, 11);
+  }
+
+```
