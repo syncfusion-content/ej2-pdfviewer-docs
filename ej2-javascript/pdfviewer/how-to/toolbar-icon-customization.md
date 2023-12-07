@@ -21,9 +21,9 @@ PDF Viewer allows you to customize(add, show, hide, enable, and disable) existin
 
 * Enable, Disable -  Toolbar items can be enabled or disable using [`enableItems`](https://ej2.syncfusion.com/javascript/documentation/api/pdfviewer/toolbar/#enabletoolbaritem)
 
-```ts
+```js
 
-let viewer: PdfViewer = new PdfViewer();
+var viewer = new PdfViewer();
 var toolItem = {
    prefixIcon: 'e-icons e-paste',
    cssClass: 'e-de-toolbar-btn-end e-de-lock-dropdownbutton',
