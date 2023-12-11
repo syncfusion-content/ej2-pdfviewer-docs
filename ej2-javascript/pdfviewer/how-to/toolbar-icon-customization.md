@@ -21,7 +21,9 @@ PDF Viewer allows you to customize(add, show, hide, enable, and disable) existin
 
 * Enable, Disable -  Toolbar items can be enabled or disable using [`enableItems`](https://ej2.syncfusion.com/javascript/documentation/api/pdfviewer/toolbar/#enabletoolbaritem)
 
-```js
+{% tabs %}
+{% highlight js tabtitle="Standalone" %}
+ 
    let toolItem: CustomToolbarItemModel = {
       prefixIcon: 'e-icons e-paste',
       id: 'print',
@@ -43,7 +45,35 @@ PDF Viewer allows you to customize(add, show, hide, enable, and disable) existin
          viewer.download();
       }
    };
+
+{% endhighlight %}
+{% highlight js tabtitle="Server-Backed" %}
+
+   let toolItem: CustomToolbarItemModel = {
+      prefixIcon: 'e-icons e-paste',
+      id: 'print',
+      tooltipText: 'Custom toolbar item',
+      align: 'left'
+   };
     
-```
+   //Initialize EJ2 Pdfviewer Container component with custom toolbar item.
+   let viewer: PdfViewer = new PdfViewer();
+   viewer.toolbarSettings = { toolbarItems: [toolItem, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']}
+   viewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
+   viewer.appendTo("#pdfViewer");
+    
+   //To handle custom toolbar click event.
+   viewer.toolbarClick = function (args) {
+      if (args.item && args.item.id === 'print') {
+         viewer.printModule.print();
+      }
+      else if (args.item && args.item.id === 'download') {
+         viewer.download();
+      }
+   };
+
+{% endhighlight %}
+{% endtabs %}
+
 
 >Note : Default value of toolbar items is ['OpenOption', 'PageNavigationTool','MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption','UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm'] 
