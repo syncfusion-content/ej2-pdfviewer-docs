@@ -22,19 +22,19 @@ PDF Viewer allows you to customize(add, show, hide, enable, and disable) existin
 * Enable, Disable -  Toolbar items can be enabled or disable using [`enableItems`](https://ej2.syncfusion.com/javascript/documentation/api/pdfviewer/toolbar/#enabletoolbaritem)
 
 ```js
-
-var viewer = new PdfViewer();
-var toolItem = {
-   prefixIcon: 'e-icons e-paste',
-   cssClass: 'e-de-toolbar-btn-end e-de-lock-dropdownbutton',
-   id: 'print',
-   text: 'Save',
-   tooltipText: 'Custom toolbar item',
-};
-viewer.toolbarSettings = { toolbarItems: [toolItem, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']}
-viewer.appendTo("#pdfViewer");
-
-//To handle custom toolbar click event.
+   let toolItem: CustomToolbarItemModel = {
+      prefixIcon: 'e-icons e-paste',
+      id: 'print',
+      tooltipText: 'Custom toolbar item',
+      align: 'left'
+   };
+    
+   //Initialize EJ2 Pdfviewer Container component with custom toolbar item.
+   let viewer: PdfViewer = new PdfViewer();
+   viewer.toolbarSettings = { toolbarItems: [toolItem, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']}
+   viewer.appendTo("#pdfViewer");
+    
+   //To handle custom toolbar click event.
    viewer.toolbarClick = function (args) {
       if (args.item && args.item.id === 'print') {
          viewer.printModule.print();
@@ -43,8 +43,7 @@ viewer.appendTo("#pdfViewer");
          viewer.download();
       }
    };
-};
-
+    
 ```
 
->Note : Default value of toolbar items is ['OpenOption', 'PageNavigationTool','MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption','UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']
+>Note : Default value of toolbar items is ['OpenOption', 'PageNavigationTool','MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption','UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm'] 
