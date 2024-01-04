@@ -45,12 +45,19 @@ The accessibility compliance for the PDF Viewer component is outlined below.
 
 | Attributes | Purpose |
 | --- | --- |
-|||
-|||
-|||
-|||
-|||
-|||
+| `aria-disabled`| Indicates whether the PDF Viewer component is in a disabled state or not.|
+| `aria-expanded`| Indicates whether the suggestion list has expanded or not. |
+| `aria-readonly` | Indicates the readonly state of the PDF Viewer element. |
+| `aria-haspopup` | Indicates whether the PDF Viewer input element has a suggestion list or not. |
+| `aria-label` | Indicates the breadcrumb item text. |
+| `aria-labelledby` | Provides a label for the pdfviewer. Typically, the "aria-labelledby" attribute will contain the id of the element used as the pdfviewer's title. |
+| `aria-describedby` | This attribute points to the pdfviewer element describing the one it's set on. |
+| `aria-orientation` | Indicates whether the pdfviewer element is oriented horizontally or vertically. |
+| `aria-valuetext` | Returns the current text of the pdfviewer. |
+| `aria-valuemax` | Indicates the Maximum value of the pdfviewer. |
+| `aria-valuemin` | Indicates the Minimum value of the pdfviewer. |
+| `aria-valuenow` | Indicates the current value of the pdfviewer. |
+| `aria-controls` | Attribute is set to the button and it points to the corresponding content. |
 
 ## Keyboard interaction
 
@@ -114,6 +121,7 @@ The PDF Viewer component followed the [keyboard interaction](https://www.w3.org/
         var viewer = new ej.pdfviewer.PdfViewer({
         //Sets the document path for initial loading
         documentPath: 'https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf',
+        resourceUrl: "https://cdn.syncfusion.com/ej2/24.1.41/dist/ej2-pdfviewer-lib"
 });
 //Inject the dependencies required to render the PDF Viewer
 ej.pdfviewer.PdfViewer.Inject(
