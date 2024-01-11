@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Feature module in ##Platform_Name## Pdfviewer control | Syncfusion
-description: Learn here all about Feature module in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
+title: Feature module in JavaScript Pdfviewer Control | Syncfusion
+description: Learn here all about feature module in Syncfusion Essential JavaScript Pdfviewer control, its elements and more.
 platform: ej2-javascript
 control: Feature module 
 publishingplatform: ##Platform_Name##
@@ -9,7 +9,7 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Feature module in ##Platform_Name## Pdfviewer control
+# Feature module in JavaScript Pdfviewer Control
 
 The PDF Viewer features are segregated into individual feature-wise modules to enable selectively referencing in the application. The required modules should be injected to extend its functionality. The following are the selective modules of PDF Viewer that can be included as required:
 
