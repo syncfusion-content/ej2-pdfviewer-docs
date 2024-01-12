@@ -15,7 +15,7 @@ domainurl: ##DomainURL##
 
 PDF Viewer allows you to customize(add, show, hide, enable, and disable) existing items in a toolbar.
 
-* Add - New items can defined by **CustomToolbarItemModel** and with existing items in [**ToolbarSettings**](https://ej2.syncfusion.com/documentation/api/pdfviewer/toolbarSettings/) property. Newly added item click action can be defined in [`toolbarclick`](https://ej2.syncfusion.com/documentation/api/toolbar/clickEventArgs/).
+* Add - New items can defined by [**CustomToolbarItemModel**](https://ej2.syncfusion.com/documentation/api/pdfviewer/customToolbarItemModel/) and with existing items in [**ToolbarSettings**](https://ej2.syncfusion.com/documentation/api/pdfviewer/toolbarSettings/) property. Newly added item click action can be defined in [`toolbarclick`](https://ej2.syncfusion.com/documentation/api/toolbar/clickEventArgs/).
 
 * Show, Hide - Existing items can be shown or hidden using the [`ToolbarSettings`](https://ej2.syncfusion.com/documentation/api/pdfviewer/toolbarSettings/) property. Pre-defined toolbar items are available with [`ToolbarItem`](https://ej2.syncfusion.com/documentation/api/pdfviewer/toolbarItem/).
 
@@ -25,21 +25,42 @@ PDF Viewer allows you to customize(add, show, hide, enable, and disable) existin
 {% highlight js tabtitle="Standalone" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner,Print,CustomToolbarItemModel} from '@syncfusion/ej2-pdfviewer';
-
+import { ComboBox } from "@syncfusion/ej2-dropdowns";
+import { TextBox } from "@syncfusion/ej2-inputs";
 PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner,Print);
-let toolItem: CustomToolbarItemModel = {
+let toolItem1: CustomToolbarItemModel = {
     prefixIcon: 'e-icons e-paste',
     id: 'print',
     tooltipText: 'Custom toolbar item',
-    align: 'left'
 };
+let toolItem2: CustomToolbarItemModel = {
+    id: 'download',
+    text: 'Save',
+    tooltipText: 'Custom toolbar item',
+    align: 'right'
+};
+let LanguageList: string[] = ['Typescript', 'Javascript', 'Angular', 'C#', 'C', 'Python'];
+let toolItem3: CustomToolbarItemModel = {
+    type: 'Input',
+    tooltipText: 'Language List',
+    cssClass: 'percentage',
+    align: 'Left',
+    id: 'dropdown',
+    template: new ComboBox({ width: 100, value: 'TypeScript', dataSource: LanguageList, popupWidth: 85, showClearButton: false, readonly: false })  
+};
+let toolItem4: CustomToolbarItemModel = {
+    type: 'Input',
+    tooltipText: 'Text',
+    align: 'Right',
+    cssClass: 'find',
+    id: 'textbox',
+    template: new TextBox({ width: 125, placeholder: 'Type Here', created: OnCreateSearch })
+}
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.documentPath = "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf";
 pdfviewer.resourceUrl = "https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib";
-pdfviewer.toolbarSettings = { toolbarItems: [toolItem, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']}
-   
+pdfviewer.toolbarSettings = { toolbarItems: [toolItem1, toolItem2, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', toolItem3, 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', toolItem4, 'CommentTool', 'SubmitForm']}
 pdfviewer.appendTo('#PdfViewer');
-
 //To handle custom toolbar click event.
 pdfviewer.toolbarClick = function (args) {
    if (args.item && args.item.id === 'print') {
@@ -49,24 +70,49 @@ pdfviewer.toolbarClick = function (args) {
       pdfviewer.download();
    }
 };
+function OnCreateSearch(this: any): any {
+    this.addIcon('prepend', 'e-icons e-search');
+}
 
 {% endhighlight %}
 {% highlight js tabtitle="Server-Backed" %}
 
 import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner,Print,CustomToolbarItemModel} from '@syncfusion/ej2-pdfviewer';
-
+import { ComboBox } from "@syncfusion/ej2-dropdowns";
+import { TextBox } from "@syncfusion/ej2-inputs";
 PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner,Print);
-let toolItem: CustomToolbarItemModel = {
+let toolItem1: CustomToolbarItemModel = {
     prefixIcon: 'e-icons e-paste',
     id: 'print',
     tooltipText: 'Custom toolbar item',
-    align: 'left'
 };
+let toolItem2: CustomToolbarItemModel = {
+    id: 'download',
+    text: 'Save',
+    tooltipText: 'Custom toolbar item',
+    align: 'right'
+};
+let LanguageList: string[] = ['Typescript', 'Javascript', 'Angular', 'C#', 'C', 'Python'];
+let toolItem3: CustomToolbarItemModel = {
+    type: 'Input',
+    tooltipText: 'Language List',
+    cssClass: 'percentage',
+    align: 'Left',
+    id: 'dropdown',
+    template: new ComboBox({ width: 100, value: 'TypeScript', dataSource: LanguageList, popupWidth: 85, showClearButton: false, readonly: false })  
+};
+let toolItem4: CustomToolbarItemModel = {
+    type: 'Input',
+    tooltipText: 'Text',
+    align: 'Right',
+    cssClass: 'find',
+    id: 'textbox',
+    template: new TextBox({ width: 125, placeholder: 'Type Here', created: OnCreateSearch })
+}
 let pdfviewer: PdfViewer = new PdfViewer();
 pdfviewer.documentPath = "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf";
 pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';
-pdfviewer.toolbarSettings = { toolbarItems: [toolItem, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']}
-   
+pdfviewer.toolbarSettings = { toolbarItems: [toolItem1, toolItem2, 'OpenOption', 'PageNavigationTool', 'MagnificationTool', toolItem3, 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption', 'UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', toolItem4, 'CommentTool', 'SubmitForm']}
 pdfviewer.appendTo('#PdfViewer');
 //To handle custom toolbar click event.
 pdfviewer.toolbarClick = function (args) {
@@ -77,8 +123,40 @@ pdfviewer.toolbarClick = function (args) {
       pdfviewer.download();
    }
 };
-
+function OnCreateSearch(this: any): any {
+    this.addIcon('prepend', 'e-icons e-search');
+}
 {% endhighlight %}
 {% endtabs %}
 
->Note : Default value of toolbar items is ['OpenOption', 'PageNavigationTool','MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption','UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']
+N> Default value of toolbar items is ['OpenOption', 'PageNavigationTool','MagnificationTool', 'PanTool', 'SelectionTool', 'SearchOption', 'PrintOption', 'DownloadOption','UndoRedoTool', 'AnnotationEditTool', 'FormDesignerEditTool', 'CommentTool', 'SubmitForm']
+
+### Align Property
+
+The align property is used to specify the alignment of a toolbar item within the toolbar.
+
+`Left`: Aligns the item to the left side of the toolbar.
+`Right`: Aligns the item to the right side of the toolbar.
+
+### Tooltip Property
+
+The tooltip property is used to set the tooltip text for a toolbar item. Tooltip provides additional information when a user hovers over the item.
+
+### CssClass Property
+
+The cssClass property is used to apply custom CSS classes to a toolbar item. It allows custom styling of the toolbar item.
+
+### Prefix Property
+
+The prefix property is used to set the CSS class or icon that should be added as a prefix to the existing content of the toolbar item.
+
+### ID Property
+
+The id property within a CustomToolbarItemModel is a compulsory attribute that plays a vital role in toolbar customization. It serves as a unique identifier for each toolbar item, facilitating distinct references and interactions.
+
+When defining or customizing toolbar items, it is mandatory to assign a specific and descriptive id to each item. 
+These properties are commonly used when defining custom toolbar items with the `CustomToolbarItemModel`` in the context of Syncfusion PDF Viewer. When configuring the toolbar using the `ToolbarSettings`` property, you can include these properties to customize the appearance and behavior of each toolbar item.
+
+N> When customizing toolbar items, you have the flexibility to include either icons or text based on your design preference.
+
+[View sample in GitHub](https://github.com/SyncfusionExamples/typescript-pdf-viewer-examples/tree/master/How%20to/customize%20existing%20toolbar)
