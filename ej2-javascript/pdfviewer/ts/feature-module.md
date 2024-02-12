@@ -27,7 +27,7 @@ The available PdfViewer modules are:
 * **Annotation**:- Annotations can be added or edited in the PDF document.
 * **FormFields**:- Preserve the form fields in the PDF document.
 * **FormDesigner**:- Form fields can be added or edited in the PDF document.
-* **StickyNotesAnnotation**:- Adding sticky notes to PDF documents.
+* **StickyNotesAnnotation**:- Adding sticky notes to the PDF document.
 
 >In addition to injecting the required modules in your application, enable corresponding properties to extend the functionality for a PDF Viewer instance.
 Refer to the following table.
