@@ -28,6 +28,7 @@ The following table shows built-in toolbar items and its actions:-
 | UndoRedoTool | This tool provides options to undo and redo the annotation actions performed in the PDF Viewer.|
 | AnnotationEditTool | This tool provides options to enable or disable the edit mode of annotation in the PDF Viewer.|
 | FormDesignerEditTool | This tool provides options to enable or disable the edit mode of form fields in the PDF Viewer.|
+| CommentTool | This tool facilitates the addition of sticky notes to the pages of PDF documents in the PDF Viewer.|
 
 ## Show/Hide the default toolbar
 
