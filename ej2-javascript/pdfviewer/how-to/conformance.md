@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Know the supported conformance PDF documents | Syncfusion
-description: Learn here all about the supported conformance PDF documents in Syncfusion Javascript Pdfviewer component of Syncfusion Essential JS 2 and more.
+description: Learn here all about the supported conformance PDF documents in Syncfusion Javascript PDF Viewer component of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: Conformance
 publishingplatform: ##Platform_Name##
@@ -9,7 +9,7 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Know the supported conformance PDF documents in Javascript Pdfviewer component
+# Know the supported conformance PDF documents in Javascript PDF Viewer component
 
 The PDF Viewer supports the below conformance documents:
 
