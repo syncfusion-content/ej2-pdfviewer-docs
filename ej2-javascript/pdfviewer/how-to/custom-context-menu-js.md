@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Customize context menu in ##Platform_Name## Pdfviewer control | Syncfusion
-description: Learn here all about Customize context menu in Syncfusion ##Platform_Name## Pdfviewer control of Syncfusion Essential JS 2 and more.
+title: Customize context menu in ##Platform_Name## PDF Viewer control | Syncfusion
+description: Learn here all about Customize context menu in Syncfusion ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: PDF Viewer
 publishingplatform: ##Platform_Name##
