@@ -1,7 +1,7 @@
 ---
 layout: post
-title: PageRenderStarted and PageRenderCompleted event in ##Platform_Name## PDF Viewer control | Syncfusion
-description: Learn here all about PageRenderStarted and PageRenderCompleted event in Syncfusion ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more.
+title: pageRenderStarted and PageRenderCompleted event in ##Platform_Name## PDF Viewer control | Syncfusion
+description: Learn here all about pageRenderStarted and PageRenderCompleted event in Syncfusion ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: PDF Viewer
 publishingplatform: ##Platform_Name##
@@ -9,13 +9,13 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# PageRenderStarted and PageRenderCompleted event
+# pageRenderStarted and PageRenderCompleted event
 
-In Syncfusion PDF Viewer, `pageRenderStart` and `pageRenderCompleted` actions are events that occur during the rendering process of PDF documents. 
+In Syncfusion PDF Viewer, `pageRenderStarted` and `pageRenderCompleted` actions are events that occur during the rendering process of PDF documents. 
 
-**pageRenderStart** 
+**pageRenderStarted** 
 
-The `pageRenderStart` event is triggered when the rendering of a page in the PDF document begins. This event provides developers with an opportunity to perform any necessary initialization or setup before the rendering of the page content commences. It can be utilized to prepare resources, set up rendering parameters, or execute any other actions required before the page rendering process starts.
+The `pageRenderStarted` event is triggered when the rendering of a page in the PDF document begins. This event provides developers with an opportunity to perform any necessary initialization or setup before the rendering of the page content commences. It can be utilized to prepare resources, set up rendering parameters, or execute any other actions required before the page rendering process starts.
 
 **pageRenderCompleted**
 
@@ -24,18 +24,18 @@ The `pageRenderCompleted` event is triggered when the rendering of a page in the
 
 ```ts
 
-viewer.pageRenderStart = args => {
+viewer.pageRenderStarted = args => {
    // This method is called when the page rendering starts
-  console.log('Rendering of page ' + e.pageNumber + ' started.');
+  console.log('Rendering of page ' + args.pageNumber + ' started.');
 };
 
 viewer.pageRenderCompleted = args => {
    // This method is called when the page rendering completes
-  console.log('Rendering of page ' + e.pageNumber + ' completed.');
+  console.log('Rendering of page ' + args.pageNumber + ' completed.');
 };
 
 ```
 
-The provided code demonstrates how to subscribe to the `pageRenderStart` and `pageRenderCompleted` events in the Syncfusion PDF Viewer component. 
+The provided code demonstrates how to subscribe to the `pageRenderStarted` and `pageRenderCompleted` events in the Syncfusion PDF Viewer component. 
 
 [View sample in GitHub]()
