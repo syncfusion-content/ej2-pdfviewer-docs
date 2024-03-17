@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Customize context menu in ##Platform_Name## PDF Viewer control | Syncfusion
-description: Learn here all about Customize context menu in Syncfusion ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more.
+title: Custom context menu in ##Platform_Name## PDF Viewer control | Syncfusion
+description: Learn here all about Custom context menu in Syncfusion ##Platform_Name## PDF Viewer control of Syncfusion Essential JS 2 and more.
 platform: ej2-javascript
 control: PDF Viewer
 publishingplatform: ##Platform_Name##
@@ -9,7 +9,7 @@ documentation: ug
 domainurl: ##DomainURL##
 ---
 
-# Customize context menu in ##Platform_Name## Pdfviewer control
+# Custom context menu in ##Platform_Name## Pdfviewer control
 
 PDF Viewer allows you to add custom option in context menu. It can be achieved by using the `addCustomMenu()` method and custom action is defined using the `customContextMenuSelect()`method.
 
