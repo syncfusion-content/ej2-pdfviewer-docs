@@ -24,13 +24,13 @@ The `pageRenderComplete` event is triggered when the rendering of a page in the 
 
 ```ts
 
-pdfviewer.pageRenderInitiate = args => {
+pdfviewer.pageRenderInitiate = (args: any) => {
     // This method is called when the page rendering starts
    console.log('Rendering of pages started');
    console.log(args);
  };
  
-pdfviewer.pageRenderComplete = args => {
+pdfviewer.pageRenderComplete = (args: any) => {
     // This method is called when the page rendering completes
     console.log('Rendering of pages completed');
     console.log(args);
