@@ -7,38 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Typescript PDF Viewer Control" />
     <meta name="author" content="Syncfusion" />
-    <link href="index.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-base/styles/material.css" rel="stylesheet" />    
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-buttons/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-popups/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-navigations/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-dropdowns/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-lists/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-inputs/styles/material.css" rel="stylesheet" />    
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
-    <link href="https://cdn.syncfusion.com/ej2/24.1.41/ej2-notifications/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-base/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-pdfviewer/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-navigations/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-inputs/styles/material.css" rel="stylesheet" />    
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/23.1.40/ej2-notifications/styles/material.css" rel="stylesheet" />
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
-    <script src="systemjs.config.js"></script>
+ 	<script src="systemjs.config.js"></script>
 </head>
 <body>
-    <div class="col-lg-9 control-section"></div>
-    <div id="container">
-        <div id="PdfViewer" style="height:500px;width:100%;"></div>
-    </div>
-    </div>
-    <div class="col-lg-3 property-section">
-        <table id="property" title="Properties" class="left-side-property">
-            <tr>
-                <td class="left-side">Hide Default Context Menu</td>
-                <td><input type="checkbox" id="hide-default-context-menu"></td>
-            </tr>
-            <tr>
-                <td class="left-side">Add Custom option at bottom</td>
-                <td><input type="checkbox" id="show-custom-menu-bottom"></td>
-            </tr>
-        </table>
+    <div id='loader'>Loading....</div>
+    <div id='container'>
+        <div>
+            <input type="checkbox" id="hide">
+        </div>
+        <div> 
+            <input type="checkbox" id="toolbar">
+        </div>
+        <div id='PdfViewer' style="height:500px;width:100%;"></div>        
     </div>
 </body>
 </html>
