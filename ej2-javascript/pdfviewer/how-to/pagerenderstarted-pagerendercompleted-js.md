@@ -22,17 +22,17 @@ The pageRenderInitiate event is triggered when the rendering of a page in the PD
 The pageRenderComplete event is triggered when the rendering of a page in the PDF document is completed. This event allows developers to perform cleanup tasks or finalize rendering-related processes after the rendering of the page content finishes. It can be used to release resources, finalize rendering settings, or handle any post-rendering tasks necessary for the application.
 
 ```js
-viewer.pageRenderInitiate = args => {
-   // This method is called when the page rendering starts
-    console.log('Rendering of pages started' + args); 
-};
-
-viewer.pageRenderComplete = args => {
-  // This method is called when the page rendering completes
-  console.log('Rendering of pages completed' + args);
+pdfviewer.pageRenderInitiate = args => {
+    // This method is called when the page rendering starts
+   console.log('Rendering of pages started');
+   console.log(args);
+ };
+ 
+pdfviewer.pageRenderComplete = args => {
+    // This method is called when the page rendering completes
+    console.log('Rendering of pages completed');
+    console.log(args);
 };
 ```
 
 The provided code demonstrates how to subscribe to the `pageRenderInitiate` and `pageRenderComplete` events in the Syncfusion PDF Viewer component. 
-
-[View sample in GitHub]()
