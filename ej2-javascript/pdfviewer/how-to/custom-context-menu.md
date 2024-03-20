@@ -49,16 +49,16 @@ The following code shows how to add custom option in context menu.
         },
     ];
 
-    pdfviewer.documentLoad = function (args) {
-        pdfviewer.addCustomMenu(menuItems, true);
+    viewer.documentLoad = function (args) {
+        viewer.addCustomMenu(menuItems, true);
     }
 
-    pdfviewer.customContextMenuSelect = function (args) {
+    viewer.customContextMenuSelect = function (args) {
         switch (args.id) {
             case 'search_in_google':
-                for (var i = 0; i < pdfviewer.textSelectionModule.selectionRangeArray.length; i++) {
-                    var content = pdfviewer.textSelectionModule.selectionRangeArray[i].textContent;
-                    if ((pdfviewer.textSelectionModule.isTextSelection) && (/\S/.test(content))) {
+                for (var i = 0; i < viewer.textSelectionModule.selectionRangeArray.length; i++) {
+                    var content = viewer.textSelectionModule.selectionRangeArray[i].textContent;
+                    if ((viewer.textSelectionModule.isTextSelection) && (/\S/.test(content))) {
                         window.open('http://google.com/search?q=' + content);
                     }
                 }
@@ -120,8 +120,8 @@ The PDF Viewer feature enables customization of custom options and the ability t
         },
     ];
     
-    pdfviewer.documentLoad = function (args) {
-        pdfviewer.addCustomMenu(menuItems, true);
+    viewer.documentLoad = function (args) {
+        viewer.addCustomMenu(menuItems, true);
     }
 
 ```
@@ -163,16 +163,16 @@ The following code shows how to hide/show added custom option in context menu us
         },
     ];
 
-pdfviewer.documentLoad = function (args) {
-    pdfviewer.addCustomMenu(menuItems, false, false);
+viewer.documentLoad = function (args) {
+    viewer.addCustomMenu(menuItems, false, false);
 }
 
-pdfviewer.customContextMenuSelect = function (args) {
+viewer.customContextMenuSelect = function (args) {
     switch (args.id) {
         case 'search_in_google':
-            for (var i = 0; i < pdfviewer.textSelectionModule.selectionRangeArray.length; i++) {
-                var content = pdfviewer.textSelectionModule.selectionRangeArray[i].textContent;
-                if ((pdfviewer.textSelectionModule.isTextSelection) && (/\S/.test(content))) {
+            for (var i = 0; i < viewer.textSelectionModule.selectionRangeArray.length; i++) {
+                var content = viewer.textSelectionModule.selectionRangeArray[i].textContent;
+                if ((viewer.textSelectionModule.isTextSelection) && (/\S/.test(content))) {
                     window.open('http://google.com/search?q=' + content);
                 }
             }
@@ -196,34 +196,34 @@ pdfviewer.customContextMenuSelect = function (args) {
     }
 };
 
-pdfviewer.customContextMenuBeforeOpen = function (args) {
+viewer.customContextMenuBeforeOpen = function (args) {
     for (var i = 0; i < args.ids.length; i++) {
         var search = document.getElementById(args.ids[i]);
         if (search) {
             search.style.display = 'none';
-            if (args.ids[i] === 'search_in_google' && (pdfviewer.textSelectionModule) && pdfviewer.textSelectionModule.isTextSelection) {
+            if (args.ids[i] === 'search_in_google' && (viewer.textSelectionModule) && viewer.textSelectionModule.isTextSelection) {
                 search.style.display = 'block';
             } else if (args.ids[i] === "lock_annotation" || args.ids[i] === "unlock_annotation") {
                 var isLockOption = args.ids[i] === "lock_annotation";
-                for (var j = 0; j < pdfviewer.selectedItems.annotations.length; j++) {
-                    var selectedAnnotation = pdfviewer.selectedItems.annotations[j];
+                for (var j = 0; j < viewer.selectedItems.annotations.length; j++) {
+                    var selectedAnnotation = viewer.selectedItems.annotations[j];
                     if (selectedAnnotation && selectedAnnotation.annotationSettings) {
                         var shouldDisplay = (isLockOption && !selectedAnnotation.annotationSettings.isLock) ||
                             (!isLockOption && selectedAnnotation.annotationSettings.isLock);
                         search.style.display = shouldDisplay ? 'block' : 'none';
                     }
                 }
-            } else if ((args.ids[i] === "read_only_true" || args.ids[i] === "read_only_false") && pdfviewer.selectedItems.formFields.length !== 0) {
+            } else if ((args.ids[i] === "read_only_true" || args.ids[i] === "read_only_false") && viewer.selectedItems.formFields.length !== 0) {
                 var isReadOnlyOption = args.ids[i] === "read_only_true";
-                for (var k = 0; k < pdfviewer.selectedItems.formFields.length; k++) {
-                    var selectedFormFields = pdfviewer.selectedItems.formFields[k];
+                for (var k = 0; k < viewer.selectedItems.formFields.length; k++) {
+                    var selectedFormFields = viewer.selectedItems.formFields[k];
                     if (selectedFormFields) {
-                        var selectedFormField = pdfviewer.selectedItems.formFields[k].isReadonly;
+                        var selectedFormField = viewer.selectedItems.formFields[k].isReadonly;
                         var displayMenu = (isReadOnlyOption && !selectedFormField) || (!isReadOnlyOption && selectedFormField);
                         search.style.display = displayMenu ? 'block' : 'none';
                     }
                 }
-            } else if (args.ids[i] === 'formfield properties' && pdfviewer.selectedItems.formFields.length !== 0) {
+            } else if (args.ids[i] === 'formfield properties' && viewer.selectedItems.formFields.length !== 0) {
                 search.style.display = 'block';
             }
         }
@@ -231,33 +231,33 @@ pdfviewer.customContextMenuBeforeOpen = function (args) {
 };
 
 function lockAnnotations(args) {
-    for (var i = 0; i < pdfviewer.annotationCollection.length; i++) {
-        if (pdfviewer.annotationCollection[i].uniqueKey === pdfviewer.selectedItems.annotations[0].id) {
-            pdfviewer.annotationCollection[i].annotationSettings.isLock = true;
-            pdfviewer.annotationCollection[i].isCommentLock = true;
-            pdfviewer.annotation.editAnnotation(pdfviewer.annotationCollection[i]);
+    for (var i = 0; i < viewer.annotationCollection.length; i++) {
+        if (viewer.annotationCollection[i].uniqueKey === viewer.selectedItems.annotations[0].id) {
+            viewer.annotationCollection[i].annotationSettings.isLock = true;
+            viewer.annotationCollection[i].isCommentLock = true;
+            viewer.annotation.editAnnotation(viewer.annotationCollection[i]);
         }
         args.cancel = false;
     }
 }
 
 function unlockAnnotations(args) {
-    for (var i = 0; i < pdfviewer.annotationCollection.length; i++) {
-        if (pdfviewer.annotationCollection[i].uniqueKey === pdfviewer.selectedItems.annotations[0].id) {
-            pdfviewer.annotationCollection[i].annotationSettings.isLock = false;
-            pdfviewer.annotationCollection[i].isCommentLock = false;
-            pdfviewer.annotation.editAnnotation(pdfviewer.annotationCollection[i]);
+    for (var i = 0; i < viewer.annotationCollection.length; i++) {
+        if (viewer.annotationCollection[i].uniqueKey === viewer.selectedItems.annotations[0].id) {
+            viewer.annotationCollection[i].annotationSettings.isLock = false;
+            viewer.annotationCollection[i].isCommentLock = false;
+            viewer.annotation.editAnnotation(viewer.annotationCollection[i]);
         }
         args.cancel = false;
     }
 }
 
 function setReadOnlyTrue(args) {
-    var selectedFormFields = pdfviewer.selectedItems.formFields;
+    var selectedFormFields = viewer.selectedItems.formFields;
     for (var i = 0; i < selectedFormFields.length; i++) {
         var selectFormFields = selectedFormFields[i];
         if (selectFormFields) {
-            pdfviewer.formDesignerModule.updateFormField(selectFormFields, {
+            viewer.formDesignerModule.updateFormField(selectFormFields, {
                 isReadOnly: true,
             });
         }
@@ -266,11 +266,11 @@ function setReadOnlyTrue(args) {
 }
 
 function setReadOnlyFalse(args) {
-    var selectedFormFields = pdfviewer.selectedItems.formFields;
+    var selectedFormFields = viewer.selectedItems.formFields;
     for (var i = 0; i < selectedFormFields.length; i++) {
         var selectFormFields = selectedFormFields[i];
         if (selectFormFields) {
-            pdfviewer.formDesignerModule.updateFormField(selectFormFields, {
+            viewer.formDesignerModule.updateFormField(selectFormFields, {
                 isReadOnly: false,
             });
         }
@@ -291,6 +291,6 @@ The following is the output of custom context menu with customization.
 
 N> To set up the **server-backed PDF Viewer**,
 Add the below `serviceUrl` in the `index.ts` file
-`pdfviewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`  
+`viewer.serviceUrl = 'https://services.syncfusion.com/js/production/api/pdfviewer';`  
 
 {% previewsample "page.domainurl/code-snippet/pdfviewer/custom-context-menu" %}
