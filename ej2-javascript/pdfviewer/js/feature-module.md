@@ -27,6 +27,7 @@ The available PdfViewer modules are:
 * **Annotation**:- Annotations can be added or edited in the PDF document.
 * **FormFields**:- Preserve the form fields in the PDF document.
 * **FormDesigner**:- Form fields can be added or edited in the PDF document.
+* **StickyNotesAnnotation**:- Adding sticky notes to the PDF document.
 
 >In addition to injecting the required modules in your application, enable corresponding properties to extend the functionality for a PDF Viewer instance.
 Refer to the following table.
@@ -45,6 +46,7 @@ Refer to the following table.
 |Annotation|`PdfViewer.Inject(Annotation)`|`let pdfViewer: PdfViewer = new PdfViewer({ enableAnnotation: true });`|
 |FormFields|`PdfViewer.Inject(FormFields)`|`let pdfViewer: PdfViewer = new PdfViewer({ enableFormFields: true });`|
 |FormDesigner|`PdfViewer.Inject(FormDesigner)`|`let pdfViewer: PdfViewer = new PdfViewer({ enableFormDesigner: true });`|
+|StickyNotesAnnotation|`PdfViewer.Inject(StickyNotesAnnotation)`|`let pdfViewer: PdfViewer = new PdfViewer({ enableStickyNotesAnnotation: true });`|
 
 ## See also
 
