@@ -24,18 +24,18 @@ The `pageRenderComplete` event is triggered when the rendering of a page in the 
 
 ```ts
 
-viewer.pageRenderInitiate = args => {
-   // This method is called when the page rendering starts
-  console.log('Rendering of pages started' + args);
-};
-
-viewer.pageRenderComplete = args => {
-   // This method is called when the page rendering completes
-   console.log('Rendering of pages completed' + args);
+pdfviewer.pageRenderInitiate = (args: any) => {
+    // This method is called when the page rendering starts
+   console.log('Rendering of pages started');
+   console.log(args);
+ };
+ 
+pdfviewer.pageRenderComplete = (args: any) => {
+    // This method is called when the page rendering completes
+    console.log('Rendering of pages completed');
+    console.log(args);
 };
 
 ```
 
 The provided code demonstrates how to subscribe to the `pageRenderInitiate` and `pageRenderComplete` events in the Syncfusion PDF Viewer component. 
-
-[View sample in GitHub]()

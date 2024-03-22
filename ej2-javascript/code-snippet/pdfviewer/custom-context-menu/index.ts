@@ -1,20 +1,16 @@
-import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation,ThumbnailView, BookmarkView,
-         TextSelection, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
-import { ContextMenu, MenuItemModel } from '@syncfusion/ej2-navigations';
-import { CheckBox, ChangeEventArgs } from '@syncfusion/ej2-buttons';         
+import { PdfViewer, Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner, PageOrganizer} from '@syncfusion/ej2-pdfviewer';
+import { MenuItemModel } from '@syncfusion/ej2-navigations';
+import { CheckBox, ChangeEventArgs } from '@syncfusion/ej2-buttons';
+PdfViewer.Inject(Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, ThumbnailView, BookmarkView, TextSelection, TextSearch, FormFields, FormDesigner, PageOrganizer);
 
-PdfViewer.Inject( Toolbar,Magnification, Navigation, LinkAnnotation, ThumbnailView,
-                  BookmarkView, TextSelection, Annotation, FormDesigner, FormFields );
-
-let pdfviewer: PdfViewer = new PdfViewer({ 
-    documentPath:'https://cdn.syncfusion.com/content/pdf/form-designer.pdf',
-    resourceUrl:'https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib'
-});
+let pdfviewer: PdfViewer = new PdfViewer();
+pdfviewer.documentPath = "https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf";
+pdfviewer.resourceUrl = "https://cdn.syncfusion.com/ej2/23.1.43/dist/ej2-pdfviewer-lib";
 var menuItems: MenuItemModel[] = [
     {
         text: 'Search In Google',
         id: 'search_in_google',
-        iconCss: 'e-icons e-de-ctnr-find'
+        iconCss: 'e-icons e-search'
     },
     {
         text: 'Lock Annotation',
@@ -27,24 +23,23 @@ var menuItems: MenuItemModel[] = [
         id: 'unlock_annotation'
     },
     {
-        text: 'Lock Form Field',
+        text: 'Lock Form Fields',
         iconCss: 'e-icons e-lock',
         id: 'read_only_true'
     },
     {
-        text: 'Unlock Form Field',
+        text: 'Unlock Form Fields',
         iconCss: 'e-icons e-unlock',
         id: 'read_only_false'
     },
 ];
-
 pdfviewer.appendTo('#PdfViewer');
 
-pdfviewer.documentLoad = function (args) {
+pdfviewer.documentLoad = function (args: any) {
     pdfviewer.addCustomMenu(menuItems, false, false);
 }
 
-pdfviewer.customContextMenuSelect = function (args) {
+pdfviewer.customContextMenuSelect = function (args: any) {
     switch (args.id) {
         case 'search_in_google':
             for (var i = 0; i < pdfviewer.textSelectionModule.selectionRangeArray.length; i++) {
@@ -73,7 +68,7 @@ pdfviewer.customContextMenuSelect = function (args) {
     }
 };
 
-pdfviewer.customContextMenuBeforeOpen = function (args) {
+pdfviewer.customContextMenuBeforeOpen = function (args: any) {
     for (var i = 0; i < args.ids.length; i++) {
         var search = document.getElementById(args.ids[i]);
         if (search) {
@@ -83,7 +78,7 @@ pdfviewer.customContextMenuBeforeOpen = function (args) {
             } else if (args.ids[i] === "lock_annotation" || args.ids[i] === "unlock_annotation") {
                 var isLockOption = args.ids[i] === "lock_annotation";
                 for (var j = 0; j < pdfviewer.selectedItems.annotations.length; j++) {
-                    var selectedAnnotation = pdfviewer.selectedItems.annotations[j];
+                    var selectedAnnotation: any = pdfviewer.selectedItems.annotations[j];
                     if (selectedAnnotation && selectedAnnotation.annotationSettings) {
                         var shouldDisplay = (isLockOption && !selectedAnnotation.annotationSettings.isLock) ||
                             (!isLockOption && selectedAnnotation.annotationSettings.isLock);
@@ -92,9 +87,14 @@ pdfviewer.customContextMenuBeforeOpen = function (args) {
                 }
             } else if ((args.ids[i] === "read_only_true" || args.ids[i] === "read_only_false") && pdfviewer.selectedItems.formFields.length !== 0) {
                 var isReadOnlyOption = args.ids[i] === "read_only_true";
-                var selectedFormField = pdfviewer.selectedItems.formFields[0].isReadonly;
-                var displayMenu = (isReadOnlyOption && !selectedFormField) || (!isReadOnlyOption && selectedFormField);
-                search.style.display = displayMenu ? 'block' : 'none';
+                for (var k = 0; k < pdfviewer.selectedItems.formFields.length; k++) {
+                    var selectedFormFields = pdfviewer.selectedItems.formFields[k];
+                    if (selectedFormFields) {
+                        var selectedFormField = pdfviewer.selectedItems.formFields[k].isReadonly;
+                        var displayMenu = (isReadOnlyOption && !selectedFormField) || (!isReadOnlyOption && selectedFormField);
+                        search.style.display = displayMenu ? 'block' : 'none';
+                    }
+                }
             } else if (args.ids[i] === 'formfield properties' && pdfviewer.selectedItems.formFields.length !== 0) {
                 search.style.display = 'block';
             }
@@ -103,26 +103,24 @@ pdfviewer.customContextMenuBeforeOpen = function (args) {
 };
 
 function lockAnnotations(args: any) {
-    var selectedAnnotations: any = pdfviewer.selectedItems.annotations;
-    for (var i = 0; i < selectedAnnotations.length; i++) {
-        var annotation = selectedAnnotations[i];
-        if (annotation && annotation.annotationSettings) {
-            annotation.annotationSettings.isLock = true;
-            pdfviewer.annotationModule.editAnnotation(annotation);
-            args.cancel = false;
+    for (var i = 0; i < pdfviewer.annotationCollection.length; i++) {
+        if (pdfviewer.annotationCollection[i].uniqueKey === pdfviewer.selectedItems.annotations[0].id) {
+            pdfviewer.annotationCollection[i].annotationSettings.isLock = true;
+            pdfviewer.annotationCollection[i].isCommentLock = true;
+            pdfviewer.annotation.editAnnotation(pdfviewer.annotationCollection[i]);
         }
+        args.cancel = false;
     }
 }
 
 function unlockAnnotations(args: any) {
-    var selectedAnnotations: any = pdfviewer.selectedItems.annotations;
-    for (var i = 0; i < selectedAnnotations.length; i++) {
-        var annotation = selectedAnnotations[i];
-        if (annotation && annotation.annotationSettings) {
-            annotation.annotationSettings.isLock = false;
-            pdfviewer.annotationModule.editAnnotation(annotation);
-            args.cancel = false;
+    for (var i = 0; i < pdfviewer.annotationCollection.length; i++) {
+        if (pdfviewer.annotationCollection[i].uniqueKey === pdfviewer.selectedItems.annotations[0].id) {
+            pdfviewer.annotationCollection[i].annotationSettings.isLock = false;
+            pdfviewer.annotationCollection[i].isCommentLock = false;
+            pdfviewer.annotation.editAnnotation(pdfviewer.annotationCollection[i]);
         }
+        args.cancel = false;
     }
 }
 
@@ -154,16 +152,16 @@ function setReadOnlyFalse(args: any) {
 
 let defaultCheckBoxObj: CheckBox = new CheckBox({
     change: contextmenuHelper,
-    cssClass: 'multiline',
+    label: "Hide Default Context Menu"
 });
-defaultCheckBoxObj.appendTo('#hide-default-context-menu');
+defaultCheckBoxObj.appendTo('#hide');
 
 let positionCheckBoxObj: CheckBox = new CheckBox({
     change: contextmenuHelper,
-    cssClass: 'multiline',
+    label: "Add Custom option at bottom"
 });
-positionCheckBoxObj.appendTo('#show-custom-menu-bottom');
+positionCheckBoxObj.appendTo('#toolbar');
 
 function contextmenuHelper(args: ChangeEventArgs): void {
     pdfviewer.addCustomMenu(menuItems, defaultCheckBoxObj.checked, positionCheckBoxObj.checked);
-} 
+}
